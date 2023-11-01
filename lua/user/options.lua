@@ -10,7 +10,7 @@ local options = {
 	expandtab = true,
 	smartcase = true,
 	smartindent = true,
-	cursorline = false,
+	cursorline = true,
 
 	-- statusline
 	showmode = true,
