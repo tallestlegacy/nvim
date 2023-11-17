@@ -1,3 +1,3 @@
-require "user.options"
-require "user.keymaps"
-require "user.plugins"
+require "builtin.options"
+require "builtin.remap"
+require "builtin.plugins"

@@ -26,7 +26,8 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+keymap("n", "<leader>l", ":Lexplore<CR>", opts)
+keymap("n", "<C-s>", ":w<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -41,6 +42,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+keymap("i", "<C-s>", "<ESC>:w<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -70,3 +72,4 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Files
 keymap("n" , "<C-n>", ":new<CR>", opts)
+

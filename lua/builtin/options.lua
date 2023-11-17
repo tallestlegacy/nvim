@@ -11,6 +11,7 @@ local options = {
 	smartcase = true,
 	smartindent = true,
 	cursorline = true,
+  clipboard = "unnamedplus",
 
 	-- statusline
 	showmode = true,
