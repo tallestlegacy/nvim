@@ -1,10 +1,10 @@
-require ("nvim-treesitter").setup {
+require("nvim-treesitter").setup {
   build = ":TSUpdate"
 }
 
-require("nvim-treesitter.install").compilers = {"clang", "gcc"}
+require("nvim-treesitter.install").compilers = { "clang", "gcc" }
 
-local parsers_path =  "~/.local/share/nvim/parsers"
+local parsers_path = "~/.local/share/nvim/parsers"
 vim.opt.runtimepath:append(parsers_path)
 
 require("nvim-treesitter.configs").setup {
@@ -18,4 +18,3 @@ require("nvim-treesitter.configs").setup {
 
   indent = { enable = true },
 }
-

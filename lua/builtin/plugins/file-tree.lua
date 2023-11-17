@@ -2,5 +2,5 @@
 
 
 require("nvim-tree").setup {
-  
+
 }

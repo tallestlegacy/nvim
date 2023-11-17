@@ -34,16 +34,17 @@ require("lazy").setup({
   },
 
   -- TreeSitter
-  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 
   -- Colorscheme
-  {  "ellisonleao/gruvbox.nvim",  priority = 1000 },
+  { "ellisonleao/gruvbox.nvim",        priority = 1000 },
 
   -- Telescope
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.4',
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.4',
     dependencies = {
-      'nvim-lua/plenary.nvim', 
+      'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-fzf-native.nvim',
       build = "make",
     },
@@ -52,7 +53,7 @@ require("lazy").setup({
   -- Mason
   "williamboman/mason.nvim",
 
-  -- LSP 
+  -- LSP
   "neovim/nvim-lspconfig",
 
   -- Completions
@@ -68,8 +69,8 @@ require("lazy").setup({
   'rafamadriz/friendly-snippets',
 
   -- AI Completions
-  { 
-    "Exafunction/codeium.vim", 
+  {
+    "Exafunction/codeium.vim",
     event = "BufEnter",
   },
 

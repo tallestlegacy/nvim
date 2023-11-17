@@ -71,5 +71,4 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 
 -- Files
-keymap("n" , "<C-n>", ":new<CR>", opts)
-
+keymap("n", "<C-n>", ":new<CR>", opts)
