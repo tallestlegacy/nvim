@@ -4,9 +4,13 @@ wk.setup {
 }
 
 
-local explorer = {
-  "<cmd>NvimTreeToggle<cr>",
-  "Explorer",
+local explorer = {"<cmd>NvimTreeOpen<cr>", "Explorer" }
+
+local find = {
+  f = { "<cmd>Telescope find_files<cr>" , "Files"},
+  g = { "<cmd>Telescope live_grep<cr>", "Live Grep"} ,
+  b = { "<cmd>Telescope buffers<cr>", "Buffer" },
+  h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
 }
 
 
@@ -16,5 +20,6 @@ local explorer = {
 
 wk.register({
   e = explorer,
+  f = { find , "Find"} ,
 }, 
 { prefix = "<leader>" })

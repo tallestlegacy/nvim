@@ -20,7 +20,6 @@ require("lazy").setup({
     config = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
-      require "builtin.plugins.mappings"
     end,
   },
 
@@ -32,8 +31,37 @@ require("lazy").setup({
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    config = function()
-      require "builtin.plugins.file-tree"
-    end,
-  }
+  },
+
+  -- TreeSitter
+  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+
+  -- Colorscheme
+  {  "ellisonleao/gruvbox.nvim",  priority = 1000 },
+
+  -- Telescope
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.4',
+    dependencies = { 'nvim-lua/plenary.nvim' },  
+  },
+
+  -- Mason
+  { 
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = { "pyright" },
+    },
+  },
+
+  -- LSP 
+  "neovim/nvim-lspconfig",
 })
+
+
+require "builtin.colorscheme"
+require "builtin.plugins.mappings"
+require "builtin.plugins.file-tree"
+require "builtin.plugins.telescope"
+require "builtin.plugins.treesitter"
+require "builtin.plugins.mason"
+require "builtin.plugins.lspconfig"
