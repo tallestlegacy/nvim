@@ -9,3 +9,7 @@ require("mason-lspconfig").setup {
 
 
 lspconfig.lua_ls.setup({})
+lspconfig.gopls.setup({})
+lspconfig.rust_analyzer.setup({})
+lspconfig.tsserver.setup({})
+lspconfig.pyright.setup({})

@@ -1,5 +1,5 @@
 local M = {}
 
-M.plugins = require "user.plugins"
+--  M.plugins = require "user.plugins"
 
 return M

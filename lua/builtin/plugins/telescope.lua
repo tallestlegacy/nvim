@@ -17,7 +17,7 @@ telescope.setup {
   },
 
   path_display = { "truncate" },
-  file_ignore_patterns = { "node_modules", "git" },
+  file_ignore_patterns = { "node_modules" },
 
   extensions_list = { "themes" }, -- "terms", "fzf" },
   color_devicons = true,

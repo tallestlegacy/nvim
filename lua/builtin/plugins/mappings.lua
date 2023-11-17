@@ -3,11 +3,10 @@ local wk = require("which-key")
 wk.setup {}
 
 
-local explorer = { "<cmd>NvimTreeOpen<cr>", "Explorer" }
+local explorer = { "<cmd>Neotree focus<cr>", "Explorer" }
 
 local find = {
-  f = { "<cmd>Telescope git_files<cr>", "Git files" },
-  F = { "<cmd>Telescope find_files<cr>", "All Files" },
+  f = { "<cmd>Telescope find_files<cr>", "All Files" },
   w = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
   z = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer" },
   b = { "<cmd>Telescope buffers<cr>", "Buffer" },
@@ -61,7 +60,10 @@ local buffer = {
 
 wk.register({
   e = explorer,
+  n = { "<cmd>Neotree toggle<cr>", "Explorer" },
   f = { find, "Find" },
   l = { lsp, "LSP" },
   b = { buffer, "Buffer" },
 }, { prefix = "<leader>" })
+
+

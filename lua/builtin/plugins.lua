@@ -15,6 +15,8 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Init Lazy
 require("lazy").setup({
+
+  -- mappings
   {
     "folke/which-key.nvim",
     config = function()
@@ -25,12 +27,15 @@ require("lazy").setup({
 
   -- File Tree
   {
-    "nvim-tree/nvim-tree.lua",
-    version = "*",
-    lazy = false,
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
   },
-
   -- Bufferline
   {
     "akinsho/bufferline.nvim",
@@ -38,20 +43,42 @@ require("lazy").setup({
     dependencies = "nvim-tree/nvim-web-devicons",
   },
 
+  -- Winbar
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+  },
+
+  -- Lualine
+  'nvim-lualine/lualine.nvim',
+
+  -- GitSigns
+  'lewis6991/gitsigns.nvim',
+
+  -- Other editor plugins
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl",       opts = {} },
+
   -- TreeSitter
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  { "nvim-treesitter/nvim-treesitter",     build = ":TSUpdate" },
 
   -- Colorscheme
-  { "ellisonleao/gruvbox.nvim",        priority = 1000 },
+  { "ellisonleao/gruvbox.nvim" },
+  { "navarasu/onedark.nvim",               priority = 1000 },     -- Ensure it loads first},
+  { "catppuccin/nvim",                     name = "catppuccin" }, --  priority = 1000 },
 
   -- Telescope
   {
     'nvim-telescope/telescope.nvim',
-    dependencies = { 
-    'nvim-lua/plenary.nvim',
-    'nvim-telescope/telescope-symbols.nvim',
-    'nvim-telescope/telescope-fzf-native.nvim',
-    build = "make",
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-symbols.nvim',
+      'nvim-telescope/telescope-fzf-native.nvim',
+      build = "make",
     },
   },
   -- Mason
@@ -78,6 +105,13 @@ require("lazy").setup({
     event = "BufEnter",
   },
 
+  -- Dashboard
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+  },
+
 })
 
 
@@ -89,3 +123,5 @@ require "builtin.plugins.telescope"
 require "builtin.plugins.treesitter"
 require "builtin.plugins.cmp"
 require "builtin.plugins.lsp"
+require "builtin.plugins.lualine"
+require "builtin.plugins.gitsigns"
