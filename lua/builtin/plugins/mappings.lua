@@ -13,6 +13,10 @@ local find = {
   h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
 }
 
+local lsp = {
+  a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action"},
+  r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename"},
+}
 
 ---------------------------------------------------
 ------------------ REGISTER -----------------------
@@ -20,6 +24,6 @@ local find = {
 
 wk.register({
   e = explorer,
-  f = { find , "Find"} ,
-}, 
-{ prefix = "<leader>" })
+  f = { find , "Find"},
+  l = { lsp, "LSP" },
+}, { prefix = "<leader>" })

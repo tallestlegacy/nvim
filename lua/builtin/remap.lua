@@ -26,7 +26,7 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>l", ":Lexplore<CR>", opts)
+-- keymap("n", "<C-e>", ":Lexplore<CR>", opts)
 keymap("n", "<C-s>", ":w<CR>", opts)
 
 -- Resize with arrows

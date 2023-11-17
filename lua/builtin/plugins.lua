@@ -42,19 +42,37 @@ require("lazy").setup({
   -- Telescope
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.4',
-    dependencies = { 'nvim-lua/plenary.nvim' },  
-  },
-
-  -- Mason
-  { 
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = { "pyright" },
+    dependencies = {
+      'nvim-lua/plenary.nvim', 
+      'nvim-telescope/telescope-fzf-native.nvim',
+      build = "make",
     },
   },
 
+  -- Mason
+  "williamboman/mason.nvim",
+
   -- LSP 
   "neovim/nvim-lspconfig",
+
+  -- Completions
+  'neovim/nvim-lspconfig',
+  'williamboman/mason-lspconfig',
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
+  'hrsh7th/cmp-cmdline',
+  'hrsh7th/nvim-cmp',
+  'L3MON4D3/LuaSnip',
+  'saadparwaiz1/cmp_luasnip',
+  'rafamadriz/friendly-snippets',
+
+  -- AI Completions
+  { 
+    "Exafunction/codeium.vim", 
+    event = "BufEnter",
+  },
+
 })
 
 
@@ -63,5 +81,5 @@ require "builtin.plugins.mappings"
 require "builtin.plugins.file-tree"
 require "builtin.plugins.telescope"
 require "builtin.plugins.treesitter"
-require "builtin.plugins.mason"
-require "builtin.plugins.lspconfig"
+require "builtin.plugins.cmp"
+require "builtin.plugins.lsp"
