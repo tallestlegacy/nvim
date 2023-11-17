@@ -28,9 +28,14 @@ require("lazy").setup({
     "nvim-tree/nvim-tree.lua",
     version = "*",
     lazy = false,
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
+  -- Bufferline
+  {
+    "akinsho/bufferline.nvim",
+    version = "v3.*",
+    dependencies = "nvim-tree/nvim-web-devicons",
   },
 
   -- TreeSitter
@@ -42,14 +47,13 @@ require("lazy").setup({
   -- Telescope
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.4',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope-fzf-native.nvim',
-      build = "make",
+    dependencies = { 
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope-symbols.nvim',
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build = "make",
     },
   },
-
   -- Mason
   "williamboman/mason.nvim",
 
@@ -80,6 +84,7 @@ require("lazy").setup({
 require "builtin.colorscheme"
 require "builtin.plugins.mappings"
 require "builtin.plugins.file-tree"
+require "builtin.plugins.bufferline"
 require "builtin.plugins.telescope"
 require "builtin.plugins.treesitter"
 require "builtin.plugins.cmp"
