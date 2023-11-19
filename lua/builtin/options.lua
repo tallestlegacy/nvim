@@ -12,6 +12,7 @@ local options = {
   smartindent = true,
   cursorline = true,
   clipboard = "unnamedplus",
+  wrap = false,
 
   -- statusline
   showmode = true,

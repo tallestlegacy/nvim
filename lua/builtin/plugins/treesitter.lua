@@ -4,7 +4,7 @@ require("nvim-treesitter").setup {
 
 require("nvim-treesitter.install").compilers = { "clang", "gcc" }
 
-local parsers_path = "~/.local/share/nvim/parsers"
+local parsers_path = "~/.local/share/nvim"
 vim.opt.runtimepath:append(parsers_path)
 
 require("nvim-treesitter.configs").setup {

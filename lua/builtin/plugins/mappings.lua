@@ -1,9 +1,16 @@
-local wk = require("which-key")
+local status_ok, wk = pcall(require, "which-key")
+if not status_ok then
+  print("which-key is not installed")
+  return
+end
 
 wk.setup {}
 
 
 local explorer = { "<cmd>Neotree focus<cr>", "Explorer" }
+local explorer_toggle = { "<cmd>Neotree toggle<cr>", "Explorer" }
+wk.register({ n = explorer_toggle }, { mod = "A" })
+
 local dashboard = { "<cmd>Alpha<cr>", "Dashboard" }
 
 local find = {
@@ -69,6 +76,14 @@ local mod_terminal = {
 wk.register(mod_terminal, { mod = "A" })
 
 
+-- plugin management
+local pm = {
+  l = { "<cmd>Lazy<cr>", "Lazy plugin manager" },
+  c = { "<cmd>Lazy clean<cr>", "Clean unused plugins" },
+  u = { "<cmd>Lazy update<cr>", "Update plugins" },
+}
+
+
 ---------------------------------------------------
 ------------------ REGISTER -----------------------
 ---------------------------------------------------
@@ -76,9 +91,9 @@ wk.register(mod_terminal, { mod = "A" })
 wk.register({
   a = dashboard,
   e = explorer,
-  n = { "<cmd>Neotree toggle<cr>", "Explorer" },
   f = { find, "Find" },
   l = { lsp, "LSP" },
   b = { buffer, "Buffer" },
   t = { terminal, "Toggle Term" },
+  p = { pm, "Plugin Management" },
 }, { prefix = "<leader>" })

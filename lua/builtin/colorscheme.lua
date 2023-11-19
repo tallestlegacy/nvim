@@ -1,15 +1,15 @@
 vim.o.background = "dark" -- or "light" for light mode
 
-vim.cmd.colorscheme "onedark"
+local colorscheme = "gruvbox"
 
-require("catppuccin").setup({
-  flavour = "mocha",
-})
+local status_ok, user = pcall(require, "user.init")
+if status_ok and user.colorscheme ~= nil then
+  colorscheme = user.colorscheme
+end
 
-
-require('onedark').setup {
-  style = 'darker'
-}
-require('onedark').load()
-
-require("barbecue").setup()
+local ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+vim.o.background = "dark"   -- or "light" for light mode
+if not ok then
+  vim.notify("colorscheme " .. colorscheme .. " not found!")
+  return
+end

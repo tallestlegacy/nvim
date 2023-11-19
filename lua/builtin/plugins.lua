@@ -13,12 +13,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
--- Init Lazy
-require("lazy").setup({
+-- default plugins
+local default_plugins = {
 
   -- mappings
   {
     "folke/which-key.nvim",
+    priority = 1000,
     config = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
@@ -68,10 +69,7 @@ require("lazy").setup({
   { "nvim-treesitter/nvim-treesitter",     build = ":TSUpdate" },
 
   -- Colorscheme
-  { "ellisonleao/gruvbox.nvim" },
-  { "navarasu/onedark.nvim",               priority = 1000 },     -- Ensure it loads first},
-  { "catppuccin/nvim",                     name = "catppuccin" }, --  priority = 1000 },
-
+  { "ellisonleao/gruvbox.nvim",            priority = 1000 },
   -- Telescope
   {
     'nvim-telescope/telescope.nvim',
@@ -87,9 +85,8 @@ require("lazy").setup({
 
   -- LSP
   "neovim/nvim-lspconfig",
-
+  "folke/trouble.nvim",
   -- Completions
-  'neovim/nvim-lspconfig',
   'williamboman/mason-lspconfig',
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-buffer',
@@ -100,11 +97,7 @@ require("lazy").setup({
   'saadparwaiz1/cmp_luasnip',
   'rafamadriz/friendly-snippets',
 
-  -- AI Completions
-  {
-    "Exafunction/codeium.vim",
-    event = "BufEnter",
-  },
+
 
   -- Dashboard
   {
@@ -119,9 +112,22 @@ require("lazy").setup({
 
   -- Terminal
   'akinsho/toggleterm.nvim',
+}
 
-})
 
+-- concatenate default plugins with extras
+local status_ok, user = pcall(require, "user.init")
+if not status_ok then
+  print("Status is not ok")
+elseif user.plugins then
+  for _, v in pairs(user.plugins) do
+    table.insert(default_plugins, v)
+  end
+end
+
+
+-- init Lazy
+require("lazy").setup(default_plugins)
 
 require "builtin.colorscheme"
 require "builtin.plugins.mappings"
@@ -131,6 +137,7 @@ require "builtin.plugins.telescope"
 require "builtin.plugins.treesitter"
 require "builtin.plugins.cmp"
 require "builtin.plugins.lsp"
+require "builtin.plugins.trouble"
 require "builtin.plugins.lualine"
 require "builtin.plugins.gitsigns"
 require "builtin.plugins.comment"
