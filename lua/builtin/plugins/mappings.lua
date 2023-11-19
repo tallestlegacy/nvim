@@ -4,6 +4,7 @@ wk.setup {}
 
 
 local explorer = { "<cmd>Neotree focus<cr>", "Explorer" }
+local dashboard = { "<cmd>Alpha<cr>", "Dashboard" }
 
 local find = {
   f = { "<cmd>Telescope find_files<cr>", "All Files" },
@@ -54,11 +55,13 @@ local buffer = {
   e = { "<cmd>BufferLineSortByExtension<cr>", "Sort by Extension" }
 }
 
+
 ---------------------------------------------------
 ------------------ REGISTER -----------------------
 ---------------------------------------------------
 
 wk.register({
+  a = dashboard,
   e = explorer,
   n = { "<cmd>Neotree toggle<cr>", "Explorer" },
   f = { find, "Find" },

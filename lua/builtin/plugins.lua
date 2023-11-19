@@ -42,6 +42,7 @@ require("lazy").setup({
     version = "v3.*",
     dependencies = "nvim-tree/nvim-web-devicons",
   },
+  'arkav/lualine-lsp-progress',
 
   -- Winbar
   {
@@ -107,10 +108,14 @@ require("lazy").setup({
 
   -- Dashboard
   {
-    'nvimdev/dashboard-nvim',
+    'goolord/alpha-nvim',
     event = 'VimEnter',
     dependencies = { { 'nvim-tree/nvim-web-devicons' } }
   },
+
+  -- Comments
+  'numToStr/Comment.nvim',
+  'JoosepAlviste/nvim-ts-context-commentstring',
 
 })
 
@@ -125,3 +130,5 @@ require "builtin.plugins.cmp"
 require "builtin.plugins.lsp"
 require "builtin.plugins.lualine"
 require "builtin.plugins.gitsigns"
+require "builtin.plugins.comment"
+require "builtin.plugins.dashboard"
