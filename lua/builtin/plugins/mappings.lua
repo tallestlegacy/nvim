@@ -55,6 +55,19 @@ local buffer = {
   e = { "<cmd>BufferLineSortByExtension<cr>", "Sort by Extension" }
 }
 
+local terminal = {
+  ["h"] = { "<cmd>ToggleTerm direction=horizontal<cr>", "Horizontal term" },
+  ["v"] = { "<cmd>ToggleTerm direction=vertical<cr>", "Vertical term" },
+  ["f"] = { "<cmd>ToggleTerm direction=float<cr>", "Floating term" },
+}
+
+local mod_terminal = {
+  ["1"] = { "<cmd>ToggleTerm direction=horizontal<cr>", "Horizontal term" },
+  ["2"] = { "<cmd>ToggleTerm direction=vertical<cr>", "Vertical term" },
+  ["3"] = { "<cmd>ToggleTerm direction=float<cr>", "Floating term" },
+}
+wk.register(mod_terminal, { mod = "A" })
+
 
 ---------------------------------------------------
 ------------------ REGISTER -----------------------
@@ -67,6 +80,5 @@ wk.register({
   f = { find, "Find" },
   l = { lsp, "LSP" },
   b = { buffer, "Buffer" },
+  t = { terminal, "Toggle Term" },
 }, { prefix = "<leader>" })
-
-

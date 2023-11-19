@@ -117,6 +117,9 @@ require("lazy").setup({
   'numToStr/Comment.nvim',
   'JoosepAlviste/nvim-ts-context-commentstring',
 
+  -- Terminal
+  'akinsho/toggleterm.nvim',
+
 })
 
 
@@ -132,3 +135,4 @@ require "builtin.plugins.lualine"
 require "builtin.plugins.gitsigns"
 require "builtin.plugins.comment"
 require "builtin.plugins.dashboard"
+require "builtin.plugins.terminal"
