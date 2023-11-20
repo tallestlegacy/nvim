@@ -62,10 +62,18 @@ local buffer = {
   e = { "<cmd>BufferLineSortByExtension<cr>", "Sort by Extension" }
 }
 
-local terminal = {
-  ["h"] = { "<cmd>ToggleTerm direction=horizontal<cr>", "Horizontal term" },
-  ["v"] = { "<cmd>ToggleTerm direction=vertical<cr>", "Vertical term" },
-  ["f"] = { "<cmd>ToggleTerm direction=float<cr>", "Floating term" },
+local toggle = {
+  --  terminal
+  h = { "<cmd>ToggleTerm direction=horizontal<cr>", "Horizontal term" },
+  v = { "<cmd>ToggleTerm direction=vertical<cr>", "Vertical term" },
+  f = { "<cmd>ToggleTerm direction=float<cr>", "Floating term" },
+
+  --trouble
+  t = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
+  w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics" },
+  d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics" },
+  q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
+  r = { "<cmd>TroubleToggle lsp_references<cr>", "LSP References" },
 }
 
 local mod_terminal = {
@@ -94,6 +102,6 @@ wk.register({
   f = { find, "Find" },
   l = { lsp, "LSP" },
   b = { buffer, "Buffer" },
-  t = { terminal, "Toggle Term" },
+  t = { toggle, "Toggle" },
   p = { pm, "Plugin Management" },
 }, { prefix = "<leader>" })

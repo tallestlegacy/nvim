@@ -6,15 +6,15 @@ local plugins = {
   },
 
   -- Linting
-  { 
+  {
     "nvimtools/none-ls.nvim",
-    config = function ()
+    config = function()
       require "user.config.null-ls"
     end
   },
   {
     "neovim/nvim-lspconfig",
-    config = function ()
+    config = function()
       require "user.config.lspconfig"
     end
   },

@@ -1,3 +1,21 @@
+-- LSP clients attached to buffer
+local clients_lsp = function()
+  local bufnr = vim.api.nvim_get_current_buf()
+
+  local clients = vim.lsp.buf_get_clients(bufnr)
+  if next(clients) == nil then
+    return ''
+  end
+
+  local c = {}
+  for _, client in pairs(clients) do
+    table.insert(c, client.name)
+  end
+  return '\u{f085} ' .. table.concat(c, ' | ')
+end
+
+
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -18,12 +36,13 @@ require('lualine').setup {
     section_separators = { left = '', right = '' },
   },
   sections = {
-    lualine_a = { 'mode', separator = { left = '', right_padding = 2 } },
+    lualine_a = { 'mode' },
     lualine_b = { 'branch', 'diff', 'diagnostics' },
     lualine_c = { 'filename', "lsp_progress" },
-    lualine_x = { 'encoding', 'fileformat', 'filetype' },
-    lualine_y = { 'progress' },
-    lualine_z = { 'location', separator = { right = '' }, left_padding = 2 } },
+    lualine_x = { "filetype" },
+    lualine_y = { clients_lsp },
+    lualine_z = { 'location' },
+  },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},

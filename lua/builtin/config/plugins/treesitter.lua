@@ -9,7 +9,7 @@ vim.opt.runtimepath:append(parsers_path)
 
 require("nvim-treesitter.configs").setup {
   parser_install_dir = parsers_path,
-  ensure_installed = { "lua" },
+  ensure_installed = {},
 
   highlight = {
     enable = true,

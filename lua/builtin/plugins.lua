@@ -15,6 +15,8 @@ vim.opt.rtp:prepend(lazypath)
 
 -- default plugins
 local default_plugins = {
+  -- Neovim ❤️  Lua
+  { "folke/neodev.nvim" },
 
   -- mappings
   {
@@ -62,24 +64,23 @@ local default_plugins = {
   -- GitSigns
   'lewis6991/gitsigns.nvim',
 
-  -- Other editor plugins
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl",       opts = {} },
-
   -- TreeSitter
-  { "nvim-treesitter/nvim-treesitter",     build = ":TSUpdate" },
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 
   -- Colorscheme
-  { "ellisonleao/gruvbox.nvim",            priority = 1000 },
+  { "ellisonleao/gruvbox.nvim",        priority = 1000 },
+
   -- Telescope
   {
     'nvim-telescope/telescope.nvim',
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-symbols.nvim',
-      'nvim-telescope/telescope-fzf-native.nvim',
       build = "make",
     },
   },
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
+
   -- Mason
   "williamboman/mason.nvim",
 
@@ -97,6 +98,11 @@ local default_plugins = {
   'saadparwaiz1/cmp_luasnip',
   'rafamadriz/friendly-snippets',
 
+  -- Autopairs
+  'windwp/nvim-autopairs',
+
+  -- Multiple cursors
+  'mg979/vim-visual-multi',
 
 
   -- Dashboard
@@ -118,7 +124,7 @@ local default_plugins = {
 -- concatenate default plugins with extras
 local status_ok, user = pcall(require, "user.init")
 if not status_ok then
-  print("Status is not ok")
+  print("Failed to load default plugins")
 elseif user.plugins then
   for _, v in pairs(user.plugins) do
     table.insert(default_plugins, v)
@@ -128,18 +134,4 @@ end
 
 -- init Lazy
 require("lazy").setup(default_plugins)
-
-require "builtin.colorscheme"
-require "builtin.plugins.mappings"
-require "builtin.plugins.file-tree"
-require "builtin.plugins.bufferline"
-require "builtin.plugins.telescope"
-require "builtin.plugins.treesitter"
-require "builtin.plugins.cmp"
-require "builtin.plugins.lsp"
-require "builtin.plugins.trouble"
-require "builtin.plugins.lualine"
-require "builtin.plugins.gitsigns"
-require "builtin.plugins.comment"
-require "builtin.plugins.dashboard"
-require "builtin.plugins.terminal"
+require "builtin.config.plugins"

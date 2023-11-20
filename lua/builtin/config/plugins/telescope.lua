@@ -1,4 +1,5 @@
 local telescope = require("telescope")
+local trouble = require("trouble.providers.telescope")
 
 telescope.setup {
   defaults = {
@@ -14,11 +15,19 @@ telescope.setup {
         mirror = false,
       },
     },
+    mappings = {
+      i = { ["<C-j>"] = trouble.open_with_trouble },
+      n = { ["<C-j>"] = trouble.open_with_trouble },
+    }
   },
 
   path_display = { "truncate" },
   file_ignore_patterns = { "node_modules" },
 
-  extensions_list = { "themes" }, -- "terms", "fzf" },
+  extensions_list = { "themes", "fzf" },
   color_devicons = true,
+
 }
+
+
+pcall(telescope.load_extension, "fzf")
