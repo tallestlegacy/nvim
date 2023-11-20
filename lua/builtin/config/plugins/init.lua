@@ -1,6 +1,5 @@
 -- add new plugin files here
 local configs = {
-  "telescope",
   "autopairs",
   "bufferline",
   "cmp",
@@ -8,9 +7,11 @@ local configs = {
   "dashboard",
   "file-tree",
   "gitsigns",
+  "indentlines",
   "lsp",
   "lualine",
   "mappings",
+  "telescope",
   "terminal",
   "treesitter",
   "trouble",

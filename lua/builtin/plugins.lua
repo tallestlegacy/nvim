@@ -83,12 +83,17 @@ local default_plugins = {
 
   -- Mason
   "williamboman/mason.nvim",
+  {
+    'williamboman/mason-lspconfig',
+    lazy = true,
+    event = "User FileOpened",
+    dependencies = "mason.nvim",
+  },
 
   -- LSP
   "neovim/nvim-lspconfig",
   "folke/trouble.nvim",
   -- Completions
-  'williamboman/mason-lspconfig',
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
@@ -118,6 +123,8 @@ local default_plugins = {
 
   -- Terminal
   'akinsho/toggleterm.nvim',
+
+  -- Scope highlighting
 }
 
 
