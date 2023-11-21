@@ -103,6 +103,9 @@ local default_plugins = {
   'saadparwaiz1/cmp_luasnip',
   'rafamadriz/friendly-snippets',
 
+  -- Hover
+  "lewis6991/hover.nvim",
+
   -- Autopairs
   'windwp/nvim-autopairs',
 
@@ -132,7 +135,7 @@ local default_plugins = {
 -- concatenate default plugins with extras
 local status_ok, user = pcall(require, "user.init")
 if not status_ok then
-  print("Failed to load default plugins")
+  print("Failed to user plugins")
 elseif user.plugins then
   for _, v in pairs(user.plugins) do
     table.insert(default_plugins, v)

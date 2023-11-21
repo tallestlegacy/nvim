@@ -6,9 +6,22 @@ local plugins = {
   },
 
   -- Linting
-  "nvimtools/none-ls.nvim",
+  {
+    "nvimtools/none-ls.nvim",
+    config = function()
+      return require "user.config.null-ls"
+    end
+  },
 
-  -- LSP 
+  -- lspconfig
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      return require "user.config.lspconfig"
+    end
+  },
+
+  -- LSP
   {
     "williamboman/mason.nvim",
     opts = {

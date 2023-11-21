@@ -8,6 +8,7 @@ local configs = {
   "dashboard",
   "file-tree",
   "gitsigns",
+  "hover",
   "indentlines",
   "lsp",
   "lualine",
