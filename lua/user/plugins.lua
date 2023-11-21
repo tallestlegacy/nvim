@@ -8,6 +8,14 @@ local plugins = {
   -- Linting
   "nvimtools/none-ls.nvim",
 
+  -- LSP 
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = require("user.config.defaults").mason_lsp,
+    },
+  },
+
   -- Flutter tools
   {
     "akinsho/flutter-tools.nvim",

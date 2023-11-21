@@ -7,9 +7,14 @@ require("nvim-treesitter.install").compilers = { "clang", "gcc" }
 local parsers_path = "~/.local/share/nvim"
 vim.opt.runtimepath:append(parsers_path)
 
+
+local _, user = pcall(require, "user")
+local opts = user.options.treesitter
+
+
 require("nvim-treesitter.configs").setup {
   parser_install_dir = parsers_path,
-  ensure_installed = {},
+  ensure_installed = opts.ensure_installed,
 
   highlight = {
     enable = true,
