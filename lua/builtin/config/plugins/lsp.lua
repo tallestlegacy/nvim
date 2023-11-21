@@ -2,10 +2,10 @@ local lspconfig = require("lspconfig")
 
 --- Mason
 
-local _, user = pcall(require, "user")
+--- local _, user = pcall(require, "user")
 
 require("mason").setup({
-  opts = { ensure_installed = user.options.mason.ensure_installed },
+--  opts = { ensure_installed = user.options.mason.ensure_installed },
 })
 
 require("mason-lspconfig").setup {

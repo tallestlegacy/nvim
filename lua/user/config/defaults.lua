@@ -6,8 +6,13 @@ M.ts_languages = {
   "tsx",
   "go",
   "rust",
-  "lua",
+  -- "lua",
   "dart",
+  "svelte",
+  "vue",
+  "astro",
+  "css",
+  "scss",
 }
 
 M.mason_lsp = {

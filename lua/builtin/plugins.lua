@@ -124,7 +124,12 @@ local default_plugins = {
   -- Terminal
   'akinsho/toggleterm.nvim',
 
+  -- Breadcrumbs
+  { "SmiteshP/nvim-navic" },
+
   -- Scope highlighting
+  { "lukas-reineke/indent-blankline.nvim",      main = "ibl" },
+
 }
 
 

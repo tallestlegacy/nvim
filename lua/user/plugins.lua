@@ -29,6 +29,7 @@ local plugins = {
 
   -- Custom theme
   "sainnhe/gruvbox-material",
+  "RRethy/nvim-base16",
 }
 
 return plugins

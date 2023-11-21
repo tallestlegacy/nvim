@@ -1,4 +1,7 @@
 local icons = require "builtin.ui.icons"
 
 
---require('anyline').setup()
+
+require("ibl").setup {
+  scope = { enabled = false }
+}

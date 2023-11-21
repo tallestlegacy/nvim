@@ -1,6 +1,7 @@
 -- add new plugin files here
 local configs = {
   "autopairs",
+  "breadcrumbs",
   "bufferline",
   "cmp",
   "comment",

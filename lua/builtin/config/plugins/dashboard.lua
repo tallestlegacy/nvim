@@ -32,7 +32,7 @@ dashboard.section.buttons.val = {
   dashboard.button("r", "> recent files", ":Telescope oldfiles <CR>"),
   dashboard.button("s", "> scratchpad", ":e ~/documents/scratchpad <CR>"),
   dashboard.button("t", "> todolist", ":e ~/documents/todolist <CR>"),
-  dashboard.button("c", "> config", ":e ~/.config/nvim/init.lua <CR>"),
+  dashboard.button("c", "> config", ":cd ~/.config/nvim <CR> :e ~/.config/nvim/lua/user/init.lua <CR>"),
   dashboard.button("q", "> quit", ":qa<CR>"),
 }
 
