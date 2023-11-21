@@ -4,8 +4,7 @@ if not status_ok then
   return
 end
 
-wk.setup {}
-
+wk.setup({})
 
 local explorer = { "<cmd>Neotree focus<cr>", "Explorer" }
 local explorer_toggle = { "<cmd>Neotree toggle<cr>", "Explorer" }
@@ -59,7 +58,7 @@ local buffer = {
   c = { "<cmd>BufferLineCloseLeft<cr><cmd>BufferLineCloseRight<cr><cmd>BufferLineCloseRight<cr>", "Close All" },
   -- sorting
   d = { "<cmd>BufferLineSortByDirectory<cr>", "Sort by Directory" },
-  e = { "<cmd>BufferLineSortByExtension<cr>", "Sort by Extension" }
+  e = { "<cmd>BufferLineSortByExtension<cr>", "Sort by Extension" },
 }
 
 local toggle = {
@@ -83,7 +82,6 @@ local mod_terminal = {
 }
 wk.register(mod_terminal, { mod = "A" })
 
-
 -- plugin management
 local pm = {
   l = { "<cmd>Lazy<cr>", "Lazy plugin manager" },
@@ -91,6 +89,14 @@ local pm = {
   u = { "<cmd>Lazy update<cr>", "Update plugins" },
 }
 
+-- Git stuff
+local git = {
+  -- diff view
+  d = { "<cmd>DiffviewOpen<cr>", "Diffview Open" },
+  c = { "<cmd>DiffviewClose<cr>", "Diffview Close" },
+  r = { "<cmd>DiffviewRefresh<cr>", "Diffview Refresh" },
+  h = { "<cmd>DiffviewFileHistory<cr>", "Diffview File History" },
+}
 
 ---------------------------------------------------
 ------------------ REGISTER -----------------------
@@ -104,4 +110,5 @@ wk.register({
   b = { buffer, "Buffer" },
   t = { toggle, "Toggle" },
   p = { pm, "Plugin Management" },
+  g = { git, "Git" },
 }, { prefix = "<leader>" })

@@ -27,10 +27,7 @@ local options = {
   undofile = true,
   updatetime = 300,
   writebackup = false,
-
 }
-
-
 
 -- update options
 for k, v in pairs(options) do

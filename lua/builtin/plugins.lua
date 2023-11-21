@@ -12,7 +12,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 -- default plugins
 local default_plugins = {
   -- Neovim ❤️  Lua
@@ -37,7 +36,7 @@ local default_plugins = {
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-    }
+    },
   },
   -- Bufferline
   {
@@ -45,7 +44,7 @@ local default_plugins = {
     version = "v3.*",
     dependencies = "nvim-tree/nvim-web-devicons",
   },
-  'arkav/lualine-lsp-progress',
+  "arkav/lualine-lsp-progress",
 
   -- Winbar
   {
@@ -59,32 +58,38 @@ local default_plugins = {
   },
 
   -- Lualine
-  'nvim-lualine/lualine.nvim',
+  "nvim-lualine/lualine.nvim",
 
-  -- GitSigns
-  'lewis6991/gitsigns.nvim',
+  -- Git stuff
+  "lewis6991/gitsigns.nvim",
+  "sindrets/diffview.nvim",
 
   -- TreeSitter
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  "RRethy/vim-illuminate", -- highlight words under cursors
 
   -- Colorscheme
-  { "ellisonleao/gruvbox.nvim",        priority = 1000 },
+  { "ellisonleao/gruvbox.nvim",            priority = 1000 },
 
   -- Telescope
   {
-    'nvim-telescope/telescope.nvim',
+    "nvim-telescope/telescope.nvim",
     dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope-symbols.nvim',
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-symbols.nvim",
       build = "make",
     },
   },
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build =
+    "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+  },
 
   -- Mason
   "williamboman/mason.nvim",
   {
-    'williamboman/mason-lspconfig',
+    "williamboman/mason-lspconfig",
     lazy = true,
     event = "User FileOpened",
     dependencies = "mason.nvim",
@@ -94,43 +99,40 @@ local default_plugins = {
   "neovim/nvim-lspconfig",
   "folke/trouble.nvim",
   -- Completions
-  'hrsh7th/cmp-nvim-lsp',
-  'hrsh7th/cmp-buffer',
-  'hrsh7th/cmp-path',
-  'hrsh7th/cmp-cmdline',
-  'hrsh7th/nvim-cmp',
-  'L3MON4D3/LuaSnip',
-  'saadparwaiz1/cmp_luasnip',
-  'rafamadriz/friendly-snippets',
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-buffer",
+  "hrsh7th/cmp-path",
+  "hrsh7th/cmp-cmdline",
+  "hrsh7th/nvim-cmp",
+  "L3MON4D3/LuaSnip",
+  "saadparwaiz1/cmp_luasnip",
+  "rafamadriz/friendly-snippets",
 
   -- Hover
   "lewis6991/hover.nvim",
 
   -- Autopairs
-  'windwp/nvim-autopairs',
+  "windwp/nvim-autopairs",
 
   -- Multiple cursors
-  'mg979/vim-visual-multi',
-
+  "mg979/vim-visual-multi",
 
   -- Dashboard
   {
-    'goolord/alpha-nvim',
-    event = 'VimEnter',
-    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+    "goolord/alpha-nvim",
+    event = "VimEnter",
+    dependencies = { { "nvim-tree/nvim-web-devicons" } },
   },
 
   -- Comments
-  'numToStr/Comment.nvim',
-  'JoosepAlviste/nvim-ts-context-commentstring',
+  "numToStr/Comment.nvim",
+  "JoosepAlviste/nvim-ts-context-commentstring",
 
   -- Terminal
-  'akinsho/toggleterm.nvim',
+  "akinsho/toggleterm.nvim",
   -- Scope highlighting
-  { "lukas-reineke/indent-blankline.nvim",      main = "ibl" },
-
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl" },
 }
-
 
 -- concatenate default plugins with extras
 local status_ok, user = pcall(require, "user.init")
@@ -142,7 +144,6 @@ elseif user.plugins then
   end
 end
 
-
 -- init Lazy
 require("lazy").setup(default_plugins)
-require "builtin.config.plugins"
+require("builtin.config.plugins")
