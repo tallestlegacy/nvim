@@ -12,5 +12,6 @@ require("illuminate").configure({
     "dirbuf",
     "neo-tree",
     "DiffviewFiles",
+    "TelescopePrompt",
   },
 })
