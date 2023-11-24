@@ -96,6 +96,7 @@ local git = {
   c = { "<cmd>DiffviewClose<cr>", "Diffview Close" },
   r = { "<cmd>DiffviewRefresh<cr>", "Diffview Refresh" },
   h = { "<cmd>DiffviewFileHistory<cr>", "Diffview File History" },
+  g = { "<cmd>LazyGit<cr>", "LazyGit" },
 }
 
 ---------------------------------------------------

@@ -11,6 +11,10 @@ terminal.setup {
   -- open_mapping = [[<c-\]],
   close_on_exit = true,
 
+  float_opts = {
+    border = "curved",
+  },
+
 
   size = function(term)
     if term.direction == "horizontal" then

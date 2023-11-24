@@ -3,7 +3,7 @@ local configs = {
   "autopairs",
   "breadcrumbs",
   "bufferline",
-  "cmp",
+  "completions",
   "comment",
   "dashboard",
   "file-tree",

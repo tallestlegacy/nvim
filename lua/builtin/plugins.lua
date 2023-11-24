@@ -1,6 +1,7 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
+  print("Fetching lazy plugin manager ...")
   vim.fn.system({
     "git",
     "clone",
@@ -9,6 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
     "--branch=stable", -- latest stable release
     lazypath,
   })
+  print("Done fetching lazy plugin manager!")
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -85,6 +87,7 @@ local default_plugins = {
     build =
     "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
   },
+  "kdheepak/lazygit.nvim",
 
   -- Mason
   "williamboman/mason.nvim",
@@ -99,14 +102,18 @@ local default_plugins = {
   "neovim/nvim-lspconfig",
   "folke/trouble.nvim",
   -- Completions
-  "hrsh7th/cmp-nvim-lsp",
-  "hrsh7th/cmp-buffer",
-  "hrsh7th/cmp-path",
-  "hrsh7th/cmp-cmdline",
-  "hrsh7th/nvim-cmp",
-  "L3MON4D3/LuaSnip",
-  "saadparwaiz1/cmp_luasnip",
-  "rafamadriz/friendly-snippets",
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+      "rafamadriz/friendly-snippets",
+    },
+  },
 
   -- Hover
   "lewis6991/hover.nvim",

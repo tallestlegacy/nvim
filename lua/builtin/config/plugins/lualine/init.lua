@@ -15,8 +15,7 @@ local clients_lsp = function()
 end
 
 
-
-require('lualine').setup {
+local config = {
   options = {
     icons_enabled = true,
     disabled_filetypes = {
@@ -24,8 +23,8 @@ require('lualine').setup {
       winbar = {},
     },
     ignore_focus = {},
-    always_divide_middle = true,
-    globalstatus = false,
+    always_divide_middle = false,
+    globalstatus = true,
     refresh = {
       statusline = 1000,
       tabline = 1000,
@@ -37,10 +36,10 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = { 'mode' },
-    lualine_b = { 'branch', 'diff', 'diagnostics' },
-    lualine_c = { 'filename', "lsp_progress" },
+    lualine_b = { 'branch', 'diff' },
+    lualine_c = { { 'filename', file_status = true, path = 1 } },
     lualine_x = { "filetype" },
-    lualine_y = { clients_lsp },
+    lualine_y = { 'diagnostics', clients_lsp },
     lualine_z = { 'location' },
   },
   inactive_sections = {
@@ -56,3 +55,8 @@ require('lualine').setup {
   inactive_winbar = {},
   extensions = {}
 }
+
+local lsp_progress = require('builtin.config.plugins.lualine.lsp_progress')
+table.insert(config.sections.lualine_x, lsp_progress.component)
+
+require("lualine").setup(config)

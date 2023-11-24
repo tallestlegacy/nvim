@@ -9,16 +9,29 @@ local plugins = {
   {
     "nvimtools/none-ls.nvim",
     config = function()
-      return require "user.config.null-ls"
-    end
+      return require("user.config.null-ls")
+    end,
   },
+  -- {
+  --   "mfussenegger/nvim-lint",
+  --   config = function()
+  --     return require "user.config.linting"
+  --   end,
+  -- },
+  -- -- Formatting
+  -- {
+  --   'stevearc/conform.nvim',
+  --   config = function()
+  --     return require "user.config.formatting"
+  --   end
+  -- },
 
   -- lspconfig
   {
     "neovim/nvim-lspconfig",
     config = function()
-      return require "user.config.lspconfig"
-    end
+      return require("user.config.lspconfig")
+    end,
   },
 
   -- LSP

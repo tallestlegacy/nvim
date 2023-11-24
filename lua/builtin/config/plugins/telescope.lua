@@ -24,10 +24,11 @@ telescope.setup {
   path_display = { "truncate" },
   file_ignore_patterns = { "node_modules" },
 
-  extensions_list = { "themes", "fzf" },
+  extensions_list = { "themes", "fzf", "lazygit" },
   color_devicons = true,
 
 }
 
 
 pcall(telescope.load_extension, "fzf")
+pcall(telescope.load_extension, "lazygit")
