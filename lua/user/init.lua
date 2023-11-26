@@ -12,7 +12,7 @@ M.options = {
 }
 
 -- ui
-M.colorscheme = "gruvbox-material"
+M.colorscheme = "base16-onedark"
 vim.o.termguicolors = true
 
 -- configs
