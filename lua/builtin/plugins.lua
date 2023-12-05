@@ -1,153 +1,143 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
-	print("Fetching lazy plugin manager ...")
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
-	print("Done fetching lazy plugin manager!")
+  print("Fetching lazy plugin manager ...")
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+  print("Done fetching lazy plugin manager!")
 end
 vim.opt.rtp:prepend(lazypath)
 
 -- default plugins
 local default_plugins = {
-	-- Neovim ❤️  Lua
-	{ "folke/neodev.nvim" },
+  -- common dependencies
+  "nvim-lua/plenary.nvim",
+  "nvim-tree/nvim-web-devicons",
 
-	-- mappings
-	{
-		"folke/which-key.nvim",
-		priority = 1000,
-		config = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 300
-		end,
-	},
+  -- Neovim ❤️  Lua
+  { "folke/neodev.nvim" },
 
-	-- File Tree
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
-			"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-		},
-	},
-	-- Bufferline
-	{
-		"akinsho/bufferline.nvim",
-		version = "v3.*",
-		dependencies = "nvim-tree/nvim-web-devicons",
-	},
-	"arkav/lualine-lsp-progress",
+  -- mappings
+  {
+    "folke/which-key.nvim",
+    priority = 1000,
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+  },
 
-	-- Winbar
-	{
-		"utilyre/barbecue.nvim",
-		name = "barbecue",
-		version = "*",
-		dependencies = {
-			"SmiteshP/nvim-navic",
-			"nvim-tree/nvim-web-devicons", -- optional dependency
-		},
-	},
+  -- File Tree
+  { "nvim-tree/nvim-tree.lua" },
 
-	-- Lualine
-	"nvim-lualine/lualine.nvim",
+  -- Bufferline
+  {
+    "akinsho/bufferline.nvim",
+    version = "v3.*",
+  },
+  "arkav/lualine-lsp-progress",
 
-	-- Git stuff
-	"lewis6991/gitsigns.nvim",
-	"sindrets/diffview.nvim",
+  -- Winbar
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+    },
+  },
 
-	-- TreeSitter
-	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-	"RRethy/vim-illuminate", -- highlight words under cursors
+  -- Lualine
+  "nvim-lualine/lualine.nvim",
 
-	-- Colorscheme
-	{ "ellisonleao/gruvbox.nvim", priority = 1000 },
+  -- Git stuff
+  "lewis6991/gitsigns.nvim",
+  "sindrets/diffview.nvim",
 
-	-- Telescope
-	{
-		"nvim-telescope/telescope.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope-symbols.nvim",
-			build = "make",
-		},
-	},
-	{
-		"nvim-telescope/telescope-fzf-native.nvim",
-		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-	},
-	"kdheepak/lazygit.nvim",
+  -- TreeSitter
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  "RRethy/vim-illuminate", -- highlight words under cursors
 
-	-- Mason
-	"williamboman/mason.nvim",
-	{
-		"williamboman/mason-lspconfig",
-		lazy = true,
-		event = "User FileOpened",
-		dependencies = "mason.nvim",
-	},
+  -- Colorscheme
+  { "ellisonleao/gruvbox.nvim",        priority = 1000 },
 
-	-- LSP
-	"neovim/nvim-lspconfig",
-	"folke/trouble.nvim",
-	-- Completions
-	{
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-buffer",
-			-- "hrsh7th/cmp-cmdline",
-			"L3MON4D3/LuaSnip",
-			-- "saadparwaiz1/cmp_luasnip",
-			"rafamadriz/friendly-snippets",
-		},
-	},
+  -- Telescope
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "nvim-telescope/telescope-symbols.nvim",
+      build = "make",
+    },
+  },
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build =
+    "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+  },
+  "kdheepak/lazygit.nvim",
 
-	-- Hover
-	"lewis6991/hover.nvim",
+  -- Mason
+  "williamboman/mason.nvim",
+  {
+    "williamboman/mason-lspconfig",
+    lazy = true,
+    event = "User FileOpened",
+    dependencies = "mason.nvim",
+  },
 
-	-- Autopairs
-	"windwp/nvim-autopairs",
+  -- LSP
+  "neovim/nvim-lspconfig",
+  "folke/trouble.nvim",
+  -- Completions
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-buffer",
+      -- "hrsh7th/cmp-cmdline",
+      "L3MON4D3/LuaSnip",
+      -- "saadparwaiz1/cmp_luasnip",
+      "rafamadriz/friendly-snippets",
+    },
+  },
 
-	-- Multiple cursors
-	"mg979/vim-visual-multi",
+  -- Hover
+  "lewis6991/hover.nvim",
 
-	-- Dashboard
-	{
-		"goolord/alpha-nvim",
-		event = "VimEnter",
-		dependencies = { { "nvim-tree/nvim-web-devicons" } },
-	},
+  -- Autopairs
+  "windwp/nvim-autopairs",
 
-	-- Comments
-	"numToStr/Comment.nvim",
-	"JoosepAlviste/nvim-ts-context-commentstring",
+  -- Dashboard
+  {
+    "goolord/alpha-nvim",
+    event = "VimEnter",
+  },
 
-	-- Terminal
-	"akinsho/toggleterm.nvim",
-	-- Scope highlighting
-	{ "lukas-reineke/indent-blankline.nvim", main = "ibl" },
+  -- Comments
+  "numToStr/Comment.nvim",
+  "JoosepAlviste/nvim-ts-context-commentstring",
+
+  -- Terminal
+  "akinsho/toggleterm.nvim",
+  -- Scope highlighting
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl" },
 }
 
 -- concatenate default plugins with extras
 local status_ok, user = pcall(require, "user.init")
 if not status_ok then
-	print("Failed to user plugins")
+  print("Failed to user plugins")
 elseif user.plugins then
-	for _, v in pairs(user.plugins) do
-		table.insert(default_plugins, v)
-	end
+  for _, v in pairs(user.plugins) do
+    table.insert(default_plugins, v)
+  end
 end
 
 -- init Lazy

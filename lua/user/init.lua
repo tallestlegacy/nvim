@@ -7,12 +7,13 @@ M.plugins = require("user.plugins")
 local defaults = require("user.config.defaults")
 
 M.options = {
-	mason = { ensure_installed = defaults.mason_lsp },
-	treesitter = { ensure_installed = defaults.ts_languages },
+  mason = { ensure_installed = defaults.mason_lsp },
+  treesitter = { ensure_installed = defaults.ts_languages },
 }
 
 -- ui
 M.colorscheme = "base16-onedark"
+-- M.colorscheme = "onedark"
 vim.o.termguicolors = true
 
 -- configs

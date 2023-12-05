@@ -20,16 +20,16 @@ null_ls.setup({
 		null_ls.builtins.formatting.stylua,
 		-- go
 		-- null_ls.builtins.diagnostics.gopls,
-		null_ls.builtins.formatting.goimports_reviser,
-		null_ls.builtins.formatting.golines,
-		null_ls.builtins.formatting.gofumpt,
+		-- null_ls.builtins.formatting.goimports_reviser,
+		-- null_ls.builtins.formatting.golines,
+		-- null_ls.builtins.formatting.gofumpt,
 		--rust
 		-- null_ls.builtins.diagnostics.rust_analyzer,
 		null_ls.builtins.formatting.rustfmt,
 		-- js
 		null_ls.builtins.diagnostics.eslint,
 		-- null_ls.builtins.diagnostics.tsserver,
-		null_ls.builtins.formatting.prettier,
+		-- null_ls.builtins.formatting.prettier,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then

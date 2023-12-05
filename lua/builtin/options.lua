@@ -12,7 +12,7 @@ local options = {
 	smartindent = true,
 	cursorline = true,
 	clipboard = "unnamedplus",
-	guicursor = "i:blinkon1",
+	-- guicursor = "i:blinkon",
 	wrap = false,
 
 	-- statusline

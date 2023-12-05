@@ -1,15 +1,16 @@
 local lspconfig = require("lspconfig")
 
 local servers = {
-	"gopls",
-	"rust_analyzer",
-	"tsserver",
-	"pyright",
-	"dartls",
-	"volar",
-	"svelte",
+  "gopls",
+  "rust_analyzer",
+  "tsserver",
+  "pyright",
+  "dartls",
+  "volar",
+  "svelte",
+  "clangd",
 }
 
 for _, lsp in ipairs(servers) do
-	lspconfig[lsp].setup({})
+  lspconfig[lsp].setup({})
 end

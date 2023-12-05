@@ -27,6 +27,8 @@ M.mason_lsp = {
   "typescript-language-server",
   "svelte-language-server",
   "vue-langague-server",
+
+  "clang_d",
 }
 
 return M
