@@ -9,6 +9,7 @@ local servers = {
   "volar",
   "svelte",
   "clangd",
+  "astro",
 }
 
 for _, lsp in ipairs(servers) do

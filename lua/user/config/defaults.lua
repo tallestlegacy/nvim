@@ -6,13 +6,14 @@ M.ts_languages = {
   "tsx",
   "go",
   "rust",
-  -- "lua",
+  "lua",
   "dart",
   "svelte",
   "vue",
   "astro",
   "css",
   "scss",
+  "pug",
 }
 
 M.mason_lsp = {
@@ -27,8 +28,13 @@ M.mason_lsp = {
   "typescript-language-server",
   "svelte-language-server",
   "vue-langague-server",
+  "astro-language-server",
 
   "clang_d",
+
+  -- formatters
+  "prettierd",
+  "stylua",
 }
 
 return M

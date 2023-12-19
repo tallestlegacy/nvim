@@ -56,10 +56,6 @@ local plugins = {
   -- Custom theme
   "sainnhe/gruvbox-material",
   "RRethy/nvim-base16",
-  {
-    "olimorris/onedarkpro.nvim",
-    priority = 1000 -- Ensure it loads first
-  }
 }
 
 return plugins

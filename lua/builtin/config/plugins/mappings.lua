@@ -100,6 +100,13 @@ local git = {
   g = { "<cmd>LazyGit<cr>", "LazyGit" },
 }
 
+-- Diagnostics
+local diagnostics = {
+  n = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
+  p = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
+  f = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Float Diagnostic" },
+}
+
 -------------------------------------------------
 ----------------- REGISTER ----------------------
 -------------------------------------------------
@@ -113,6 +120,7 @@ wk.register({
   t = { toggle, "Toggle" },
   p = { pm, "Plugin Management" },
   g = { git, "Git" },
+  d = { diagnostics, "Diagnostics" },
 }, { prefix = "<leader>" })
 
 -------------------------------------------------

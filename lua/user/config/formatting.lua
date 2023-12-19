@@ -6,15 +6,17 @@ require("conform").setup({
     -- Use a sub-list to run only the first available formatter
     javascript = { "eslint_d", { "prettierd", "prettier" } },
     typescript = { { "prettierd", "prettier" } },
+    json = { { "prettierd", "prettier" } },
     vue = { { "prettierd", "prettier" } },
     go = { "gofumpt", "goimports-reviser", "golines" },
     rust = { "rustfmt" },
-    cpp = { "clang-format" }
+    cpp = { "clang-format" },
+    astro = { { "prettierd", "prettier" } }
   },
 
   format_on_save = function(bufnr)
     -- Disable autoformat on certain filetypes
-    local ignore_filetypes = { "sql", "javascript", "vue" }
+    local ignore_filetypes = { "sql", "javascript" } -- , "vue" }
     if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
       return
     end

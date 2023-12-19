@@ -12,8 +12,10 @@ M.options = {
 }
 
 -- ui
-M.colorscheme = "base16-onedark"
+-- M.colorscheme = "base16-onedark"
 -- M.colorscheme = "onedark"
+M.colorscheme = "gruvbox-material"
+
 vim.o.termguicolors = true
 
 -- configs
