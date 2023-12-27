@@ -1,40 +1,41 @@
 local M = {}
 
 M.ts_languages = {
-  "javascript",
-  "typescript",
-  "tsx",
-  "go",
-  "rust",
-  "lua",
-  "dart",
-  "svelte",
-  "vue",
-  "astro",
-  "css",
-  "scss",
-  "pug",
+	"javascript",
+	"typescript",
+	"tsx",
+	"go",
+	"rust",
+	"lua",
+	"dart",
+	"svelte",
+	"vue",
+	"astro",
+	"css",
+	"scss",
+	"pug",
 }
 
 M.mason_lsp = {
-  "gopls",
-  "golines",
-  "gofumpt",
-  "goimports-reviser",
+	"gopls",
+	"golines",
+	"gofumpt",
+	"goimports-reviser",
 
-  "rust-analyzer",
+	"rust-analyzer",
 
-  "eslint-lsp",
-  "typescript-language-server",
-  "svelte-language-server",
-  "vue-language-server",
-  "astro-language-server",
+	"eslint-lsp",
+	"eslint_d",
+	"typescript-language-server",
+	"svelte-language-server",
+	"vue-language-server",
+	"astro-language-server",
 
-  "clang_d",
+	"clangd",
 
-  -- formatters
-  "prettierd",
-  "stylua",
+	-- formatters
+	"prettierd",
+	"stylua",
 }
 
 return M
