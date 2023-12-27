@@ -27,7 +27,7 @@ M.mason_lsp = {
   "eslint-lsp",
   "typescript-language-server",
   "svelte-language-server",
-  "vue-langague-server",
+  "vue-language-server",
   "astro-language-server",
 
   "clang_d",

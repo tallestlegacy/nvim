@@ -7,20 +7,24 @@ local plugins = {
 
   -- Linting
   -- {
-  -- 	"nvimtools/none-ls.nvim",
-  -- 	config = function()
-  -- 		return require("user.config.null-ls")
-  -- 	end,
+  --   "nvimtools/none-ls.nvim",
+  --   config = function()
+  --     return require("user.config.null-ls")
+  --   end,
   -- },
+  --
+
   {
     "mfussenegger/nvim-lint",
     config = function()
       return require("user.config.linting")
     end,
   },
+
   -- Formatting
   {
     "stevearc/conform.nvim",
+    event = "VeryLazy",
     config = function()
       return require("user.config.formatting")
     end,
@@ -29,22 +33,16 @@ local plugins = {
   -- lspconfig
   {
     "neovim/nvim-lspconfig",
+    event = "BufEnter",
     config = function()
       return require("user.config.lspconfig")
     end,
   },
 
-  -- LSP
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = require("user.config.defaults").mason_lsp,
-    },
-  },
-
   -- Flutter tools
   {
     "akinsho/flutter-tools.nvim",
+    event = "VeryLazy",
     lazy = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -55,7 +53,11 @@ local plugins = {
 
   -- Custom theme
   "sainnhe/gruvbox-material",
-  "RRethy/nvim-base16",
+
+
+  -- Multiple cursors
+  -- "mg979/vim-visual-multi",
+
 }
 
 return plugins

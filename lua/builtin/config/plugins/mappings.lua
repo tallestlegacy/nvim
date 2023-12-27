@@ -12,40 +12,15 @@ wk.register({ n = explorer_toggle }, { mod = "A" })
 
 local dashboard = { "<cmd>Alpha<cr>", "Dashboard" }
 
-local find = {
-  F = { "<cmd>lua require('telescope.builtin').find_files({no_ignore = true})<cr>", "All Files" },
-  f = { "<cmd>Telescope find_files<cr>", "Find Files" },
-  w = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
-  z = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer" },
-  b = { "<cmd>Telescope buffers<cr>", "Buffer" },
-  -- Other
-  s = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-  h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
-  d = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-  c = { "<cmd>Telescope commands<cr>", "Commands" },
-  m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-  k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-  e = { "<cmd>Telescope symbols<cr>", "Emoji" },
-  l = {
-    s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    S = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols" },
-    "LSP",
-  },
-  -- git stuff
-  g = {
-    s = { "<cmd>Telescope git_status<cr>", "Git Status" },
-    b = { "<cmd>Telescope git_branches<cr>", "Git Branches" },
-    c = { "<cmd>Telescope git_commits<cr>", "Git Commits" },
-    C = { "<cmd>Telescope git_bcommits<cr>", "Git File Commits" },
-    f = { "<cmd>Telescope git_files<cr>", "Git Files" },
-  },
-}
+-- custom telescope search mappings
+local find = require("builtin.config.mappings.telescope_mappings")
+
 
 local lsp = {
-  a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-  r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-  f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
-  d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
+  a = { vim.lsp.buf.code_action, "Code Action" },
+  r = { vim.lsp.buf.rename, "Rename" },
+  f = { vim.lsp.buf.format, "Format" },
+  d = { vim.lsp.buf.definition, "Definition" },
 }
 
 local buffer = {
@@ -102,10 +77,11 @@ local git = {
 
 -- Diagnostics
 local diagnostics = {
-  n = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
-  p = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
-  f = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Float Diagnostic" },
+  n = { vim.diagnostic.goto_next, "Next Diagnostic" },
+  p = { vim.diagnostic.goto_prev, "Prev Diagnostic" },
+  f = { vim.diagnostic.open_float, "Float Diagnostic" },
 }
+
 
 -------------------------------------------------
 ----------------- REGISTER ----------------------

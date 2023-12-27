@@ -9,13 +9,15 @@ require("conform").setup({
     javascript = { "eslint_d", { "prettierd", "prettier" } },
     typescript = pretty,
     json = pretty,
+    svelte = pretty,
     vue = pretty,
-    go = { "gofumpt", "goimports-reviser", "golines" },
-    rust = { "rustfmt" },
-    cpp = { "clang-format" },
     astro = pretty,
     scss = pretty,
     css = pretty,
+
+    go = { "gofumpt", "goimports-reviser", "golines" },
+    rust = { "rustfmt" },
+    cpp = { "clang-format" },
   },
 
   format_on_save = function(bufnr)

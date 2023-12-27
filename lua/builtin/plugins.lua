@@ -46,6 +46,7 @@ local default_plugins = {
   -- Winbar
   {
     "utilyre/barbecue.nvim",
+    event = "VeryLazy",
     name = "barbecue",
     version = "*",
     dependencies = {
@@ -90,6 +91,9 @@ local default_plugins = {
     event = "User FileOpened",
     dependencies = "mason.nvim",
   },
+
+  -- Mason tool installer
+  "WhoIsSethDaniel/mason-tool-installer.nvim",
 
   -- LSP
   "neovim/nvim-lspconfig",
