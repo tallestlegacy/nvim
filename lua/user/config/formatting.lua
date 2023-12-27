@@ -1,17 +1,21 @@
-local auto_format_pattern = { "*.ts", "*.go", "*.rs", "*.lua", "*.tsx", "*.html", "*.svelte", "*.astro", "*.md" }
+-- local auto_format_pattern = { "*.ts", "*.go", "*.rs", "*.lua", "*.tsx", "*.html", "*.svelte", "*.astro", "*.md" }
+
+local pretty = { { "prettierd", "prettier" } }
 
 require("conform").setup({
   formatters_by_ft = {
     lua = { "stylua" },
     -- Use a sub-list to run only the first available formatter
     javascript = { "eslint_d", { "prettierd", "prettier" } },
-    typescript = { { "prettierd", "prettier" } },
-    json = { { "prettierd", "prettier" } },
-    vue = { { "prettierd", "prettier" } },
+    typescript = pretty,
+    json = pretty,
+    vue = pretty,
     go = { "gofumpt", "goimports-reviser", "golines" },
     rust = { "rustfmt" },
     cpp = { "clang-format" },
-    astro = { { "prettierd", "prettier" } }
+    astro = pretty,
+    scss = pretty,
+    css = pretty,
   },
 
   format_on_save = function(bufnr)
