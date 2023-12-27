@@ -1,63 +1,61 @@
 local plugins = {
-  -- AI Completions
-  {
-    "Exafunction/codeium.vim",
-    event = "BufEnter",
-  },
+	-- AI Completions
+	{
+		"Exafunction/codeium.vim",
+		event = "BufEnter",
+	},
 
-  -- Linting
-  -- {
-  --   "nvimtools/none-ls.nvim",
-  --   config = function()
-  --     return require("user.config.null-ls")
-  --   end,
-  -- },
-  --
+	-- Linting
+	-- {
+	--   "nvimtools/none-ls.nvim",
+	--   config = function()
+	--     return require("user.config.null-ls")
+	--   end,
+	-- },
+	--
 
-  {
-    "mfussenegger/nvim-lint",
-    config = function()
-      return require("user.config.linting")
-    end,
-  },
+	{
+		"mfussenegger/nvim-lint",
+		config = function()
+			return require("user.config.linting")
+		end,
+	},
 
-  -- Formatting
-  {
-    "stevearc/conform.nvim",
-    event = "VeryLazy",
-    config = function()
-      return require("user.config.formatting")
-    end,
-  },
+	-- Formatting
+	{
+		"stevearc/conform.nvim",
+		event = "VeryLazy",
+		config = function()
+			return require("user.config.formatting")
+		end,
+	},
 
-  -- lspconfig
-  {
-    "neovim/nvim-lspconfig",
-    event = "BufEnter",
-    config = function()
-      return require("user.config.lspconfig")
-    end,
-  },
+	-- lspconfig
+	{
+		"neovim/nvim-lspconfig",
+		event = "BufEnter",
+		config = function()
+			return require("user.config.lspconfig")
+		end,
+	},
 
-  -- Flutter tools
-  {
-    "akinsho/flutter-tools.nvim",
-    event = "VeryLazy",
-    lazy = false,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "stevearc/dressing.nvim", -- optional for vim.ui.select
-    },
-    config = true,
-  },
+	-- Flutter tools
+	{
+		"akinsho/flutter-tools.nvim",
+		event = "VeryLazy",
+		lazy = false,
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/dressing.nvim", -- optional for vim.ui.select
+		},
+		config = true,
+	},
 
-  -- Custom theme
-  "sainnhe/gruvbox-material",
+	-- Custom theme
+	"sainnhe/gruvbox-material",
 
-
-  -- Multiple cursors
-  -- "mg979/vim-visual-multi",
-
+	-- Multiple cursors
+	-- "mg979/vim-visual-multi",
 }
 
 return plugins
