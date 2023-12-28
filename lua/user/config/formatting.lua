@@ -6,7 +6,7 @@ require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		-- Use a sub-list to run only the first available formatter
-		javascript = { "eslint_d", { "prettierd", "prettier" } },
+		javascript = { "eslint_d", pretty },
 		typescript = pretty,
 		json = pretty,
 		svelte = pretty,
@@ -18,8 +18,10 @@ require("conform").setup({
 		go = { "gofumpt", "goimports-reviser", "golines" },
 		rust = { "rustfmt" },
 		cpp = { "clang-format" },
-	},
 
+		markdown = pretty,
+	},
+	-- Enable or disable autoformat on save
 	format_on_save = function(bufnr)
 		-- Disable autoformat on certain filetypes
 		local ignore_filetypes = { "sql", "javascript" } -- , "vue" }
