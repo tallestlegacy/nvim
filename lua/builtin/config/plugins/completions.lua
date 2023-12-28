@@ -57,6 +57,8 @@ cmp.setup({
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
 		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		["up"] = cmp.mapping.select_prev_item(),
+		["down"] = cmp.mapping.select_next_item(),
 	}),
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
