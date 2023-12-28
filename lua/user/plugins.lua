@@ -52,7 +52,8 @@ local plugins = {
 	},
 
 	-- Custom theme
-	"sainnhe/gruvbox-material",
+	--	"sainnhe/gruvbox-material",
+	"wittyjudge/gruvbox-material.nvim",
 
 	-- Multiple cursors
 	-- "mg979/vim-visual-multi",
