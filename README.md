@@ -1,6 +1,7 @@
 # My Neovim config
 
-![image](https://github.com/tallestlegacy/nvim/assets/71118951/0f8c2c83-2044-4f50-9021-5555af5c00e3)
+![image](https://github.com/tallestlegacy/nvim/assets/71118951/3f7bfac7-8411-4482-8136-fcf13b716534)
+
 
 ## Features
 
