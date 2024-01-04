@@ -54,5 +54,6 @@ These are plugins I included in my seperated user config - a place where I can p
 - [x] [nvim-lint](https://github.com/mfussenegger/nvim-lint) for linting
 - [x] AI completions : [codeium.vim](https://github.com/Exafunction/codeium.vim)
 - [x] [flutter-tools.nvim](https://github.com/akinsho/flutter-tools.nvim) for flutter
+- [x] [ray-x/go.nvim](https://github.com/ray-x/go.nvim) for go treesitter injection, gopher and other goodies
 
 I might have missed a few
