@@ -14,12 +14,18 @@ M.ts_languages = {
 	"vue",
 	"astro",
 
+	"php",
+
 	"css",
 	"scss",
 	"pug",
 
 	"sql",
 	"json",
+	"toml",
+	"yaml",
+
+	"markdown",
 }
 
 M.mason_lsp = {
@@ -30,6 +36,8 @@ M.mason_lsp = {
 
 	"rust-analyzer",
 
+	"tailwindcss-language-server",
+	"emmet-language-server",
 	"eslint-lsp",
 	"eslint_d",
 	"typescript-language-server",
@@ -39,9 +47,16 @@ M.mason_lsp = {
 
 	"clangd",
 
+	"intelephense",
+
+	"pyright",
+
 	-- formatters
 	"prettierd",
 	"stylua",
+	"gofumpt",
+	"golines",
+	"goimports-reviser",
 }
 
 return M

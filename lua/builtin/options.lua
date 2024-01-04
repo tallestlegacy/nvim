@@ -22,7 +22,7 @@ local options = {
 	-- window
 	splitbelow = true,
 	splitright = true,
-	scrolloff = 999,
+	-- scrolloff = 999,
 
 	-- other
 	timeoutlen = 1000,

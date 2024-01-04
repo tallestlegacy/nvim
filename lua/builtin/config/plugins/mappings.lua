@@ -4,7 +4,11 @@ if not status_ok then
 	return
 end
 
-wk.setup({})
+wk.setup({
+	window = {
+		border = "shadow",
+	},
+})
 
 local explorer = { "<cmd>NvimTreeFocus<cr>", "Explorer" }
 local explorer_toggle = { "<cmd>NvimTreeToggle<cr>", "Explorer" }
@@ -55,7 +59,9 @@ local mod_terminal = {
 	["2"] = { "<cmd>ToggleTerm direction=vertical<cr>", "Vertical term" },
 	["3"] = { "<cmd>ToggleTerm direction=float<cr>", "Floating term" },
 }
-wk.register(mod_terminal, { mod = "A" })
+
+-- only register mod_terminal bindings using Alt key
+wk.register(mod_terminal, { prefix = "<leader>" })
 
 -- plugin management
 local pm = {
@@ -81,6 +87,14 @@ local diagnostics = {
 	f = { vim.diagnostic.open_float, "Float Diagnostic" },
 }
 
+-- Window management
+local windows = {
+	h = { "<cmd>split<cr>", "Horizontsl Split window" },
+	v = { "<cmd>vsplit<cr>", "Vertical Split window" },
+	q = { "<cmd>close<cr>", "Close window" },
+	o = { "<cmd>only<cr>", "Only window" },
+}
+
 -------------------------------------------------
 ----------------- REGISTER ----------------------
 -------------------------------------------------
@@ -95,6 +109,7 @@ wk.register({
 	p = { pm, "Plugin Management" },
 	g = { git, "Git" },
 	d = { diagnostics, "Diagnostics" },
+	w = { windows, "Window" },
 	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
 }, { prefix = "<leader>" })
 

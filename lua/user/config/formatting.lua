@@ -6,10 +6,10 @@ require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		-- Use a sub-list to run only the first available formatter
-		javascript = { "eslint_d", pretty },
+		javascript = pretty, -- { "eslint_d", pretty },
 		typescript = pretty,
 		json = pretty,
-		svelte = pretty,
+		--	svelte = pretty,
 		vue = pretty,
 		astro = pretty,
 		scss = pretty,

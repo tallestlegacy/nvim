@@ -2,7 +2,6 @@
 
 ![image](https://github.com/tallestlegacy/nvim/assets/71118951/3f7bfac7-8411-4482-8136-fcf13b716534)
 
-
 ## Features
 
 ### Basic features

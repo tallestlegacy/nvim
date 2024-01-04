@@ -21,7 +21,7 @@ local vim_dos_rebel = {
 
 local anya = require("builtin.ui.anya")
 
-dashboard.section.header.val = anya[4]
+dashboard.section.header.val = anya[3]
 
 dashboard.section.buttons.val = {
 	dashboard.button("f", "> find file", ":Telescope find_files <CR>"),

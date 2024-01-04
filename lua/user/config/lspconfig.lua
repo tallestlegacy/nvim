@@ -12,6 +12,8 @@ local servers = {
 	"svelte",
 	"clangd",
 	"astro",
+	"tailwindcss",
+	"intelephense",
 	--  "luals",
 }
 
@@ -20,3 +22,17 @@ for _, lsp in ipairs(servers) do
 		capabilities = capabilities,
 	})
 end
+
+lspconfig.emmet_language_server.setup({
+	filetypes = {
+		"css",
+		"html",
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"svelte",
+		"vue",
+		"php",
+	},
+})
