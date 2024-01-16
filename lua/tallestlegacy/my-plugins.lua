@@ -1,24 +1,32 @@
 -- None-essential plugins that I like to use
 
 local plugins = {
-
-	-- AI Completions
+	-- Flutter tools
 	{
-		"Exafunction/codeium.vim",
-		event = "BufEnter",
-	},
+		"akinsho/flutter-tools.nvim",
+		event = "VeryLazy",
+		lazy = false,
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/dressing.nvim", -- optional for vim.ui.select
+		},
+		config = function()
+			require("flutter-tools").setup({})
 
-	-- -- Flutter tools
-	-- {
-	-- 	"akinsho/flutter-tools.nvim",
-	-- 	event = "VeryLazy",
-	-- 	lazy = false,
-	-- 	dependencies = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"stevearc/dressing.nvim", -- optional for vim.ui.select
-	-- 	},
-	-- 	config = true,
-	-- },
+			require("which-key").register({
+				f = {
+					l = {
+						d = { "<cmd>FlutterDevices<cr>", "Devices" },
+						s = { "<cmd>FlutterRun<cr>", "Start (Run)" },
+						r = { "<cmd>FlutterReload<cr>", "Reload" },
+						R = { "<cmd>FlutterRestart<cr>", "Restart" },
+						q = { "<cmd>FlutterQuit<cr>", "Quit" },
+						"Flutter tools",
+					},
+				},
+			}, { prefix = "<leader>" })
+		end,
+	},
 
 	-- Custom theme
 	--	"sainnhe/gruvbox-material",
@@ -51,8 +59,19 @@ local plugins = {
 
 		event = { "CmdlineEnter" },
 		ft = { "go", "gomod" },
-		build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+		build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries,
 	},
+
+	-- Rest Client
+	{
+		"rest-nvim/rest.nvim",
+		dependencies = { { "nvim-lua/plenary.nvim" } },
+		config = function()
+			require("rest-nvim").setup({})
+		end,
+	},
+
+	{ "alec-gibson/nvim-tetris" },
 }
 
 return plugins

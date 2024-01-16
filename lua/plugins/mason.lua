@@ -10,6 +10,9 @@ return {
     lazy = true,
     event = "User FileOpened",
     dependencies = "mason.nvim",
+    opts = {
+      automatic_installation = false,
+    }
   },
 
   -- Mason tool installer
@@ -23,6 +26,6 @@ return {
           ensure_installed = opts.ensure_installed,
         })
       end
-    end
+    end,
   },
 }

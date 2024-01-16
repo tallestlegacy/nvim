@@ -1,32 +1,33 @@
 return {
-  ensure_installed = {
-    "gopls",
-    "golines",
-    "gofumpt",
-    "goimports-reviser",
+	ensure_installed = {
 
-    "rust-analyzer",
+		-- "rust-analyzer",
+		--
+		"gopls",
+		--
+		"tailwindcss-language-server",
+		"emmet-language-server",
+		"eslint-lsp",
+		"eslint_d",
+		"typescript-language-server",
+		"svelte-language-server",
+		"vue-language-server",
+		"astro-language-server",
+		--
+		-- "clangd",
 
-    "tailwindcss-language-server",
-    "emmet-language-server",
-    "eslint-lsp",
-    "eslint_d",
-    "typescript-language-server",
-    "svelte-language-server",
-    "vue-language-server",
-    "astro-language-server",
+		-- "intelephense",
 
-    "clangd",
+		"pyright",
 
-    "intelephense",
+		"json-lsp",
 
-    "pyright",
-
-    -- formatters
-    "prettierd",
-    "stylua",
-    "gofumpt",
-    "golines",
-    "goimports-reviser",
-  }
+		-- formatters
+		"prettierd",
+		"stylua",
+		"gofumpt",
+		"golines",
+		"goimports-reviser",
+		"black",
+	},
 }

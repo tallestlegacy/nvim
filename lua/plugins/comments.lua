@@ -31,4 +31,13 @@
 -- 	end,
 -- })
 
-return {}
+return {
+	-- TODO this is a todo
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = true,
+	},
+
+	{ "JosefLitos/colorizer.nvim", config = true },
+}

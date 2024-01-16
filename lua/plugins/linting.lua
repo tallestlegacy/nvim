@@ -4,10 +4,10 @@ return {
 
 	config = function()
 		require("lint").linters_by_ft = {
-			javascript = { "eslint_d" },
-			typescript = { "eslint_d" },
-			typescriptreact = { "eslint_d" },
-			vue = { "eslint_d" },
+			-- javascript = { "eslint_d" },
+			-- typescript = { "eslint_d" },
+			-- typescriptreact = { "eslint_d" },
+			-- vue = { "eslint_d" },
 		}
 
 		local lint_callback = function()
@@ -15,8 +15,9 @@ return {
 		end
 
 		local lint_events = {
-			"BufReadPre",
+			-- "BufReadPre",
 			"BufWritePost",
+			"BufEnter",
 			"InsertLeave",
 			"TextChanged",
 			"TextChangedI",

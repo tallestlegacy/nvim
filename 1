@@ -29,21 +29,10 @@ lspconfig.emmet_language_server.setup({
 		"svelte",
 		"vue",
 		"php",
-		"astro",
 	},
 })
 
 lspconfig.tailwindcss.setup({
-	filetypes = {
-		"html",
-		"css",
-		"scss",
-		"javascript",
-		"javascriptreact",
-		"typescript",
-		"typescriptreact",
-		"vue",
-		"astro",
-	},
-	root_dir = lspconfig.util.root_pattern("tailwind.config.js", "postcss.config.js", "tailwind.config.mjs"),
+	filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+	root_dir = lspconfig.util.root_pattern("tailwind.config.js", "postcss.config.js"),
 })

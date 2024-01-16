@@ -2,7 +2,7 @@ local options = {
 	-- numberline
 	number = true,
 	numberwidth = 4,
-	relativenumber = false,
+	relativenumber = true,
 
 	-- editor
 	shiftwidth = 2,
@@ -22,13 +22,18 @@ local options = {
 	-- window
 	splitbelow = true,
 	splitright = true,
-	-- scrolloff = 999,
+	scrolloff = 8,
+	sidescrolloff = 8,
 
 	-- other
 	timeoutlen = 1000,
 	undofile = true,
 	updatetime = 300,
 	writebackup = false,
+
+	--search
+	hlsearch = true,
+	incsearch = true,
 }
 
 -- update options

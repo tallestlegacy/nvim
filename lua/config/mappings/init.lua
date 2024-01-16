@@ -12,7 +12,7 @@ wk.setup({
 
 local explorer = { "<cmd>NvimTreeFocus<cr>", "Explorer" }
 local explorer_toggle = { "<cmd>NvimTreeToggle<cr>", "Explorer" }
-wk.register({ n = explorer_toggle }, { mod = "A" })
+wk.register({ n = explorer_toggle }, { prefix = "<leader>" })
 
 local dashboard = { "<cmd>Alpha<cr>", "Dashboard" }
 
@@ -65,13 +65,17 @@ local mod_terminal = {
 -- only register mod_terminal bindings using Alt key
 wk.register(mod_terminal, { prefix = "<leader>" })
 
--- plugin management
+-- package management
 local pm = {
+	-- Lazy
 	l = { "<cmd>Lazy<cr>", "Lazy plugin manager" },
 	c = { "<cmd>Lazy clean<cr>", "Clean unused plugins" },
 	u = { "<cmd>Lazy update<cr>", "Update plugins" },
 	a = { "<cmd>Lazy load all<cr>", "Load all plugins" },
 	i = { "<cmd>Lazy install all<cr>", "Install all plugins" },
+
+	-- Mason
+	m = { "<cmd>Mason<cr>", "Mason" },
 }
 
 -- Git stuff
@@ -92,11 +96,16 @@ local diagnostics = {
 }
 
 -- Window management
-local windows = {
+local split = {
 	h = { "<cmd>split<cr>", "Horizontsl Split window" },
 	v = { "<cmd>vsplit<cr>", "Vertical Split window" },
-	q = { "<cmd>close<cr>", "Close window" },
-	o = { "<cmd>only<cr>", "Only window" },
+	-- q = { "<cmd>close<cr>", "Close window" },
+	-- o = { "<cmd>only<cr>", "Only window" },
+}
+
+local harpoon = {
+	m = { require("harpoon.ui").add_file, "Add file to harpoon" },
+	t = { require("harpoon.ui").toggle_quick_menu, "Toggle harpoon menu" },
 }
 
 -------------------------------------------------
@@ -113,7 +122,8 @@ wk.register({
 	p = { pm, "Plugin Management" },
 	g = { git, "Git" },
 	d = { diagnostics, "Diagnostics" },
-	w = { windows, "Window" },
+	s = { split, "Split" },
+	h = { harpoon, "Harpoon" },
 	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
 }, { prefix = "<leader>" })
 

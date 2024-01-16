@@ -14,11 +14,11 @@ local find = {
 	m = { M.man_pages, "Man Pages" },
 	k = { M.keymaps, "Keymaps" },
 	e = { M.symbols, "Emoji" },
-	l = {
-		s = { M.lsp_document_symbols, "Document Symbols" },
-		S = { M.lsp_workspace_symbols, "Workspace Symbols" },
-		"LSP",
-	},
+	-- l = {
+	-- 	s = { M.lsp_document_symbols, "Document Symbols" },
+	-- 	S = { M.lsp_workspace_symbols, "Workspace Symbols" },
+	-- 	"LSP",
+	-- },
 	-- git stuff
 	g = {
 		s = { M.git_status, "Git Status" },

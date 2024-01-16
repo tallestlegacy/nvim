@@ -70,3 +70,10 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Files
 keymap("n", "<C-n>", ":new<CR>", opts)
+keymap("n", "<leader>r", "<CMD>!source ~/.config/nvim/init.lua<CR>", opts)
+
+-- remove arrow keys
+keymap("n", "<Left>", "<Nop>", opts)
+keymap("n", "<Right>", "<Nop>", opts)
+keymap("n", "<Up>", "<Nop>", opts)
+keymap("n", "<Down>", "<Nop>", opts)

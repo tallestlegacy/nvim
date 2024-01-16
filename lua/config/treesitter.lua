@@ -1,29 +1,29 @@
 return {
-  ensure_installed = {
-    "javascript",
-    "typescript",
-    "tsx",
+	ensure_installed = {
+		"javascript",
+		"typescript",
+		"tsx",
 
-    "go",
-    "rust",
-    "lua",
-    "dart",
+		"go",
+		"rust",
+		"lua",
+		-- "dart",
 
-    "svelte",
-    "vue",
-    "astro",
+		"svelte",
+		"vue",
+		"astro",
 
-    "php",
+		"php",
 
-    "css",
-    "scss",
-    "pug",
+		"css",
+		"scss",
+		"pug",
 
-    "sql",
-    "json",
-    "toml",
-    "yaml",
+		"sql",
+		"json",
+		"toml",
+		"yaml",
 
-    "markdown",
-  }
+		"markdown",
+	},
 }

@@ -1,4 +1,27 @@
 return {
+	{
+		"nvim-telescope/telescope-fzf-native.nvim",
+		build = "make",
+	},
+	-- Harpoon
+	{
+		"ThePrimeagen/harpoon",
+		config = function()
+			require("harpoon").setup({
+				global_settings = {
+					mark_branch = false,
+				},
+				save_on_toggle = false,
+				save_on_change = true,
+				enter_on_sendcmd = true,
+				tmux_autoclose_windows = false,
+				excluded_filetypes = { "harpoon" },
+				tabline = false,
+				tabline_prefix = "  ",
+				tabline_suffix = "  ",
+			})
+		end,
+	},
 	-- Telescope
 	{
 		"nvim-telescope/telescope.nvim",
@@ -7,11 +30,9 @@ return {
 			"nvim-telescope/telescope-symbols.nvim",
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
-				build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+				build = "make",
 			},
-			build = "make",
 		},
-
 		config = function()
 			local telescope = require("telescope")
 			local trouble = require("trouble.providers.telescope")
@@ -34,6 +55,15 @@ return {
 						i = { ["<C-j>"] = trouble.open_with_trouble },
 						n = { ["<C-j>"] = trouble.open_with_trouble },
 					},
+					extensions = {
+						fzf = {
+							fuzzy = true, -- false will only do exact matching
+							override_generic_sorter = true, -- override the generic sorter
+							override_file_sorter = true, -- override the file sorter
+							case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+							-- the default case_mode is "smart_case"
+						},
+					},
 				},
 
 				path_display = { "truncate" },
@@ -43,8 +73,9 @@ return {
 				color_devicons = true,
 			})
 
-			pcall(telescope.load_extension, "fzf")
-			pcall(telescope.load_extension, "lazygit")
+			require("telescope").load_extension("fzf")
+			require("telescope").load_extension("lazygit")
+			require("telescope").load_extension("harpoon")
 		end,
 	},
 }

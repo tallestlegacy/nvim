@@ -13,7 +13,10 @@ return {
 			lua = { "stylua" },
 			-- Use a sub-list to run only the first available formatter
 			javascript = pretty, -- { "eslint_d", pretty },
+			javascriptreact = pretty,
 			typescript = pretty,
+			typescriptreact = pretty,
+
 			json = pretty,
 			--	svelte = pretty,
 			vue = pretty,
@@ -25,6 +28,7 @@ return {
 			go = { "gofumpt", "goimports-reviser", "golines" },
 			rust = { "rustfmt" },
 			cpp = { "clang-format" },
+			python = { "black" },
 
 			markdown = pretty,
 		},
@@ -32,7 +36,7 @@ return {
 		-- Enable or disable autoformat on save
 		format_on_save = function(bufnr)
 			-- Disable autoformat on certain filetypes
-			local ignore_filetypes = { "sql", "javascript" } -- , "vue" }
+			local ignore_filetypes = { "sql", "javascript", "vue" }
 			if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
 				return
 			end
