@@ -45,6 +45,10 @@ Version Control:
 - [x] [diffview.nvim](https://github.com/sindrets/diffview.nvim) to view git diff
 - [x] [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) for more complete git features
 
+
+![image](https://github.com/tallestlegacy/nvim/assets/71118951/6875b074-a17b-423d-9881-759063647a6c)
+
+
 ### Personal plugins
 
 These are plugins I included in my seperated user config - a place where I can play around with new plugins and add plugins that aren't a part of the **core** features of my config
