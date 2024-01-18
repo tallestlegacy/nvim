@@ -26,9 +26,10 @@ return {
 				"",
 			}
 
-			local anya = require("builtin.ui.anya")
+			-- local anya = require("builtin.ui.anya")
+			local bemo = require("builtin.ui.adventure-time").bemo
 
-			dashboard.section.header.val = anya[3]
+			dashboard.section.header.val = bemo
 
 			dashboard.section.buttons.val = {
 				dashboard.button("f", "> find file", ":Telescope find_files <CR>"),
