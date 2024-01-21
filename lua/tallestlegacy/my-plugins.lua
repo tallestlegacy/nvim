@@ -69,7 +69,8 @@ local plugins = {
 
 	"alec-gibson/nvim-tetris",
 
-  'Mofiqul/vscode.nvim',
+	"Mofiqul/vscode.nvim",
+	"LunarVim/darkplus.nvim",
 }
 
 return plugins

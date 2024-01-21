@@ -1,5 +1,5 @@
 return {
--- mappings
+	-- mappings
 	{
 		"folke/which-key.nvim",
 		priority = 1000,

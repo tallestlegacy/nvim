@@ -9,6 +9,7 @@
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "colorizer.nvim": { "branch": "master", "commit": "107719885290366c893e1c1c58b7474cbeabfef6" },
   "conform.nvim": { "branch": "master", "commit": "cbc5745bf7519acaf3a5cbaaa677fd556aa813d7" },
+  "darkplus.nvim": { "branch": "master", "commit": "4c5a8fd9aedc199bb21eb8392716f6b18a486f70" },
   "diffview.nvim": { "branch": "main", "commit": "3dc498c9777fe79156f3d32dddd483b8b3dbd95f" },
   "dressing.nvim": { "branch": "master", "commit": "7237cdf25ea9150951f3c7ecbd4537cad7b32a9f" },
   "flutter-tools.nvim": { "branch": "main", "commit": "b65ad58462116785423d81aeb2ee6c8c16f78679" },

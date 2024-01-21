@@ -38,5 +38,5 @@ local component = {
 }
 
 return {
-  component = component
+	component = component,
 }
