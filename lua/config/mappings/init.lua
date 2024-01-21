@@ -22,6 +22,7 @@ local find = require("config.mappings.telescope_mappings")
 local lsp = {
 	a = { vim.lsp.buf.code_action, "Code Action" },
 	r = { vim.lsp.buf.rename, "Rename" },
+  R = { "<cmd>LspRestart<cr>" ,"Restart" },
 	f = { vim.lsp.buf.format, "Format" },
 	d = { vim.lsp.buf.definition, "Definition" },
 }

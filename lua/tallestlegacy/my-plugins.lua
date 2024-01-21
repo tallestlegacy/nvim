@@ -28,10 +28,6 @@ local plugins = {
 		end,
 	},
 
-	-- Custom theme
-	--	"sainnhe/gruvbox-material",
-	"wittyjudge/gruvbox-material.nvim",
-
 	-- Multiple cursors
 	-- "mg979/vim-visual-multi",
 
@@ -71,7 +67,9 @@ local plugins = {
 		end,
 	},
 
-	{ "alec-gibson/nvim-tetris" },
+	"alec-gibson/nvim-tetris",
+
+  'Mofiqul/vscode.nvim',
 }
 
 return plugins

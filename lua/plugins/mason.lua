@@ -23,7 +23,7 @@ return {
       local status_ok, opts = pcall(require, "config.mason-lsp")
       if status_ok and opts.ensure_installed then
         require("mason-tool-installer").setup({
-          ensure_installed = opts.ensure_installed,
+          -- ensure_installed = opts.ensure_installed,
         })
       end
     end,
