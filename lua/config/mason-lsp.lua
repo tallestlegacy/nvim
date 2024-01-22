@@ -2,6 +2,7 @@ return {
 	ensure_installed = {
 
 		-- "rust-analyzer",
+		"taplo",
 		--
 		"gopls",
 		--

@@ -12,6 +12,7 @@ local servers = {
 	"astro",
 	"intelephense",
 	-- "lua_ls",
+	"taplo", -- toml
 }
 
 for _, lsp in ipairs(servers) do
