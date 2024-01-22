@@ -30,6 +30,7 @@
   "mason-tool-installer.nvim": { "branch": "main", "commit": "bf0f4f8062d3acbe0afcc61db01a4d19d96310e4" },
   "mason.nvim": { "branch": "main", "commit": "bce96d2fd483e71826728c6f9ac721fc9dd7d2cf" },
   "mini.nvim": { "branch": "main", "commit": "b5645ac6eefce8e7af9d7dd4e5e296a81cba8a10" },
+  "neoscroll.nvim": { "branch": "master", "commit": "be4ebf855a52f71ca4338694a5696675d807eff9" },
   "noice.nvim": { "branch": "main", "commit": "92433164e2f7118d4122c7674c3834d9511722ba" },
   "nui.nvim": { "branch": "main", "commit": "35da9ca1de0fc4dda96c2e214d93d363c145f418" },
   "nvim-autopairs": { "branch": "master", "commit": "eac31b4797ce4fa9dd546f7b98ec32305527b19e" },
