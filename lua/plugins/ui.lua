@@ -1,6 +1,4 @@
 return {
-	-- icons
-	{ "yamatsum/nvim-nonicons", config = true },
 
 	-- noice.nvim
 	{
