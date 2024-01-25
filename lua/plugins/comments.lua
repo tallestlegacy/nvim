@@ -34,10 +34,10 @@
 local icons = require("builtin.ui.icons")
 
 return {
-	-- TODO this is a todo
+	-- FIXME this is a todo
 	{
 		"folke/todo-comments.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		Dependencies = { "nvim-lua/plenary.nvim" },
 		event = "BufEnter",
 		opts = {
 			signs = true,

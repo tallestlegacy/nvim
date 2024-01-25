@@ -36,7 +36,7 @@ return {
 		-- Enable or disable autoformat on save
 		format_on_save = function(bufnr)
 			-- Disable autoformat on certain filetypes
-			local ignore_filetypes = { "sql", "javascript", "vue" }
+			local ignore_filetypes = {} -- { "sql", "javascript", "vue" }
 			if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
 				return
 			end

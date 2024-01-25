@@ -30,6 +30,7 @@ local options = {
 	undofile = true,
 	updatetime = 300,
 	writebackup = false,
+	spell = true,
 
 	--search
 	hlsearch = true,

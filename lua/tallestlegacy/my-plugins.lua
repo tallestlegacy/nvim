@@ -71,6 +71,11 @@ local plugins = {
 
 	"Mofiqul/vscode.nvim",
 	"LunarVim/darkplus.nvim",
+	"folke/tokyonight.nvim",
+	"rose-pine/neovim",
+	"catppuccin/nvim",
+	"rebelot/kanagawa.nvim",
+	"neanias/everforest-nvim",
 }
 
 return plugins
