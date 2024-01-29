@@ -17,7 +17,6 @@ local plugins = {
 				f = {
 					l = {
 						d = { "<cmd>FlutterDevices<cr>", "Devices" },
-						s = { "<cmd>FlutterRun<cr>", "Start (Run)" },
 						r = { "<cmd>FlutterReload<cr>", "Reload" },
 						R = { "<cmd>FlutterRestart<cr>", "Restart" },
 						q = { "<cmd>FlutterQuit<cr>", "Quit" },
@@ -27,9 +26,6 @@ local plugins = {
 			}, { prefix = "<leader>" })
 		end,
 	},
-
-	-- Multiple cursors
-	-- "mg979/vim-visual-multi",
 
 	-- Go
 	{
@@ -58,24 +54,7 @@ local plugins = {
 		build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries,
 	},
 
-	-- Rest Client
-	{
-		"rest-nvim/rest.nvim",
-		dependencies = { { "nvim-lua/plenary.nvim" } },
-		config = function()
-			require("rest-nvim").setup({})
-		end,
-	},
-
 	"alec-gibson/nvim-tetris",
-
-	"Mofiqul/vscode.nvim",
-	"LunarVim/darkplus.nvim",
-	"folke/tokyonight.nvim",
-	"rose-pine/neovim",
-	"catppuccin/nvim",
-	"rebelot/kanagawa.nvim",
-	"neanias/everforest-nvim",
 }
 
 return plugins

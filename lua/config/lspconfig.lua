@@ -61,6 +61,6 @@ lspconfig.lua_ls.setup({
 	cmd = { "lua-language-server" },
 })
 
-lspconfig.eslint.setup({
-	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "astro" },
-})
+-- lspconfig.eslint.setup({
+-- 	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "astro" },
+-- })

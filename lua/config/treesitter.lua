@@ -7,7 +7,7 @@ return {
 		"go",
 		"rust",
 		"lua",
-		-- "dart",
+		"dart",
 
 		"svelte",
 		"vue",

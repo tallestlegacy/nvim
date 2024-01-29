@@ -67,15 +67,21 @@ return {
 				},
 
 				path_display = { "truncate" },
-				no_ignore = false,
+				no_ignore = true,
 				file_ignore_patterns = { "node_modules", "build", "target" },
 				extensions_list = { "themes", "fzf", "lazygit" },
 				color_devicons = true,
+
+				pickers = {
+					colorscheme = {
+						enable_preview = true,
+					},
+				},
 			})
 
-			require("telescope").load_extension("fzf")
-			require("telescope").load_extension("lazygit")
-			require("telescope").load_extension("harpoon")
+			pcall(require("telescope").load_extension("fzf"))
+			pcall(require("telescope").load_extension("lazygit"))
+			pcall(require("telescope").load_extension("harpoon"))
 		end,
 	},
 }
