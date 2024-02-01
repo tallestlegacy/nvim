@@ -64,3 +64,7 @@ lspconfig.lua_ls.setup({
 -- lspconfig.eslint.setup({
 -- 	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "astro" },
 -- })
+
+lspconfig.elixirls.setup({
+	cmd = { "elixir-ls" },
+})

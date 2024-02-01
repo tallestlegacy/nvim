@@ -7,6 +7,9 @@ return {
 	-- Lazy git
 	"kdheepak/lazygit.nvim",
 
+	-- fugitive
+	"tpope/vim-fugitive",
+
 	-- Git signs
 	{
 		"lewis6991/gitsigns.nvim",

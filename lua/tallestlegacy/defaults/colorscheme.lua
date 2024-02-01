@@ -2,6 +2,7 @@ vim.o.background = "dark" -- or "light" for light mode
 
 local colorscheme = "gruvbox"
 colorscheme = "base16-gruvbox-dark-hard"
+colorscheme = "catppuccin"
 
 local ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 vim.o.background = "dark" -- or "light" for light mode
