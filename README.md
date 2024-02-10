@@ -61,3 +61,8 @@ These are plugins I included in my seperated user config - a place where I can p
 - [x] [ray-x/go.nvim](https://github.com/ray-x/go.nvim) for go treesitter injection, gopher and other goodies
 
 I might have missed a few
+
+# And now
+
+![image](https://github.com/tallestlegacy/nvim/assets/71118951/7062abfe-90ff-4ad4-9174-c64d5f2796a6)
+
