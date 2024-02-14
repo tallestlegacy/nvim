@@ -71,11 +71,6 @@ local default_diagnostic_config = {
 
 vim.diagnostic.config(default_diagnostic_config)
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-	-- delay update diagnostics
-	update_in_insert = true,
-})
-
 local icons = require("builtin.ui.icons")
 
 -- diagnostics icons

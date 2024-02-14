@@ -12,24 +12,24 @@ return {
 			-- go to https://textkool.com/en/ascii-art-generator
 
 			local vim_dos_rebel = {
-				"",
-				"",
-				"              ███                 ",
-				"             ░░░                  ",
-				" █████ █████ ████  █████████████  ",
-				"░░███ ░░███ ░░███ ░░███░░███░░███ ",
-				" ░███  ░███  ░███  ░███ ░███ ░███ ",
-				" ░░███ ███   ░███  ░███ ░███ ░███ ",
-				"  ░░█████    █████ █████░███ █████",
-				"   ░░░░░    ░░░░░ ░░░░░ ░░░ ░░░░░ ",
-				"",
-				"",
+				[[]],
+				[[]],
+				[[              ███                 ]],
+				[[             ░░░                  ]],
+				[[ █████ █████ ████  █████████████  ]],
+				[[░░███ ░░███ ░░███ ░░███░░███░░███ ]],
+				[[ ░███  ░███  ░███  ░███ ░███ ░███ ]],
+				[[ ░░███ ███   ░███  ░███ ░███ ░███ ]],
+				[[  ░░█████    █████ █████░███ █████]],
+				[[   ░░░░░    ░░░░░ ░░░░░ ░░░ ░░░░░ ]],
+				[[]],
+				[[]],
 			}
 
 			-- local anya = require("builtin.ui.anya")
-			local bemo = require("builtin.ui.adventure-time").bemo
+			local adventure_time = require("builtin.ui.adventure-time").logo
 
-			dashboard.section.header.val = vim_dos_rebel
+			dashboard.section.header.val = adventure_time
 
 			dashboard.section.buttons.val = {
 				dashboard.button("f", "> find file", ":Telescope find_files <CR>"),
@@ -47,7 +47,7 @@ return {
 
 			dashboard.section.buttons.opts = {
 				spacing = 0,
-				position = "bottom",
+				position = "top",
 			}
 
 			local function footer()

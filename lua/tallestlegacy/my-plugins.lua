@@ -55,6 +55,7 @@ local plugins = {
 	},
 
 	"alec-gibson/nvim-tetris",
+	"LunarVim/darkplus.nvim",
 }
 
 return plugins

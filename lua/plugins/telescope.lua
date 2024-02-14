@@ -68,6 +68,7 @@ return {
 
 				path_display = { "truncate" },
 				no_ignore = true,
+				hidden = true,
 				file_ignore_patterns = { "node_modules", "build", "target" },
 				extensions_list = { "themes", "fzf", "lazygit" },
 				color_devicons = true,
@@ -75,6 +76,10 @@ return {
 				pickers = {
 					colorscheme = {
 						enable_preview = true,
+					},
+					find_files = {
+						hidden = true,
+						file_ignore_patterns = { "node_modules", "build", "target", ".git/*" },
 					},
 				},
 			})
