@@ -24,6 +24,7 @@ local options = {
 	splitright = true,
 	scrolloff = 8,
 	sidescrolloff = 8,
+	termguicolors = true,
 
 	-- other
 	timeoutlen = 1000,

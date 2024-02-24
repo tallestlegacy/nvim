@@ -11,7 +11,7 @@ return {
 		event = "User FileOpened",
 		dependencies = "mason.nvim",
 		opts = {
-			automatic_installation = false,
+			automatic_installation = true,
 		},
 	},
 

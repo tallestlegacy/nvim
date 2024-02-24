@@ -70,12 +70,18 @@ return {
 				styles = {
 					comments = { "italic" },
 					conditionals = { "italic" },
-					-- variables = { "bold" },
+					variables = { "bold" },
 				},
 				integrations = {
 					treesitter = true,
+					notify = true,
+					mini = {
+						enabled = true,
+						indebtscope_color = "#7f7f7f",
+					},
 				},
 			})
 		end,
 	},
+	{ "briones-gabriel/darcula-solid.nvim", dependencies = "rktjmp/lush.nvim" },
 }

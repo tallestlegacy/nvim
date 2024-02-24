@@ -10,8 +10,8 @@ wk.setup({
 	},
 })
 
-local explorer = { "<cmd>NvimTreeFocus<cr>", "Explorer" }
-local explorer_toggle = { "<cmd>NvimTreeToggle<cr>", "Explorer" }
+local explorer = { "<cmd>Neotree focus<cr>", "Explorer" }
+local explorer_toggle = { "<cmd>Neotree toggle<cr>", "Explorer" }
 wk.register({ n = explorer_toggle }, { prefix = "<leader>" })
 
 local dashboard = { "<cmd>Alpha<cr>", "Dashboard" }

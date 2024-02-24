@@ -22,7 +22,7 @@ Editor features UI and functional features:
 - [x] [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) for statusline
 - [x] [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for highlights
 - [x] [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) to display indentation guides
-- [x] File Tree [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
+- [x] File Tree [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - [x] [lualine-lsp-progress](https://github.com/arkav/lualine-lsp-progress) to display LSP server progress
 - [x] [alpha-nvim](https://github.com/goolord/alpha-nvim) for dashboard customisation
 
@@ -45,9 +45,7 @@ Version Control:
 - [x] [diffview.nvim](https://github.com/sindrets/diffview.nvim) to view git diff
 - [x] [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) for more complete git features
 
-
 ![image](https://github.com/tallestlegacy/nvim/assets/71118951/6875b074-a17b-423d-9881-759063647a6c)
-
 
 ### Personal plugins
 
@@ -65,4 +63,3 @@ I might have missed a few
 # And now
 
 ![image](https://github.com/tallestlegacy/nvim/assets/71118951/7062abfe-90ff-4ad4-9174-c64d5f2796a6)
-
