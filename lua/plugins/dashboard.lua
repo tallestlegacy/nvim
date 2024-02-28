@@ -26,10 +26,9 @@ return {
 				[[]],
 			}
 
-			-- local anya = require("builtin.ui.anya")
-			local adventure_time = require("builtin.ui.adventure-time").logo
+			local avatar = require("builtin.ui.simpsons").lisa_l
 
-			dashboard.section.header.val = adventure_time
+			dashboard.section.header.val = avatar
 
 			dashboard.section.buttons.val = {
 				dashboard.button("f", "> find file", ":Telescope find_files <CR>"),

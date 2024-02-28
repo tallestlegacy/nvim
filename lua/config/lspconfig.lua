@@ -14,6 +14,7 @@ local servers = {
 	-- "lua_ls",
 	"taplo", -- toml
 	"cssls",
+	"zls",
 }
 
 for _, lsp in ipairs(servers) do

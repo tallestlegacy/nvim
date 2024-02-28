@@ -79,7 +79,7 @@ return {
 					},
 					find_files = {
 						hidden = true,
-						file_ignore_patterns = { "node_modules", "build", "target", ".git/*" },
+						file_ignore_patterns = { "node_modules", "build", "target", ".git" },
 					},
 				},
 			})
