@@ -72,6 +72,7 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 keymap("n", "<C-n>", ":new<CR>", opts)
 keymap("n", "<leader>r", "<CMD>!source ~/.config/nvim/init.lua<CR>", opts)
 
+-- NOTE thank me later
 -- remove arrow keys
 keymap("n", "<Left>", "<Nop>", opts)
 keymap("n", "<Right>", "<Nop>", opts)

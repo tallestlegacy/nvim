@@ -1,6 +1,19 @@
 -- None-essential plugins that I like to use
 
 local plugins = {
+
+	-- tmux
+	{ "christoomey/vim-tmux-navigator", lazy = false },
+
+	-- find and replace
+	{
+		"nvim-pack/nvim-spectre",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("spectre").setup()
+		end,
+	},
+
 	-- Flutter tools
 	{
 		"akinsho/flutter-tools.nvim",

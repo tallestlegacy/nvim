@@ -43,7 +43,7 @@ return {
 					},
 					theme = "auto",
 					component_separators = icons.ui.LineMiddle,
-					section_separators = { left = icons.ui.BoldDividerRight, right = icons.ui.BoldDividerLeft },
+					section_separators = { left = icons.ui.CircleDividerRight, right = icons.ui.CircleDividerLeft },
 				},
 				sections = {
 					lualine_a = { "mode" },

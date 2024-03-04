@@ -1,5 +1,18 @@
 local lspconfig = require("lspconfig")
 
+local markup_files = {
+	"html",
+	"css",
+	"scss",
+	"javascript",
+	"javascriptreact",
+	"typescript",
+	"typescriptreact",
+	"svelte",
+	"vue",
+	"astro",
+}
+
 local servers = {
 	"gopls",
 	"rust_analyzer",
@@ -37,18 +50,7 @@ lspconfig.emmet_language_server.setup({
 })
 
 lspconfig.tailwindcss.setup({
-	filetypes = {
-		"html",
-		"css",
-		"scss",
-		"javascript",
-		"javascriptreact",
-		"typescript",
-		"typescriptreact",
-		"svelte",
-		"vue",
-		"astro",
-	},
+	filetypes = markup_files,
 	root_dir = lspconfig.util.root_pattern(
 		"tailwind.config.js",
 		"postcss.config.js",
@@ -56,6 +58,11 @@ lspconfig.tailwindcss.setup({
 		"tailwind.config.mjs"
 	),
 })
+
+-- lspconfig.cssls.setup({
+-- 	filetypes = markup_files,
+-- })
+--
 
 lspconfig.lua_ls.setup({
 	filetypes = { "lua" },
