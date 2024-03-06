@@ -120,6 +120,8 @@ return {
 		Note = "",
 		Package = "",
 		Pencil = "󰏫",
+		Pin = "",
+		Pinned = "",
 		Plus = "",
 		Project = "",
 		Search = "",

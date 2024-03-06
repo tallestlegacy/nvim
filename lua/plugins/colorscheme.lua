@@ -9,4 +9,9 @@ return {
 			})
 		end,
 	},
+	{ "catppuccin/nvim", opts = {
+		integrations = {
+			neotree = true,
+		},
+	} },
 }

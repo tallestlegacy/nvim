@@ -32,6 +32,7 @@ local options = {
 	updatetime = 300,
 	writebackup = false,
 	spell = true,
+	ignorecase = true,
 	spelllang = "en_us,en_gb,la",
 
 	--search
