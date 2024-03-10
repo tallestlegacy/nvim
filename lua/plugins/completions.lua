@@ -9,7 +9,7 @@ return {
 			"hrsh7th/cmp-buffer",
 			-- "hrsh7th/cmp-cmdline",
 			"L3MON4D3/LuaSnip",
-			-- "saadparwaiz1/cmp_luasnip",
+			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
 		},
 		event = "InsertEnter",
@@ -32,35 +32,8 @@ return {
 				return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 			end
 
-			local kind_icons = {
-				Text = "󰉿",
-				Method = "󰆧",
-				Function = "󰊕",
-				Constructor = "",
-				Field = " ",
-				Variable = "󰀫",
-				Class = "󰠱",
-				Interface = "",
-				Module = "",
-				Property = "󰜢",
-				Unit = "󰑭",
-				Value = "󰎠",
-				Enum = "",
-				Keyword = "󰌋",
-				Snippet = "",
-				Color = "󰏘",
-				File = "󰈙",
-				Reference = "",
-				Folder = "󰉋",
-				EnumMember = "",
-				Constant = "󰏿",
-				Struct = "",
-				Event = "",
-				Operator = "󰆕",
-				TypeParameter = " ",
-				Misc = " ",
-			}
-			-- find more here: https://www.nerdfonts.com/cheat-sheet
+			-- use my locally defined icons
+			local kind_icons = require("builtin.ui.icons").kind
 
 			cmp.setup({
 				snippet = {
@@ -75,27 +48,37 @@ return {
 					["<C-e>"] = cmp.mapping.abort(),
 					["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 				}),
+
 				formatting = {
 					fields = { "kind", "abbr", "menu" },
+
 					format = function(entry, vim_item)
 						-- Kind icons
 						vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 						-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 						vim_item.menu = ({
-							nvim_lsp = "[LSP]",
-							luasnip = "[Snippet]",
-							buffer = "[Buffer]",
-							path = "[Path]",
+							nvim_lsp = "LSP",
+							luasnip = "Snippet",
+							buffer = "Buffer",
+							path = "Path",
 						})[entry.source.name]
 						return vim_item
 					end,
 				},
 
+				sorting = {
+					comparators = {
+						cmp.config.compare.offset,
+						cmp.config.compare.score,
+						cmp.config.compare.exact,
+					},
+				},
+
 				sources = {
 					{ name = "nvim_lsp", max_item_count = 20 },
-					{ name = "luasnip" },
+					{ name = "luasnip", max_item_count = 10 },
 					{ name = "buffer", max_item_count = 10 },
-					{ name = "friendlysnippets" },
+					{ name = "friendlysnippets", max_item_count = 10 },
 					{ name = "path" },
 				},
 				confirm_opts = {

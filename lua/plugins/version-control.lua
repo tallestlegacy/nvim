@@ -2,13 +2,10 @@ local icons = require("builtin.ui.icons")
 
 return {
 	-- Git diffs
-	"sindrets/diffview.nvim",
+	{ "sindrets/diffview.nvim", event = "VeryLazy" },
 
 	-- Lazy git
-	"kdheepak/lazygit.nvim",
-
-	-- fugitive
-	"tpope/vim-fugitive",
+	{ "kdheepak/lazygit.nvim", event = "VeryLazy" },
 
 	-- Git signs
 	{

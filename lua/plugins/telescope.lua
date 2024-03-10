@@ -3,25 +3,6 @@ return {
 		"nvim-telescope/telescope-fzf-native.nvim",
 		build = "make",
 	},
-	-- Harpoon
-	{
-		"ThePrimeagen/harpoon",
-		config = function()
-			require("harpoon").setup({
-				global_settings = {
-					mark_branch = false,
-				},
-				save_on_toggle = false,
-				save_on_change = true,
-				enter_on_sendcmd = true,
-				tmux_autoclose_windows = false,
-				excluded_filetypes = { "harpoon" },
-				tabline = false,
-				tabline_prefix = "  ",
-				tabline_suffix = "  ",
-			})
-		end,
-	},
 	-- Telescope
 	{
 		"nvim-telescope/telescope.nvim",

@@ -1,17 +1,4 @@
 return {
-	-- {
-	-- 	-- Bufferline
-	-- 	"akinsho/bufferline.nvim",
-	-- 	version = "*",
-	-- 	dependencies = "nvim-tree/nvim-web-devicons",
-	-- 	opts = {
-	-- 		-- highlights = require("catppuccin.groups.integrations.bufferline").get(),
-	-- 		options = {
-	-- 			separator_style = "slope",
-	-- 			diagnostics = "nvim-lsp",
-	-- 		},
-	-- 	},
-	-- },
 	{
 		"romgrk/barbar.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons", "lewis6991/gitsigns.nvim" },
@@ -26,6 +13,7 @@ return {
 			icons = {
 				pinned = { button = require("builtin.ui.icons").ui.Pinned, filename = true },
 				separator_at_end = false,
+				separator = { right = " ", left = "▎" },
 			},
 		},
 	},

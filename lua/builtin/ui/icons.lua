@@ -36,6 +36,7 @@ return {
 		Unit = "",
 		Value = "",
 		Variable = "",
+		Misc = "",
 	},
 	git = {
 		LineAdded = "",

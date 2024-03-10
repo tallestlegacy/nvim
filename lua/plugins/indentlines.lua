@@ -20,7 +20,7 @@ return {
 		end,
 	},
 
-	{
-		"HiPhish/rainbow-delimiters.nvim",
-	},
+	-- {
+	-- 	"HiPhish/rainbow-delimiters.nvim",
+	-- },
 }

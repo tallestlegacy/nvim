@@ -4,20 +4,11 @@ if not status_ok then
 	return
 end
 
-wk.setup({
-	window = {
-		border = "shadow",
-	},
-})
-
 local explorer = { "<cmd>Neotree focus<cr>", "Explorer" }
 local explorer_toggle = { "<cmd>Neotree toggle<cr>", "Explorer" }
 wk.register({ n = explorer_toggle }, { prefix = "<leader>" })
 
 local dashboard = { "<cmd>Alpha<cr>", "Dashboard" }
-
--- custom telescope search mappings
-local find = require("config.mappings.telescope_mappings")
 
 local lsp = {
 	a = { vim.lsp.buf.code_action, "Code Action" },
@@ -25,22 +16,6 @@ local lsp = {
 	R = { "<cmd>LspRestart<cr>", "Restart" },
 	f = { vim.lsp.buf.format, "Format" },
 	d = { vim.lsp.buf.definition, "Definition" },
-}
-
-local buffer = {
-	-- cycle
-	n = { "<cmd>BufferLineCycleNext<cr>", "Next" },
-	p = { "<cmd>BufferLineCyclePrev<cr>", "Prev" },
-	-- close
-	h = { "<cmd>BufferLineCloseLeft<cr>", "Close Left" },
-	l = { "<cmd>BufferLineCloseRight<cr>", "Close Right" },
-	o = { "<cmd>BufferLineCloseLeft<cr><cmd>BufferLineCloseRight<cr>", "Close Other" },
-	c = { "<cmd>BufferLineCloseLeft<cr><cmd>BufferLineCloseRight<cr><cmd>BufferLineCloseRight<cr>", "Close All" },
-	-- sorting
-	d = { "<cmd>BufferLineSortByDirectory<cr>", "Sort by Directory" },
-	e = { "<cmd>BufferLineSortByExtension<cr>", "Sort by Extension" },
-	-- pinning
-	t = { "<cmd>BufferLineTogglePin<cr>", "Toggle pin buffer" },
 }
 
 local toggle = {
@@ -104,11 +79,6 @@ local split = {
 	-- o = { "<cmd>only<cr>", "Only window" },
 }
 
-local harpoon = {
-	m = { require("harpoon.ui").add_file, "Add file to harpoon" },
-	t = { require("harpoon.ui").toggle_quick_menu, "Toggle harpoon menu" },
-}
-
 -------------------------------------------------
 ----------------- REGISTER ----------------------
 -------------------------------------------------
@@ -116,15 +86,14 @@ local harpoon = {
 wk.register({
 	a = dashboard,
 	e = explorer,
-	f = { find, "Find" },
+	f = { require("config.mappings.telescope-mappings"), "Find" },
 	l = { lsp, "LSP" },
-	b = { buffer, "Buffer" },
+	b = { require("config.mappings.bufferline-mappings"), "Buffer" },
 	t = { toggle, "Toggle" },
 	p = { pm, "Plugin Management" },
 	g = { git, "Git" },
 	d = { diagnostics, "Diagnostics" },
 	s = { split, "Split" },
-	h = { harpoon, "Harpoon" },
 	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
 }, { prefix = "<leader>" })
 
@@ -136,4 +105,11 @@ wk.register({
 -------------------------------------------------
 ------------------ OVERRIDES --------------------
 -------------------------------------------------
-pcall(require, "user.config.mappings")
+
+local manual_format = function()
+	require("conform").format({ async = true, lsp_fallback = false })
+end
+
+require("which-key").register({
+	["<leader>lf"] = { manual_format, "Format (conform)" },
+})

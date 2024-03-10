@@ -1,6 +1,8 @@
 local M = require("telescope.builtin")
 
 local find = {
+	r = { M.resume, "Resume search" },
+	n = { M.notify, "Notifications" },
 	F = { "<cmd>lua require('telescope.builtin').find_files({ no_ignore = true })<cr>", "All Files" },
 	f = { M.find_files, "Find Files" },
 	w = { M.live_grep, "Live Grep" },

@@ -1,10 +1,10 @@
 local icons = require("builtin.ui.icons")
 
 return {
-	{
-		-- lsp progress
-		"arkav/lualine-lsp-progress",
-	},
+	-- {
+	-- lsp progress
+	-- "arkav/lualine-lsp-progress",
+	-- },
 	{
 		-- Lualine
 		"nvim-lualine/lualine.nvim",
@@ -14,7 +14,7 @@ return {
 			local clients_lsp = function()
 				local bufnr = vim.api.nvim_get_current_buf()
 
-				local clients = vim.lsp.buf_get_DatePicker
+				local clients = vim.lsp.buf_get_clients(bufnr)
 
 				if next(clients) == nil then
 					return ""
@@ -44,7 +44,7 @@ return {
 					},
 					theme = "auto",
 					component_separators = icons.ui.LineMiddle,
-					section_separators = { left = icons.ui.CircleDividerRight, right = icons.ui.CircleDividerLeft },
+					-- section_separators = { left = icons.ui.CircleDividerRight, right = icons.ui.CircleDividerLeft },
 				},
 				sections = {
 					lualine_a = { "mode" },
@@ -68,8 +68,8 @@ return {
 				extensions = {},
 			}
 
-			local lsp_progress = require("plugins.lualine.lsp-progress")
-			table.insert(config.sections.lualine_x, lsp_progress.component)
+			-- local lsp_progress = require("plugins.lualine.lsp-progress")
+			-- table.insert(config.sections.lualine_x, lsp_progress.component)
 
 			require("lualine").setup(config)
 		end,

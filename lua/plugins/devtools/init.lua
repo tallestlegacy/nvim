@@ -1,19 +1,4 @@
--- None-essential plugins that I like to use
-
-local plugins = {
-
-	-- tmux
-	{ "christoomey/vim-tmux-navigator", lazy = false },
-
-	-- find and replace
-	{
-		"nvim-pack/nvim-spectre",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("spectre").setup()
-		end,
-	},
-
+return {
 	-- Flutter tools
 	{
 		"akinsho/flutter-tools.nvim",
@@ -66,9 +51,4 @@ local plugins = {
 		ft = { "go", "gomod" },
 		build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries,
 	},
-
-	"alec-gibson/nvim-tetris",
-	"LunarVim/darkplus.nvim",
 }
-
-return plugins

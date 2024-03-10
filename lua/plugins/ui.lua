@@ -6,14 +6,18 @@ return {
 		event = "VeryLazy",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
-			-- "rcarriga/nvim-notify",
+			"rcarriga/nvim-notify",
 		},
-		opts = {},
+		config = function()
+			require("noice").setup({})
+			require("notify").setup({ background_colour = "#000000", render = "compact" })
+		end,
 	},
 	{
 		"karb94/neoscroll.nvim",
+		event = "VeryLazy",
 		config = function()
-			require("neoscroll").setup({})
+			require("neoscroll").setup()
 		end,
 	},
 }
