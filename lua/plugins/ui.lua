@@ -9,7 +9,17 @@ return {
 			"rcarriga/nvim-notify",
 		},
 		config = function()
-			require("noice").setup({})
+			require("noice").setup({
+				routes = {
+					{
+						filter = {
+							event = "msg_show",
+							kind = "",
+							find = "written",
+						},
+					},
+				},
+			})
 			require("notify").setup({ background_colour = "#000000", render = "compact" })
 		end,
 	},

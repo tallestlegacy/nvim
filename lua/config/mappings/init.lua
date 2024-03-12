@@ -62,6 +62,15 @@ local git = {
 	r = { "<cmd>DiffviewRefresh<cr>", "Diffview Refresh" },
 	h = { "<cmd>DiffviewFileHistory<cr>", "Diffview File History" },
 	g = { "<cmd>LazyGit<cr>", "LazyGit" },
+	-- git signs
+	s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage Hunk" },
+	S = { "<cmd>Gitsigns stage_buffer<cr>", "Stage Buffer" },
+	u = { "<cmd>Gitsigns reset_hunk<cr>", "Unstage Hunk" },
+	U = { "<cmd>Gitsigns reset_buffer<cr>", "Unstage Buffer" },
+	P = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },
+	b = { "<cmd>Gitsigns blame_line<cr>", "Blame Line" },
+	n = { "<cmd>Gitsigns next_hunk<cr>", "Next Hunk" },
+	p = { "<cmd>Gitsigns prev_hunk<cr>", "Prev Hunk" },
 }
 
 -- Diagnostics

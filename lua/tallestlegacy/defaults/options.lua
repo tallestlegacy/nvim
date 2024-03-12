@@ -11,7 +11,7 @@ local options = {
 	smartcase = true,
 	smartindent = true,
 	cursorline = true,
-	clipboard = "unnamed",
+	clipboard = "unnamedplus",
 	-- guicursor = "i:blinkon",
 	wrap = false,
 

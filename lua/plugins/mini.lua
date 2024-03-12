@@ -12,7 +12,7 @@ return {
 			-- require("mini.notify").setup()
 
 			-- AUTO PAIRS
-			require("mini.pairs").setup()
+			-- require("mini.pairs").setup()
 
 			-- SURROUND
 			require("mini.surround").setup()
