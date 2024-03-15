@@ -10,7 +10,7 @@ return {
 			require("which-key").setup({
 				window = {
 					border = "single",
-					winblend = 90,
+					winblend = 10,
 				},
 			})
 		end,
