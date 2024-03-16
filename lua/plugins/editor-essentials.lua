@@ -37,6 +37,10 @@ return {
 		dependencies = {
 			"SmiteshP/nvim-navic",
 		},
-		config = true,
+		config = function()
+			require("barbecue").setup({
+				theme = "catppuccin",
+			})
+		end,
 	},
 }

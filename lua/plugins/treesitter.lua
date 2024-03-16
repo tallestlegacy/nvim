@@ -37,14 +37,15 @@ return {
 			})
 		end,
 	},
-	-- {
-	-- 	"nvim-treesitter/nvim-treesitter-context",
-	-- 	config = function()
-	-- 		require("treesitter-context").setup({
-	-- 			enable = true,
-	-- 			mode = "cursor",
-	-- 			zindex = 20,
-	-- 		})
-	-- 	end,
-	-- },
+	{
+		"nvim-treesitter/nvim-treesitter-context",
+		config = function()
+			require("treesitter-context").setup({
+				enable = true,
+				mode = "cursor",
+				zindex = 20,
+				trim_sope = "outer",
+			})
+		end,
+	},
 }

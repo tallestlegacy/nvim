@@ -25,7 +25,9 @@ return {
 							".git",
 						},
 					},
-					follow_current_file = true,
+					follow_current_file = {
+						enabled = true,
+					},
 				},
 				buffers = {
 					follow_current_file = true,

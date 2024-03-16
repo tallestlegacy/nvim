@@ -54,7 +54,7 @@ return {
 
 					format = function(entry, vim_item)
 						-- Kind icons
-						vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+						vim_item.kind = string.format(" %s ", kind_icons[vim_item.kind])
 						-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 						vim_item.menu = ({
 							nvim_lsp = "LSP",
@@ -86,8 +86,14 @@ return {
 					select = false,
 				},
 				window = {
-					-- completion = cmp.config.window.bordered(),
-					-- documentation = cmp.config.window.bordered(),
+					completion = cmp.config.window.bordered({
+						col_offset = -3,
+						side_padding = 0,
+						winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+					}),
+					documentation = cmp.config.window.bordered({
+						winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+					}),
 				},
 				cmdline = {
 					enable = false,
