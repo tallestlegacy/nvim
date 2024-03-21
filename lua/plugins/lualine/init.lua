@@ -39,7 +39,7 @@ return {
 
 			local config = {
 				options = {
-					theme = "catppuccin",
+					theme = "auto",
 					icons_enabled = true,
 					disabled_filetypes = {
 						statusline = {},
@@ -55,7 +55,7 @@ return {
 					},
 					component_separators = icons.ui.LineMiddle,
 					-- section_separators = { left = icons.ui.CircleDividerRight, right = icons.ui.CircleDividerLeft },
-					section_separators = { left = "", right = "" },
+					-- section_separators = { left = "", right = "" },
 				},
 				sections = {
 					lualine_a = { "mode" },

@@ -103,6 +103,7 @@ wk.register({
 	g = { git, "Git" },
 	d = { diagnostics, "Diagnostics" },
 	s = { split, "Split" },
+	S = { "<cmd>Spectre<cr>", "Spectre" },
 	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
 }, { prefix = "<leader>" })
 

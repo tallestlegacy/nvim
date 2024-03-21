@@ -10,10 +10,11 @@ return {
 
 			require("ibl").setup({
 				indent = {
-					char = icons.ui.LineMiddle,
+					char = icons.ui.LineMiddleDashedThree,
 				},
 				scope = {
-					enabled = false,
+					enabled = true,
+					show_exact_scope = true,
 				},
 			})
 			hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)

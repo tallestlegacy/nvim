@@ -1,4 +1,5 @@
 -- temporarily disabled
+
 return {
 	-- Completions
 	{
@@ -57,6 +58,7 @@ return {
 						vim_item.kind = string.format(" %s ", kind_icons[vim_item.kind])
 						-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 						vim_item.menu = ({
+							codeium = "Codeium",
 							nvim_lsp = "LSP",
 							luasnip = "Snippet",
 							buffer = "Buffer",
@@ -75,6 +77,7 @@ return {
 				},
 
 				sources = {
+					{ name = "codeium" },
 					{ name = "nvim_lsp", max_item_count = 20 },
 					{ name = "luasnip", max_item_count = 10 },
 					{ name = "buffer", max_item_count = 10 },
@@ -86,14 +89,8 @@ return {
 					select = false,
 				},
 				window = {
-					completion = cmp.config.window.bordered({
-						col_offset = -3,
-						side_padding = 0,
-						winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
-					}),
-					documentation = cmp.config.window.bordered({
-						winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
-					}),
+					-- completion = cmp.config.window.bordered(),
+					-- documentation = cmp.config.window.bordered(),
 				},
 				cmdline = {
 					enable = false,

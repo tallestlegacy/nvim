@@ -17,17 +17,17 @@ local servers = {
 	"gopls",
 	"rust_analyzer",
 	"tsserver",
-	"pyright",
+	-- "pyright",
 	-- "dartls",
 	"volar",
 	"svelte",
 	"clangd",
 	"astro",
-	"intelephense",
+	-- "intelephense",
 	-- "lua_ls",
 	"taplo", -- toml
 	"cssls",
-	"zls",
+	-- "zls",
 }
 
 for _, lsp in ipairs(servers) do

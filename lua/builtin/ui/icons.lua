@@ -8,6 +8,7 @@ return {
 		Color = "",
 		Constant = "",
 		Constructor = "",
+		Codeium = "",
 		Enum = "",
 		EnumMember = "",
 		Event = "",

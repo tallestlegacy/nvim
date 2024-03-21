@@ -28,6 +28,9 @@ return {
 		end,
 	},
 
+	-- Comment Titles
+	{ "LudoPinelli/comment-box.nvim" },
+
 	-- -- Winbar
 	{
 		"utilyre/barbecue.nvim",
@@ -38,9 +41,7 @@ return {
 			"SmiteshP/nvim-navic",
 		},
 		config = function()
-			require("barbecue").setup({
-				theme = "catppuccin",
-			})
+			require("barbecue").setup({})
 		end,
 	},
 }

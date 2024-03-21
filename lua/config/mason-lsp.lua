@@ -7,6 +7,6 @@ return {
 		"gofumpt",
 		"golines",
 		"goimports-reviser",
-		"black",
+		-- "black",
 	},
 }

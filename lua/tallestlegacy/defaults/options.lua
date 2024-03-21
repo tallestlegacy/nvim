@@ -12,8 +12,8 @@ local options = {
 	smartindent = true,
 	cursorline = true,
 	clipboard = "unnamedplus",
-	-- guicursor = "i:blinkon",
 	wrap = false,
+	cmdheight = 0,
 
 	-- statusline
 	showmode = true,
@@ -31,9 +31,10 @@ local options = {
 	undofile = true,
 	updatetime = 300,
 	writebackup = false,
-	spell = true,
 	ignorecase = true,
+	spell = true,
 	spelllang = "en_us,en_gb,la",
+	spelloptions = "camel",
 
 	--search
 	hlsearch = true,
@@ -81,3 +82,16 @@ vim.fn.sign_define("DiagnosticSignError", { text = icons.diagnostics.BoldError, 
 vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn" })
 vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo" })
 vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
+
+if vim.g.neovide then
+	vim.o.guifont = "CodeNewRoman Nerd Font:h9" -- text below applies for VimScript
+
+	-- Helper function for transparency formatting
+	local alpha = function()
+		return string.format("%x", math.floor(255 * vim.g.transparency or 0.8))
+	end
+	-- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
+	vim.g.neovide_transparency = 0.9
+	vim.g.transparency = 0.9
+	vim.g.neovide_background_color = "#1e1e2e" .. alpha()
+end

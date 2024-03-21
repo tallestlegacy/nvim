@@ -1,30 +1,5 @@
 return {
-	-- Flutter tools
-	{
-		"akinsho/flutter-tools.nvim",
-		event = "VeryLazy",
-		lazy = false,
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"stevearc/dressing.nvim", -- optional for vim.ui.select
-		},
-		config = function()
-			require("flutter-tools").setup({})
-
-			require("which-key").register({
-				f = {
-					l = {
-						d = { "<cmd>FlutterDevices<cr>", "Devices" },
-						r = { "<cmd>FlutterReload<cr>", "Reload" },
-						R = { "<cmd>FlutterRestart<cr>", "Restart" },
-						q = { "<cmd>FlutterQuit<cr>", "Quit" },
-						"Flutter tools",
-					},
-				},
-			}, { prefix = "<leader>" })
-		end,
-	},
-
+	require("plugins.devtools.flutter"),
 	-- Go
 	{
 		"ray-x/go.nvim",

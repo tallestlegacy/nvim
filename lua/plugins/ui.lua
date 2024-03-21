@@ -6,7 +6,7 @@ return {
 		event = "VeryLazy",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
+			-- "rcarriga/nvim-notify",
 		},
 		config = function()
 			require("noice").setup({
@@ -20,7 +20,7 @@ return {
 					},
 				},
 			})
-			require("notify").setup({ background_colour = "#000000", render = "compact" })
+			-- require("notify").setup({ background_colour = "#000000", render = "compact" })
 		end,
 	},
 	{

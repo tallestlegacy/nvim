@@ -6,7 +6,7 @@ return {
 	-- Formatting
 	"stevearc/conform.nvim",
 
-	event = "VeryLazy",
+	-- event = "VeryLazy",
 
 	config = function()
 		require("conform").setup({
