@@ -23,7 +23,7 @@ local servers = {
 	"svelte",
 	"clangd",
 	"astro",
-	-- "intelephense",
+	"intelephense",
 	-- "lua_ls",
 	"taplo", -- toml
 	"cssls",

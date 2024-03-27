@@ -1,13 +1,35 @@
 return {
+	{
+		"santos-gabriel-dario/darcula-solid.nvim",
+		dependencies = { "rktjmp/lush.nvim" },
+	},
 	-- "morhetz/gruvbox",
+	-- "ellisonleao/gruvbox.nvim",
+	{
+		"murtaza-u/gruvqueen",
+		config = function()
+			require("gruvqueen").setup({
+				config = {
+					style = "mix",
+					disable_bold = true,
+				},
+			})
+		end,
+	},
 	{
 		"sainnhe/gruvbox-material",
 		-- "f4z3r/gruvbox-material.nvim",
-		config = function()
-			vim.g.gruvbox_material_background = "hard"
-			vim.g.gruvbox_material_foreground = "mix"
-			vim.g.gruvbox_material_better_performance = 1
-		end,
 	},
 	"LunarVim/darkplus.nvim",
+	{
+		"loctvl842/monokai-pro.nvim",
+		config = function()
+			require("monokai-pro").setup({
+				filter = "machine",
+			})
+		end,
+	},
+
+	--- why I keep coming back to catpuccin
+	-- "catppuccin/nvim",
 }
