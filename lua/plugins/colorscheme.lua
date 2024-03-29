@@ -3,7 +3,7 @@ return {
 		"santos-gabriel-dario/darcula-solid.nvim",
 		dependencies = { "rktjmp/lush.nvim" },
 	},
-	-- "morhetz/gruvbox",
+	"morhetz/gruvbox",
 	-- "ellisonleao/gruvbox.nvim",
 	{
 		"murtaza-u/gruvqueen",

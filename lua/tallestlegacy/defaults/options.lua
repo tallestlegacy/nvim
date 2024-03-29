@@ -1,3 +1,5 @@
+local icons = require("builtin.ui.icons")
+
 local options = {
 	-- numberline
 	number = true,
@@ -46,9 +48,7 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
--- Other setting
-local icons = require("builtin.ui.icons")
-
+-- diagnostics
 local default_diagnostic_config = {
 	signs = {
 		active = true,
@@ -60,7 +60,7 @@ local default_diagnostic_config = {
 		},
 	},
 	virtual_text = true,
-	update_in_insert = false,
+	update_in_insert = true,
 	underline = true,
 	severity_sort = true,
 	float = {
@@ -73,9 +73,7 @@ local default_diagnostic_config = {
 	},
 }
 
-vim.diagnostic.config(default_diagnostic_config)
-
-local icons = require("builtin.ui.icons")
+-- vim.diagnostic.config(default_diagnostic_config)
 
 -- diagnostics icons
 vim.fn.sign_define("DiagnosticSignError", { text = icons.diagnostics.BoldError, texthl = "DiagnosticSignError" })
@@ -83,12 +81,13 @@ vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSig
 vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo" })
 vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
 
+-- neovide options
 if vim.g.neovide then
 	vim.o.guifont = "CodeNewRoman Nerd Font:h9" -- text below applies for VimScript
 
 	-- Helper function for transparency formatting
 	local alpha = function()
-		return string.format("%x", math.floor(255 * vim.g.transparency or 0.8))
+		return string.format("%x", math.floor(255 * (vim.g.transparency or 0.8)))
 	end
 	-- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
 	vim.g.neovide_transparency = 0.9

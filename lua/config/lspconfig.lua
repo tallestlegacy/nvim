@@ -16,7 +16,6 @@ local markup_files = {
 local servers = {
 	"gopls",
 	"rust_analyzer",
-	"tsserver",
 	-- "pyright",
 	-- "dartls",
 	"volar",
@@ -28,10 +27,19 @@ local servers = {
 	"taplo", -- toml
 	"cssls",
 	-- "zls",
+	"prismals",
 }
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({})
+end
+
+local function organize_imports(command)
+	local params = {
+		command = command,
+		arguments = { vim.api.nvim_buf_get_name(0) },
+	}
+	vim.lsp.buf_request(0, "workspace/executeCommand", params)
 end
 
 lspconfig.emmet_language_server.setup({
@@ -75,4 +83,18 @@ lspconfig.lua_ls.setup({
 
 lspconfig.elixirls.setup({
 	cmd = { "elixir-ls" },
+})
+
+-- javascript
+local ts_organize_imports_cmd = "_typescript.organizeImports"
+
+lspconfig.tsserver.setup({
+	commands = {
+		OrganizeImports = {
+			function()
+				organize_imports(ts_organize_imports_cmd)
+			end,
+			description = "Organize Imports",
+		},
+	},
 })

@@ -10,7 +10,7 @@ return {
 
 			require("ibl").setup({
 				indent = {
-					char = icons.ui.LineMiddleDashedThree,
+					char = icons.ui.LineMiddle,
 				},
 				scope = {
 					enabled = true,
