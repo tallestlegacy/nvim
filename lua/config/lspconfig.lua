@@ -1,5 +1,12 @@
 local lspconfig = require("lspconfig")
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
+local mason_registry = require("mason-registry")
+local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
+	.. "/node_modules/@vue/language-server"
+
 local markup_files = {
 	"html",
 	"css",
@@ -31,7 +38,9 @@ local servers = {
 }
 
 for _, lsp in ipairs(servers) do
-	lspconfig[lsp].setup({})
+	lspconfig[lsp].setup({
+		capabilities = capabilities,
+	})
 end
 
 local function organize_imports(command)
@@ -89,12 +98,22 @@ lspconfig.elixirls.setup({
 local ts_organize_imports_cmd = "_typescript.organizeImports"
 
 lspconfig.tsserver.setup({
+	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
 	commands = {
 		OrganizeImports = {
 			function()
 				organize_imports(ts_organize_imports_cmd)
 			end,
 			description = "Organize Imports",
+		},
+	},
+	init_options = {
+		plugins = {
+			{
+				name = "@vue/typescript-plugin",
+				location = vue_language_server_path,
+				languages = { "vue" },
+			},
 		},
 	},
 })
