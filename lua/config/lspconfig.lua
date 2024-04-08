@@ -25,7 +25,6 @@ local servers = {
 	"rust_analyzer",
 	-- "pyright",
 	-- "dartls",
-	"volar",
 	"svelte",
 	"clangd",
 	"astro",
@@ -60,7 +59,7 @@ lspconfig.emmet_language_server.setup({
 		"typescript",
 		"typescriptreact",
 		-- "svelte", -- svelte has its own language server
-		"vue",
+		-- "vue", -- same as vue
 		"php",
 		"astro",
 	},
@@ -117,3 +116,5 @@ lspconfig.tsserver.setup({
 		},
 	},
 })
+
+lspconfig.volar.setup({})
