@@ -69,7 +69,6 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Files
-keymap("n", "<C-n>", ":new<CR>", opts)
 keymap("n", "<leader>r", "<CMD>!source ~/.config/nvim/init.lua<CR>", opts)
 
 -- NOTE thank me later

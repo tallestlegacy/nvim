@@ -10,8 +10,10 @@ return {
 		config = function()
 			require("gruvqueen").setup({
 				config = {
-					style = "mix",
-					disable_bold = true,
+					style = "material",
+					disable_bold = false,
+					italic_variables = false,
+					invert_selection = false,
 				},
 			})
 		end,
@@ -30,6 +32,5 @@ return {
 		end,
 	},
 
-	--- why I keep coming back to catpuccin
-	-- "catppuccin/nvim",
+	"rose-pine/nvim",
 }

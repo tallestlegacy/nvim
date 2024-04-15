@@ -16,6 +16,7 @@ local options = {
 	clipboard = "unnamedplus",
 	wrap = false,
 	cmdheight = 0,
+	colorcolumn = "140",
 
 	-- statusline
 	showmode = true,

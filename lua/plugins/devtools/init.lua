@@ -3,6 +3,7 @@ return {
 		"akinsho/flutter-tools.nvim",
 		event = "VeryLazy",
 		lazy = false,
+		cond = not vim.g.vscode,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"stevearc/dressing.nvim", -- optional for vim.ui.select
