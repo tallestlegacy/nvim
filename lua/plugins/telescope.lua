@@ -66,7 +66,6 @@ return {
 			})
 
 			pcall(require("telescope").load_extension("fzf"))
-			pcall(require("telescope").load_extension("lazygit"))
 			pcall(require("telescope").load_extension("harpoon"))
 			pcall(require("telescope").load_extension("flutter"))
 		end,
