@@ -61,7 +61,7 @@ local git = {
 	c = { "<cmd>DiffviewClose<cr>", "Diffview Close" },
 	r = { "<cmd>DiffviewRefresh<cr>", "Diffview Refresh" },
 	h = { "<cmd>DiffviewFileHistory<cr>", "Diffview File History" },
-	g = { "<cmd>LazyGit<cr>", "LazyGit" },
+	g = { require("config.mappings.mapping-utils").lazygit_toggle, "LazyGit" },
 	-- git signs
 	s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage Hunk" },
 	S = { "<cmd>Gitsigns stage_buffer<cr>", "Stage Buffer" },
@@ -96,6 +96,7 @@ wk.register({
 	a = dashboard,
 	e = explorer,
 	f = { require("config.mappings.telescope-mappings"), "Find" },
+	F = { "<cmd>Telescope<cr>", "Telescope" },
 	l = { lsp, "LSP" },
 	b = { require("config.mappings.bufferline-mappings"), "Buffer" },
 	t = { toggle, "Toggle" },

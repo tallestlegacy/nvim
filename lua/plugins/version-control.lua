@@ -4,9 +4,6 @@ return {
 	-- Git diffs
 	{ "sindrets/diffview.nvim", event = "VeryLazy" },
 
-	-- Lazy git
-	{ "kdheepak/lazygit.nvim", event = "VeryLazy" },
-
 	-- Git signs
 	{
 		"lewis6991/gitsigns.nvim",

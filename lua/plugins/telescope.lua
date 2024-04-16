@@ -51,7 +51,7 @@ return {
 				no_ignore = true,
 				hidden = true,
 				file_ignore_patterns = { "node_modules", "build", "target" },
-				extensions_list = { "themes", "fzf", "lazygit" },
+				extensions_list = { "themes", "fzf" },
 				color_devicons = true,
 
 				pickers = {
