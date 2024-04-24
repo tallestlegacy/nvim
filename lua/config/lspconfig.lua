@@ -85,9 +85,9 @@ lspconfig.lua_ls.setup({
 	cmd = { "lua-language-server" },
 })
 
-lspconfig.eslint.setup({
-	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "astro" },
-})
+-- lspconfig.eslint.setup({
+-- 	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "astro" },
+-- })
 
 lspconfig.elixirls.setup({
 	cmd = { "elixir-ls" },
@@ -117,11 +117,4 @@ lspconfig.tsserver.setup({
 	},
 })
 
-lspconfig.volar.setup({
-	filetypes = { "vue" },
-	init_options = {
-		vue = {
-			hybridMode = false,
-		},
-	},
-})
+lspconfig.volar.setup({})

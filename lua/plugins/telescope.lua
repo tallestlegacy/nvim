@@ -7,8 +7,11 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
+			"nvim-lua/popup.nvim",
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-symbols.nvim",
+			"nvim-telescope/telescope-project.nvim",
+			"nvim-telescope/telescope-media-files.nvim",
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
 				build = "make",
@@ -44,6 +47,7 @@ return {
 							case_mode = "smart_case", -- or "ignore_case" or "respect_case"
 							-- the default case_mode is "smart_case"
 						},
+						media_files = {},
 					},
 				},
 
@@ -65,7 +69,12 @@ return {
 				},
 			})
 
+			-- official plugins
+			pcall(require("telescope").load_extension("project"))
+			pcall(require("telescope").load_extension("media_files"))
 			pcall(require("telescope").load_extension("fzf"))
+
+			-- other plugins
 			pcall(require("telescope").load_extension("harpoon"))
 			pcall(require("telescope").load_extension("flutter"))
 		end,

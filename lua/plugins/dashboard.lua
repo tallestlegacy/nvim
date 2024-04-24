@@ -26,22 +26,22 @@ return {
 				[[]],
 			}
 
+			-- local avatar = vim_dos_rebel
 			local avatar = require("builtin.ui.simpsons").lisa_l
+			local icons = require("builtin.ui.icons")
 
 			dashboard.section.header.val = avatar
 
 			dashboard.section.buttons.val = {
-				dashboard.button("f", "> find file", ":Telescope find_files <CR>"),
-				dashboard.button("p", "> find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
-				dashboard.button("r", "> recent files", ":Telescope oldfiles <CR>"),
-				dashboard.button("s", "> scratchpad", ":e ~/documents/scratchpad <CR>"),
-				dashboard.button("t", "> todolist", ":e ~/documents/todolist <CR>"),
+				dashboard.button("t", icons.ui.Telescope .. "  Telescope", ":Telescope<cr>"),
+				dashboard.button("f", icons.ui.Files .. "  Files", ":Telescope find_files<cr>"),
+				dashboard.button("p", icons.ui.Folder .. "  Projects", ":Telescope project<cr>"),
 				dashboard.button(
 					"c",
-					"> config",
-					":cd ~/.config/nvim <CR> :e ~/.config/nvim/lua/tallestlegacy/init.lua <CR>"
+					icons.ui.Gear .. "  Configuration",
+					":cd ~/.config/nvim <cr> :e ~/.config/nvim/lua/tallestlegacy/init.lua <cr>"
 				),
-				dashboard.button("q", "> quit", ":qa<CR>"),
+				dashboard.button("q", icons.ui.Fire .. "  Quit", ":qa<cr>"),
 			}
 
 			dashboard.section.buttons.opts = {

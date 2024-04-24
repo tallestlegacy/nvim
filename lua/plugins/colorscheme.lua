@@ -28,6 +28,7 @@ return {
 		config = function()
 			require("monokai-pro").setup({
 				filter = "machine",
+				-- transparent_background = true,
 			})
 		end,
 	},
