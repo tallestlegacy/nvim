@@ -4,6 +4,7 @@ return {
 		"prettierd",
 		"eslint_d",
 		"stylua",
+		"luaformatter",
 		"gofumpt",
 		"golines",
 		"goimports-reviser",

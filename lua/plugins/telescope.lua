@@ -12,6 +12,7 @@ return {
 			"nvim-telescope/telescope-symbols.nvim",
 			"nvim-telescope/telescope-project.nvim",
 			"nvim-telescope/telescope-media-files.nvim",
+			"nvim-telescope/telescope-ui-select.nvim",
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
 				build = "make",
@@ -73,9 +74,9 @@ return {
 			pcall(require("telescope").load_extension("project"))
 			pcall(require("telescope").load_extension("media_files"))
 			pcall(require("telescope").load_extension("fzf"))
+			pcall(require("telescope").load_extension("ui-select"))
 
 			-- other plugins
-			pcall(require("telescope").load_extension("harpoon"))
 			pcall(require("telescope").load_extension("flutter"))
 		end,
 	},
