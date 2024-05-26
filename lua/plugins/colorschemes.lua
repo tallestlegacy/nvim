@@ -10,11 +10,11 @@ return {
     end,
   },
 
-  -- TESTING
-  { "santos-gabriel-dario/darcula-solid.nvim", dependencies = "rktjmp/lush.nvim" },
+  -- for comparisons only
+  { "santos-gabriel-dario/darcula-solid.nvim", dependencies = { "rktjmp/lush.nvim" } },
+
   {
+    -- "tallestlegacy/darcula.nvim",
     dir = "~/Projects/foss/darcula.nvim",
-    dependencies = "rktjmp/lush.nvim",
-    lazy = false,
   },
 }

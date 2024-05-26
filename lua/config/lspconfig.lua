@@ -18,6 +18,7 @@ local markup_files = {
   "svelte",
   "vue",
   "astro",
+  "heex",
 }
 
 local servers = {
@@ -26,14 +27,16 @@ local servers = {
   -- "pyright",
   -- "dartls",
   "svelte",
-  "clangd",
+  -- "clangd",
   "astro",
-  "intelephense",
+  -- "intelephense",
   -- "lua_ls",
   "taplo", -- toml
   "cssls",
   -- "zls",
-  "prismals",
+  -- "prismals",
+  -- "gleam",
+  "kotlin_language_server"
 }
 
 for _, lsp in ipairs(servers) do
@@ -63,6 +66,7 @@ lspconfig.emmet_language_server.setup({
     -- "vue", -- same as vue
     "php",
     "astro",
+    "heex",
   },
 })
 
@@ -72,7 +76,8 @@ lspconfig.tailwindcss.setup({
     "tailwind.config.js",
     "postcss.config.js",
     "tailwind.config.cjs",
-    "tailwind.config.mjs"
+    "tailwind.config.mjs",
+    "mix.exs"
   ),
 })
 
@@ -85,6 +90,7 @@ lspconfig.unocss.setup({
 -- 	filetypes = markup_files,
 -- })
 --
+
 
 lspconfig.lua_ls.setup({
   filetypes = { "lua" },
@@ -104,7 +110,7 @@ lspconfig.elixirls.setup({
 local ts_organize_imports_cmd = "_typescript.organizeImports"
 
 lspconfig.tsserver.setup({
-  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
   commands = {
     OrganizeImports = {
       function()
@@ -113,15 +119,23 @@ lspconfig.tsserver.setup({
       description = "Organize Imports",
     },
   },
-  init_options = {
-    plugins = {
-      {
-        name = "@vue/typescript-plugin",
-        location = vue_language_server_path,
-        languages = { "vue" },
-      },
-    },
-  },
+  -- init_options = {
+  --   plugins = {
+  --     {
+  --       name = "@vue/typescript-plugin",
+  --       location = vue_language_server_path,
+  --       languages = { "vue" },
+  --     },
+  --   },
+  -- },
 })
 
-lspconfig.volar.setup({})
+
+lspconfig.volar.setup({
+  filetypes = { "vue" },
+  init_options = {
+    vue = {
+      hybridMode = false,
+    }
+  }
+})

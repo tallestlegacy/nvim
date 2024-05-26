@@ -1,7 +1,7 @@
 -- local auto_format_pattern = { "*.ts", "*.go", "*.rs", "*.lua", "*.tsx", "*.html", "*.svelte", "*.astro", "*.md" }
 
+-- Use a sub-list to run only the first available formatter
 local pretty = { { "prettierd", "prettier" } }
-local ast = "ast-grep"
 
 return {
   -- Formatting
@@ -12,28 +12,27 @@ return {
   config = function()
     require("conform").setup({
       formatters_by_ft = {
-        lua = { "luaformatter" },
-        -- Use a sub-list to run only the first available formatter
-        javascript = pretty, -- { "eslint_d", pretty },
+        -- lua = { "stylua", "lua_ls" },
+        javascript = pretty,
         javascriptreact = pretty,
         typescript = pretty,
         typescriptreact = pretty,
 
         json = pretty,
         jsonc = pretty,
-        --	svelte = pretty,
+        svelte = pretty,
         vue = pretty,
         astro = pretty,
         scss = pretty,
         css = pretty,
         html = pretty,
+        markdown = pretty,
 
         go = { "gofumpt", "goimports-reviser", "golines" },
         rust = { "rustfmt" },
         cpp = { "clang-format" },
         python = { "black" },
-
-        markdown = pretty,
+        kotlin = { "ktlint" },
       },
 
       -- Enable or disable autoformat on save

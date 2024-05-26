@@ -77,3 +77,6 @@ keymap("n", "<Left>", "<Nop>", opts)
 keymap("n", "<Right>", "<Nop>", opts)
 keymap("n", "<Up>", "<Nop>", opts)
 keymap("n", "<Down>", "<Nop>", opts)
+
+-- hover
+keymap("n", "K", ":lua vim.lsp.buf.hover()<CR>", opts)
