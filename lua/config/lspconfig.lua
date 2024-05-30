@@ -24,19 +24,21 @@ local markup_files = {
 local servers = {
   "gopls",
   "rust_analyzer",
-  -- "pyright",
-  -- "dartls",
+  "pyright",
+  "dartls",
   "svelte",
-  -- "clangd",
+  "clangd",
   "astro",
-  -- "intelephense",
-  -- "lua_ls",
+  "intelephense",
+  "lua_ls",
   "taplo", -- toml
   "cssls",
-  -- "zls",
-  -- "prismals",
-  -- "gleam",
-  "kotlin_language_server"
+  "zls",
+  "prismals",
+  "gleam",
+  "kotlin_language_server",
+  "bufls",
+  "vala_ls",
 }
 
 for _, lsp in ipairs(servers) do
@@ -67,6 +69,7 @@ lspconfig.emmet_language_server.setup({
     "php",
     "astro",
     "heex",
+    "buf",
   },
 })
 

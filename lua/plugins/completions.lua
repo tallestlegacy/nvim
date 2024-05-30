@@ -78,7 +78,7 @@ return {
 
         sources = {
           { name = "codeium" },
-          { name = "nvim_lsp",         max_item_count = 20 },
+          { name = "nvim_lsp" },
           { name = "luasnip",          max_item_count = 10 },
           { name = "buffer",           max_item_count = 10 },
           { name = "friendlysnippets", max_item_count = 10 },
