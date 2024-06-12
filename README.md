@@ -1,6 +1,7 @@
-# My Neovim config
+![image](https://github.com/tallestlegacy/nvim/assets/71118951/1109806a-6255-4763-81ee-f891390d7ce0)
 
-![image](https://github.com/tallestlegacy/nvim/assets/71118951/3f7bfac7-8411-4482-8136-fcf13b716534)
+
+# My Neovim config
 
 ## Features
 
@@ -39,7 +40,7 @@
 
 -----
 
-![image](https://github.com/tallestlegacy/nvim/assets/71118951/ad91f727-4bc8-431a-8209-bb345c1a7b8e)
+![image](https://github.com/tallestlegacy/nvim/assets/71118951/ecbfe8cc-6216-4669-8128-74c9699f314f)
 
 Version Control:
 
@@ -49,15 +50,15 @@ Version Control:
 
 -----
 
-![image](https://github.com/tallestlegacy/nvim/assets/71118951/6875b074-a17b-423d-9881-759063647a6c)
+![image](https://github.com/tallestlegacy/nvim/assets/71118951/e14288d9-359b-45b2-899c-25ea93a33cae)
+
 
 ### Personal plugins
 
 These are plugins I included in my seperated user config - a place where I can play around with new plugins and add plugins that aren't a part of the **core** features of my config
 
 - Colorschemes
-  - [x] [gruvbox-material.nvim](https://github.com/wittyjudge/gruvbox-material.nvim) colorscheme
-  - [x] [monokai-pro](https://github.com/loctvl842/monokai-pro.nvim) colorscheme
+  - [x] [darcula.nvim](https://github.com/tallestlegacy/darcula.nvim) colorscheme
 - Linting & formatting & AI completions
   - [x] [conform.nvim](https://github.com/stevearc/conform.nvim) for formatting
   - [x] [nvim-lint](https://github.com/mfussenegger/nvim-lint) for linting
