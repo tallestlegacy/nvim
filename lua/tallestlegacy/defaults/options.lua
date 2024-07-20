@@ -85,7 +85,7 @@ vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSig
 
 -- neovide options
 if vim.g.neovide then
-  vim.o.guifont = "CodeNewRoman Nerd Font:h9" -- text below applies for VimScript
+  vim.o.guifont = "MonaspiceNe NF:h9" -- text below applies for VimScript
 
   -- Helper function for transparency formatting
   local alpha = function()

@@ -20,7 +20,7 @@ return {
     },
     config = function()
       local telescope = require("telescope")
-      local trouble = require("trouble.providers.telescope")
+      local trouble = require("trouble.sources.telescope")
 
       telescope.setup({
         defaults = {
@@ -37,15 +37,15 @@ return {
             },
           },
           mappings = {
-            i = { ["<C-j>"] = trouble.open_with_trouble },
-            n = { ["<C-j>"] = trouble.open_with_trouble },
+            i = { ["<C-j>"] = trouble.open },
+            n = { ["<C-j>"] = trouble.open },
           },
           extensions = {
             fzf = {
-              fuzzy = true,            -- false will only do exact matching
+              fuzzy = true,                   -- false will only do exact matching
               override_generic_sorter = true, -- override the generic sorter
-              override_file_sorter = true, -- override the file sorter
-              case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+              override_file_sorter = true,    -- override the file sorter
+              case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
               -- the default case_mode is "smart_case"
             },
             media_files = {},

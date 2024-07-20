@@ -1,7 +1,7 @@
 local lspconfig = require("lspconfig")
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+-- capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 local mason_registry = require("mason-registry")
 local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
@@ -65,7 +65,7 @@ lspconfig.emmet_language_server.setup({
     "typescript",
     "typescriptreact",
     -- "svelte", -- svelte has its own language server
-    -- "vue", -- same as vue
+    "vue", -- same as vue
     "php",
     "astro",
     "heex",
@@ -77,6 +77,7 @@ lspconfig.tailwindcss.setup({
   filetypes = markup_files,
   root_dir = lspconfig.util.root_pattern(
     "tailwind.config.js",
+    "tailwind.config.ts",
     "postcss.config.js",
     "tailwind.config.cjs",
     "tailwind.config.mjs",
@@ -113,7 +114,7 @@ lspconfig.elixirls.setup({
 local ts_organize_imports_cmd = "_typescript.organizeImports"
 
 lspconfig.tsserver.setup({
-  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
   commands = {
     OrganizeImports = {
       function()
@@ -122,20 +123,19 @@ lspconfig.tsserver.setup({
       description = "Organize Imports",
     },
   },
-  -- init_options = {
-  --   plugins = {
-  --     {
-  --       name = "@vue/typescript-plugin",
-  --       location = vue_language_server_path,
-  --       languages = { "vue" },
-  --     },
-  --   },
-  -- },
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = vue_language_server_path,
+        languages = { "vue" },
+      },
+    },
+  },
 })
 
 
 lspconfig.volar.setup({
-  filetypes = { "vue" },
   init_options = {
     vue = {
       hybridMode = false,
