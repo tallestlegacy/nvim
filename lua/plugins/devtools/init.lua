@@ -29,14 +29,13 @@ return {
         },
       })
 
-      require("which-key").register({
-        f = {
-          l = {
-            "<cmd>lua require('telescope').extensions.flutter.commands()<cr>",
-            "Flutter Tools",
-          },
+      require("which-key").add({
+        {
+          "<leader>fl",
+          "<cmd>lua require('telescope').extensions.flutter.commands()<cr>",
+          desc = "Flutter Tools"
         },
-      }, { prefix = "<leader>" })
+      })
     end,
   },
 

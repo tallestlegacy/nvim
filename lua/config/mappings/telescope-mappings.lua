@@ -1,34 +1,31 @@
+local wk = require("which-key")
+
+
 local M = require("telescope.builtin")
 
-local find = {
-  r = { M.resume, "Resume search" },
-  n = { M.notify, "Notifications" },
-  F = { "<cmd>lua require('telescope.builtin').find_files({ no_ignore = true })<cr>", "All Files" },
-  f = { M.find_files, "Find Files" },
-  w = { M.live_grep, "Live Grep" },
-  z = { M.current_buffer_fuzzy_find, "Current Buffer" },
-  b = { M.buffers, "Buffer" },
-  -- Other
-  s = { M.colorscheme, "Colorscheme" },
-  h = { M.help_tags, "Help Tags" },
-  d = { M.diagnostics, "Diagnostics" },
-  c = { M.commands, "Commands" },
-  m = { M.man_pages, "Man Pages" },
-  k = { M.keymaps, "Keymaps" },
-  e = { M.symbols, "Emoji" },
-  -- l = {
-  -- 	s = { M.lsp_document_symbols, "Document Symbols" },
-  -- 	S = { M.lsp_workspace_symbols, "Workspace Symbols" },
-  -- 	"LSP",
-  -- },
-  -- git stuff
-  g = {
-    s = { M.git_status, "Git Status" },
-    b = { M.git_branches, "Git Branches" },
-    c = { M.git_commits, "Git Commits" },
-    C = { M.git_bcommits, "Git File Commits" },
-    f = { M.git_files, "Git Files" },
+wk.add {
+  { "<leader>f",
+    function() M.find_files({ no_ignore = true }) end,
+    desc = "All Files",
   },
+  { "<leader>fr",  M.resume,                    desc = "Resume search" },
+  { "<leader>fn",  M.notify,                    desc = "Notifications" },
+  { "<leader>ff",  M.find_files,                desc = "Find Files" },
+  { "<leader>fw",  M.live_grep,                 desc = "Live Grep" },
+  { "<leader>fz",  M.current_buffer_fuzzy_find, desc = "Current Buffer" },
+  { "<leader>fb",  M.buffers,                   desc = "Buffer" },
+  -- Other
+  { "<leader>fs",  M.colorscheme,               desc = "Colorscheme" },
+  { "<leader>fh",  M.help_tags,                 desc = "Help Tags" },
+  { "<leader>fd",  M.diagnostics,               desc = "Diagnostics" },
+  { "<leader>fc",  M.commands,                  desc = "Commands" },
+  { "<leader>fm",  M.man_pages,                 desc = "Man Pages" },
+  { "<leader>fk",  M.keymaps,                   desc = "Keymaps" },
+  { "<leader>fe",  M.symbols,                   desc = "Emoji" },
+  -- git stuff
+  { "<leader>fgs", M.git_status,                desc = "Git Status" },
+  { "<leader>fgb", M.git_branches,              desc = "Git Branches" },
+  { "<leader>fgc", M.git_commits,               desc = "Git Commits" },
+  { "<leader>fgC", M.git_bcommits,              desc = "Git File Commits" },
+  { "<leader>fgf", M.git_files,                 desc = "Git Files" },
 }
-
-return find

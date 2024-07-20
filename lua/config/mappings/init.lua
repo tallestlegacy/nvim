@@ -4,115 +4,106 @@ if not status_ok then
   return
 end
 
-local explorer = { "<cmd>Neotree focus<cr>", "Explorer" }
-local explorer_toggle = { "<cmd>Neotree toggle<cr>", "Explorer" }
-wk.register({ n = explorer_toggle }, { prefix = "<leader>" })
 
-local dashboard = { "<cmd>Alpha<cr>", "Dashboard" }
+require("config.mappings.telescope-mappings")
 
-local lsp = {
-  a = { vim.lsp.buf.code_action, "Code Action" },
-  r = { vim.lsp.buf.rename, "Rename" },
-  R = { "<cmd>LspRestart<cr>", "Restart" },
-  f = { vim.lsp.buf.format, "Format" },
-  d = { vim.lsp.buf.definition, "Definition" },
-  h = { function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, "Inlay hints (toggle)" }
-}
+-- Explorer
+wk.add({
+  { "<leader>n", "<cmd>Neotree toggle<cr>", desc = "Explorer (toggle)" },
+  { "<leader>e", "<cmd>Neotree focus<cr>",  desc = "Explorer (focuss)" }
+})
 
-local toggle = {
+-- Dashboard
+wk.add({ "<leader>a", "<cmd>Alpha<cr>", desc = "Dashboard" })
+
+-- Language server options
+wk.add({
+  { "<leader>l",  group = "LSP" },
+  { "<leader>la", vim.lsp.buf.code_action, desc = "Code Action" },
+  { "<leader>lr", vim.lsp.buf.rename,      desc = "Rename" },
+  { "<leader>lR", "<cmd>LspRestart<cr>",   desc = "Restart" },
+  { "<leader>lf", vim.lsp.buf.format,      desc = "Format" },
+  { "<leader>ld", vim.lsp.buf.definition,  desc = "Definition" },
+  {
+    "<leader>lh",
+    function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
+    desc = "Inlay hints (toggle)"
+  },
+})
+
+wk.add({
+  { "<leader>t",  group = "Terminal/Toggle" },
   --  terminal
-  h = { "<cmd>ToggleTerm direction=horizontal<cr>", "Horizontal term" },
-  v = { "<cmd>ToggleTerm direction=vertical<cr>", "Vertical term" },
-  f = { "<cmd>ToggleTerm direction=float<cr>", "Floating term" },
+  { "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>",     desc = "Horizontal term" },
+  { "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>",       desc = "Vertical term" },
+  { "<leader>tf", "<cmd>ToggleTerm direction=float<cr>",          desc = "Floating term" },
 
   --trouble
-  t = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
-  w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics" },
-  d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics" },
-  q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
-  r = { "<cmd>TroubleToggle lsp_references<cr>", "LSP References" },
-}
+  { "<leader>tt", "<cmd>TroubleToggle<cr>",                       desc = "Toggle Trouble" },
+  { "<leader>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics" },
+  { "<leader>td", "<cmd>TroubleToggle document_diagnostics<cr>",  desc = "Document Diagnostics" },
+  { "<leader>tq", "<cmd>TroubleToggle quickfix<cr>",              desc = "Quickfix" },
+  { "<leader>tr", "<cmd>TroubleToggle lsp_references<cr>",        desc = "LSP References" },
+})
 
-local mod_terminal = {
-  ["1"] = { "<cmd>ToggleTerm direction=horizontal<cr>", "Horizontal term" },
-  ["2"] = { "<cmd>ToggleTerm direction=vertical<cr>", "Vertical term" },
-  ["3"] = { "<cmd>ToggleTerm direction=float<cr>", "Floating term" },
-}
+-- Terminal
+wk.add({
+  { "<leader>1", "<cmd>ToggleTerm direction=horizontal<cr>", desc = "Horizontal term" },
+  { "<leader>2", "<cmd>ToggleTerm direction=vertical<cr>",   desc = "Vertical term" },
+  { "<leader>3", "<cmd>ToggleTerm direction=float<cr>",      desc = "Floating term" },
+})
 
--- only register mod_terminal bindings using Alt key
-wk.register(mod_terminal, { prefix = "<leader>" })
 
 -- package management
-local pm = {
+wk.add({
+  { "<leader>p",  group = "Package" },
   -- Lazy
-  l = { "<cmd>Lazy<cr>", "Lazy plugin manager" },
-  c = { "<cmd>Lazy clean<cr>", "Clean unused plugins" },
-  u = { "<cmd>Lazy update<cr>", "Update plugins" },
-  a = { "<cmd>Lazy load all<cr>", "Load all plugins" },
-  i = { "<cmd>Lazy install all<cr>", "Install all plugins" },
+  { "<leader>pl", "<cmd>Lazy<cr>",             desc = "Lazy plugin manager" },
+  { "<leader>pc", "<cmd>Lazy clean<cr>",       desc = "Clean unused plugins" },
+  { "<leader>pu", "<cmd>Lazy update<cr>",      desc = "Update plugins" },
+  { "<leader>pa", "<cmd>Lazy load all<cr>",    desc = "Load all plugins" },
+  { "<leader>pi", "<cmd>Lazy install all<cr>", desc = "Install all plugins" },
 
   -- Mason
-  m = { "<cmd>Mason<cr>", "Mason" },
-}
+  { "<leader>pm", "<cmd>Mason<cr>",            desc = "Mason" },
+})
 
 -- Git stuff
-local git = {
+wk.add({
+  { "<leader>g",  group = "Git" },
   -- diff view
-  d = { "<cmd>DiffviewOpen<cr>", "Diffview Open" },
-  c = { "<cmd>DiffviewClose<cr>", "Diffview Close" },
-  r = { "<cmd>DiffviewRefresh<cr>", "Diffview Refresh" },
-  h = { "<cmd>DiffviewFileHistory<cr>", "Diffview File History" },
-  g = { require("config.mappings.mapping-utils").lazygit_toggle, "LazyGit" },
+  { "<leader>gd", "<cmd>DiffviewOpen<cr>",                                 desc = "Diffview Open" },
+  { "<leader>gc", "<cmd>DiffviewClose<cr>",                                desc = "Diffview Close" },
+  { "<leader>gr", "<cmd>DiffviewRefresh<cr>",                              desc = "Diffview Refresh" },
+  { "<leader>gh", "<cmd>DiffviewFileHistory<cr>",                          desc = "Diffview File History" },
+  { "<leader>gg", require("config.mappings.mapping-utils").lazygit_toggle, desc = "LazyGit" },
   -- git signs
-  s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage Hunk" },
-  S = { "<cmd>Gitsigns stage_buffer<cr>", "Stage Buffer" },
-  u = { "<cmd>Gitsigns reset_hunk<cr>", "Unstage Hunk" },
-  U = { "<cmd>Gitsigns reset_buffer<cr>", "Unstage Buffer" },
-  P = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },
-  b = { "<cmd>Gitsigns blame_line<cr>", "Blame Line" },
-  n = { "<cmd>Gitsigns next_hunk<cr>", "Next Hunk" },
-  p = { "<cmd>Gitsigns prev_hunk<cr>", "Prev Hunk" },
-}
+  { "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>",                          desc = "Stage Hunk" },
+  { "<leader>gS", "<cmd>Gitsigns stage_buffer<cr>",                        desc = "Stage Buffer" },
+  { "<leader>gu", "<cmd>Gitsigns reset_hunk<cr>",                          desc = "Unstage Hunk" },
+  { "<leader>gU", "<cmd>Gitsigns reset_buffer<cr>",                        desc = "Unstage Buffer" },
+  { "<leader>gP", "<cmd>Gitsigns preview_hunk<cr>",                        desc = "Preview Hunk" },
+  { "<leader>gb", "<cmd>Gitsigns blame_line<cr>",                          desc = "Blame Line" },
+  { "<leader>gn", "<cmd>Gitsigns next_hunk<cr>",                           desc = "Next Hunk" },
+  { "<leader>gp", "<cmd>Gitsigns prev_hunk<cr>",                           desc = "Prev Hunk" },
+})
 
 -- Diagnostics
-local diagnostics = {
-  n = { vim.diagnostic.goto_next, "Next Diagnostic" },
-  p = { vim.diagnostic.goto_prev, "Prev Diagnostic" },
-  f = { vim.diagnostic.open_float, "Float Diagnostic" },
-}
+wk.add({
+  { "<leader>d",  group = "Diagnostics" },
+  { "<leader>dn", vim.diagnostic.goto_next,  desc = "Next Diagnostic" },
+  { "<leader>dp", vim.diagnostic.goto_prev,  desc = "Prev Diagnostic" },
+  { "<leader>df", vim.diagnostic.open_float, desc = "Float Diagnostic" },
+})
 
--- Window management
-local split = {
-  h = { "<cmd>split<cr>", "Horizontsl Split window" },
-  v = { "<cmd>vsplit<cr>", "Vertical Split window" },
-  -- q = { "<cmd>close<cr>", "Close window" },
-  -- o = { "<cmd>only<cr>", "Only window" },
-}
 
--------------------------------------------------
------------------ REGISTER ----------------------
--------------------------------------------------
 
-wk.register({
-  a = dashboard,
-  e = explorer,
-  f = { require("config.mappings.telescope-mappings"), "Find" },
-  F = { "<cmd>Telescope<cr>", "Telescope" },
-  l = { lsp, "LSP" },
-  b = { require("config.mappings.bufferline-mappings"), "Buffer" },
-  t = { toggle, "Toggle" },
-  p = { pm, "Plugin Management" },
-  g = { git, "Git" },
-  d = { diagnostics, "Diagnostics" },
-  s = { split, "Split" },
-  S = { "<cmd>Spectre<cr>", "Spectre" },
-  ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
-}, { prefix = "<leader>" })
+-- window managment
+wk.add({
+  { "<leader>sh", "<cmd>split<cr>",  desc = "Horizontsl Split window" },
+  { "<leader>sv", "<cmd>vsplit<cr>", desc = "Vertical Split window" },
+})
 
--- visual mode
-wk.register({
-  ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle linewise (visual)" },
-}, { mode = "v" })
 
 -------------------------------------------------
 ------------------ OVERRIDES --------------------
@@ -122,6 +113,14 @@ local manual_format = function()
   require("conform").format({ async = true, lsp_fallback = false })
 end
 
-require("which-key").register({
-  ["<leader>lf"] = { manual_format, "Format (conform)" },
+wk.add({
+  { "<leader>F",  "<cmd>Telescope<cr>",                      desc = "Telescope" },
+  { "<leader>S",  "<cmd>Spectre<cr>",                        desc = "Spectre" },
+  { "<leader>/",  "<Plug>(comment_toggle_linewise_current)", desc = "Comment toggle current line" },
+  { "<leader>lf", manual_format,                             desc = "Format (conform)" },
+  {
+    "<leader>fl",
+    "<cmd>lua require('telescope').extensions.flutter.commands()<cr>",
+    desc = "Flutter Tools"
+  },
 })
