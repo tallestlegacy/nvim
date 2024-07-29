@@ -1,5 +1,7 @@
 return {
 
+  -- surround
+  { "ur4ltz/surround.nvim", },
 
   -- Comments
   {

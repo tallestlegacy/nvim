@@ -5,7 +5,9 @@ if not status_ok then
 end
 
 
+-- External mapppings
 require("config.mappings.telescope-mappings")
+require("config.mappings.bufferline-mappings")
 
 -- Explorer
 wk.add({

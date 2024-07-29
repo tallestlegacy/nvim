@@ -14,7 +14,7 @@ return {
   { "santos-gabriel-dario/darcula-solid.nvim", dependencies = { "rktjmp/lush.nvim" } },
 
   {
-    -- "tallestlegacy/darcula.nvim",
-    dir = "~/Projects/foss/darcula.nvim",
+    "tallestlegacy/darcula.nvim",
+    -- dir = "~/Projects/foss/darcula.nvim",
   },
 }
