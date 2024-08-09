@@ -12,7 +12,7 @@ require("config.mappings.bufferline-mappings")
 -- Explorer
 wk.add({
   { "<leader>n", "<cmd>Neotree toggle<cr>", desc = "Explorer (toggle)" },
-  { "<leader>e", "<cmd>Neotree focus<cr>",  desc = "Explorer (focuss)" }
+  { "<leader>e", "<cmd>Neotree focus<cr>",  desc = "Explorer (focus)" },
 })
 
 -- Dashboard
@@ -20,16 +20,17 @@ wk.add({ "<leader>a", "<cmd>Alpha<cr>", desc = "Dashboard" })
 
 -- Language server options
 wk.add({
-  { "<leader>l",  group = "LSP" },
-  { "<leader>la", vim.lsp.buf.code_action, desc = "Code Action" },
-  { "<leader>lr", vim.lsp.buf.rename,      desc = "Rename" },
-  { "<leader>lR", "<cmd>LspRestart<cr>",   desc = "Restart" },
-  { "<leader>lf", vim.lsp.buf.format,      desc = "Format" },
-  { "<leader>ld", vim.lsp.buf.definition,  desc = "Definition" },
+  { "<leader>l",  group = "LSP",           mode = { "n", "v" } },
+  { "<leader>la", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" } },
+  { "<leader>lr", vim.lsp.buf.rename,      desc = "Rename",      mode = { "n", "v" } },
+  { "<leader>lR", "<cmd>LspRestart<cr>",   desc = "Restart",     mode = { "n", "v" } },
+  { "<leader>lf", vim.lsp.buf.format,      desc = "Format",      mode = { "n", "v" } },
+  { "<leader>ld", vim.lsp.buf.definition,  desc = "Definition",  mode = { "n", "v" } },
   {
     "<leader>lh",
     function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
-    desc = "Inlay hints (toggle)"
+    desc = "Inlay hints (toggle)",
+    mode = { "n", "v" }
   },
 })
 
@@ -118,7 +119,7 @@ end
 wk.add({
   { "<leader>F",  "<cmd>Telescope<cr>",                      desc = "Telescope" },
   { "<leader>S",  "<cmd>Spectre<cr>",                        desc = "Spectre" },
-  { "<leader>/",  "<Plug>(comment_toggle_linewise_current)", desc = "Comment toggle current line" },
+  { "<leader>/",  "<Plug>(comment_toggle_linewise_current)", desc = "Comment toggle current line",  mode = { "n", "v" } },
   { "<leader>lf", manual_format,                             desc = "Format (conform)" },
   {
     "<leader>fl",

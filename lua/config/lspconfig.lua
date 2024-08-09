@@ -39,6 +39,7 @@ local servers = {
   "kotlin_language_server",
   "bufls",
   "vala_ls",
+  "jsonls"
 }
 
 for _, lsp in ipairs(servers) do

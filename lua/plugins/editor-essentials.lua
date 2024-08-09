@@ -1,7 +1,7 @@
 return {
 
   -- surround
-  { "ur4ltz/surround.nvim", },
+  { "tpope/vim-surround", },
 
   -- Comments
   {
