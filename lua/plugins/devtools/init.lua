@@ -65,4 +65,25 @@ return {
     ft = { "go", "gomod" },
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries,
   },
+
+
+  -- Rust tools
+  {
+    'mrcjkb/rustaceanvim',
+    dependencies = {
+      'mfussenegger/nvim-dap',
+    },
+    version = '^5', -- Recommended
+    lazy = false,   -- This plugin is already lazy
+  },
+
+
+  -- REST
+  {
+    'mistweaverco/kulala.nvim',
+    config = function()
+      -- Setup is required, even if you don't pass any options
+      require('kulala').setup()
+    end
+  },
 }

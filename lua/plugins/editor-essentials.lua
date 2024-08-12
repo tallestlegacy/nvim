@@ -1,7 +1,6 @@
 return {
 
   -- surround
-  { "tpope/vim-surround", },
 
   -- Comments
   {

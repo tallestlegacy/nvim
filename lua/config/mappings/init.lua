@@ -8,6 +8,7 @@ end
 -- External mapppings
 require("config.mappings.telescope-mappings")
 require("config.mappings.bufferline-mappings")
+require("config.mappings.kulala")
 
 -- Explorer
 wk.add({
@@ -20,12 +21,13 @@ wk.add({ "<leader>a", "<cmd>Alpha<cr>", desc = "Dashboard" })
 
 -- Language server options
 wk.add({
-  { "<leader>l",  group = "LSP",           mode = { "n", "v" } },
-  { "<leader>la", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" } },
-  { "<leader>lr", vim.lsp.buf.rename,      desc = "Rename",      mode = { "n", "v" } },
-  { "<leader>lR", "<cmd>LspRestart<cr>",   desc = "Restart",     mode = { "n", "v" } },
-  { "<leader>lf", vim.lsp.buf.format,      desc = "Format",      mode = { "n", "v" } },
-  { "<leader>ld", vim.lsp.buf.definition,  desc = "Definition",  mode = { "n", "v" } },
+  { "<leader>l",  group = "LSP",                           mode = { "n", "v" } },
+  -- { "<leader>la", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" } },
+  { "<leader>la", require("tiny-code-action").code_action, desc = "Code Action", mode = { "n", "v" } },
+  { "<leader>lr", vim.lsp.buf.rename,                      desc = "Rename",      mode = { "n", "v" } },
+  { "<leader>lR", "<cmd>LspRestart<cr>",                   desc = "Restart",     mode = { "n", "v" } },
+  { "<leader>lf", vim.lsp.buf.format,                      desc = "Format",      mode = { "n", "v" } },
+  { "<leader>ld", vim.lsp.buf.definition,                  desc = "Definition",  mode = { "n", "v" } },
   {
     "<leader>lh",
     function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
@@ -37,16 +39,16 @@ wk.add({
 wk.add({
   { "<leader>t",  group = "Terminal/Toggle" },
   --  terminal
-  { "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>",     desc = "Horizontal term" },
-  { "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>",       desc = "Vertical term" },
-  { "<leader>tf", "<cmd>ToggleTerm direction=float<cr>",          desc = "Floating term" },
+  { "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>", desc = "Horizontal term" },
+  { "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>",   desc = "Vertical term" },
+  { "<leader>tf", "<cmd>ToggleTerm direction=float<cr>",      desc = "Floating term" },
 
   --trouble
-  { "<leader>tt", "<cmd>TroubleToggle<cr>",                       desc = "Toggle Trouble" },
-  { "<leader>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics" },
-  { "<leader>td", "<cmd>TroubleToggle document_diagnostics<cr>",  desc = "Document Diagnostics" },
-  { "<leader>tq", "<cmd>TroubleToggle quickfix<cr>",              desc = "Quickfix" },
-  { "<leader>tr", "<cmd>TroubleToggle lsp_references<cr>",        desc = "LSP References" },
+  { "<leader>tt", "<cmd>Trouble<cr>",                         desc = "Toggle Trouble" },
+  { "<leader>tw", "<cmd>Trouble workspace_diagnostics<cr>",   desc = "Workspace Diagnostics" },
+  { "<leader>td", "<cmd>Trouble document_diagnostics<cr>",    desc = "Document Diagnostics" },
+  { "<leader>tq", "<cmd>Trouble quickfix<cr>",                desc = "Quickfix" },
+  { "<leader>tr", "<cmd>Trouble lsp_references<cr>",          desc = "LSP References" },
 })
 
 -- Terminal
@@ -119,7 +121,7 @@ end
 wk.add({
   { "<leader>F",  "<cmd>Telescope<cr>",                      desc = "Telescope" },
   { "<leader>S",  "<cmd>Spectre<cr>",                        desc = "Spectre" },
-  { "<leader>/",  "<Plug>(comment_toggle_linewise_current)", desc = "Comment toggle current line",  mode = { "n", "v" } },
+  { "<leader>/",  "<Plug>(comment_toggle_linewise_current)", desc = "Comment toggle current line", mode = { "n", "v" } },
   { "<leader>lf", manual_format,                             desc = "Format (conform)" },
   {
     "<leader>fl",

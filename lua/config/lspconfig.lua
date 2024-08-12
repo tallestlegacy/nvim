@@ -23,7 +23,7 @@ local markup_files = {
 
 local servers = {
   "gopls",
-  "rust_analyzer",
+  -- "rust_analyzer",
   "pyright",
   "dartls",
   "svelte",
