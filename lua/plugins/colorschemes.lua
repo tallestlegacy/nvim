@@ -10,8 +10,8 @@ return {
     end,
   },
 
-  -- for comparisons only
-  { "santos-gabriel-dario/darcula-solid.nvim", dependencies = { "rktjmp/lush.nvim" } },
+
+  "LunarVim/darkplus.nvim",
 
   {
     "tallestlegacy/darcula.nvim",

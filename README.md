@@ -1,6 +1,5 @@
 ![image](https://github.com/tallestlegacy/nvim/assets/71118951/1109806a-6255-4763-81ee-f891390d7ce0)
 
-
 # My Neovim config
 
 ## Features
@@ -38,7 +37,7 @@
 - [x] [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) for tab management
 - [x] [illuminate.nvim](https://github.com/RRethy/vim-illuminate) to highlight word under cursor
 
------
+---
 
 ![image](https://github.com/tallestlegacy/nvim/assets/71118951/ecbfe8cc-6216-4669-8128-74c9699f314f)
 
@@ -48,10 +47,9 @@ Version Control:
 - [x] [diffview.nvim](https://github.com/sindrets/diffview.nvim) to view git diff
 - [x] [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) for more complete git features
 
------
+---
 
 ![image](https://github.com/tallestlegacy/nvim/assets/71118951/e14288d9-359b-45b2-899c-25ea93a33cae)
-
 
 ### Personal plugins
 
@@ -63,9 +61,8 @@ These are plugins I included in my seperated user config - a place where I can p
   - [x] [conform.nvim](https://github.com/stevearc/conform.nvim) for formatting
   - [x] [nvim-lint](https://github.com/mfussenegger/nvim-lint) for linting
   - [x] AI completions : [codeium.vim](https://github.com/Exafunction/codeium.vim)
-- Other code tools 
+- Other code tools
   - [x] [flutter-tools.nvim](https://github.com/akinsho/flutter-tools.nvim) for flutter
   - [x] [ray-x/go.nvim](https://github.com/ray-x/go.nvim) for go treesitter injection, gopher and other goodies
 
 > I might have missed a few things
-
