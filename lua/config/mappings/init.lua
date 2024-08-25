@@ -39,16 +39,15 @@ wk.add({
 wk.add({
   { "<leader>t",  group = "Terminal/Toggle" },
   --  terminal
-  { "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>", desc = "Horizontal term" },
-  { "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>",   desc = "Vertical term" },
-  { "<leader>tf", "<cmd>ToggleTerm direction=float<cr>",      desc = "Floating term" },
+  { "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>",                   desc = "Horizontal term" },
+  { "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>",                     desc = "Vertical term" },
+  { "<leader>tf", "<cmd>ToggleTerm direction=float<cr>",                        desc = "Floating term" },
 
   --trouble
-  { "<leader>tt", "<cmd>Trouble<cr>",                         desc = "Toggle Trouble" },
-  { "<leader>tw", "<cmd>Trouble workspace_diagnostics<cr>",   desc = "Workspace Diagnostics" },
-  { "<leader>td", "<cmd>Trouble document_diagnostics<cr>",    desc = "Document Diagnostics" },
-  { "<leader>tq", "<cmd>Trouble quickfix<cr>",                desc = "Quickfix" },
-  { "<leader>tr", "<cmd>Trouble lsp_references<cr>",          desc = "LSP References" },
+  { "<leader>tt", "<cmd>Trouble diagnostics toggle<cr>",                        desc = "Toggle Trouble" },
+  { "<leader>tb", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",           desc = "Buffer Diagnostics" },
+  { "<leader>tl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", desc = "Buffer Diagnostics" },
+  { "<leader>tq", "<cmd>Trouble qflist toggle<cr>",                             desc = "Quickfix" },
 })
 
 -- Terminal
