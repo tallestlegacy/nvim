@@ -114,7 +114,7 @@ lspconfig.elixirls.setup({
 -- javascript
 local ts_organize_imports_cmd = "_typescript.organizeImports"
 
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
   filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
   commands = {
     OrganizeImports = {
