@@ -118,10 +118,10 @@ local manual_format = function()
 end
 
 wk.add({
-  { "<leader>F",  "<cmd>Telescope<cr>",                      desc = "Telescope" },
-  { "<leader>S",  "<cmd>Spectre<cr>",                        desc = "Spectre" },
-  { "<leader>/",  "<Plug>(comment_toggle_linewise_current)", desc = "Comment toggle current line", mode = { "n", "v" } },
-  { "<leader>lf", manual_format,                             desc = "Format (conform)" },
+  { "<leader>F",  "<cmd>Telescope<cr>", desc = "Telescope" },
+  { "<leader>S",  "<cmd>Spectre<cr>",   desc = "Spectre" },
+  { "<leader>/",  "gc",                 desc = "Comment toggle current line", mode = { "n", "v" } },
+  { "<leader>lf", manual_format,        desc = "Format (conform)" },
   {
     "<leader>fl",
     "<cmd>lua require('telescope').extensions.flutter.commands()<cr>",

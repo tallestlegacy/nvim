@@ -12,6 +12,7 @@ return {
 
 
   "LunarVim/darkplus.nvim",
+  "loctvl842/monokai-pro.nvim",
 
   {
     "tallestlegacy/darcula.nvim",

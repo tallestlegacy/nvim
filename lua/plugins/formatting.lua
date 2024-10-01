@@ -1,7 +1,7 @@
 -- local auto_format_pattern = { "*.ts", "*.go", "*.rs", "*.lua", "*.tsx", "*.html", "*.svelte", "*.astro", "*.md" }
 
 -- Use a sub-list to run only the first available formatter
-local pretty = { { "prettierd", "prettier" } }
+local pretty = { "prettierd", "prettier", stop_after_first = true, lsp_format = "format" }
 
 return {
   -- Formatting
@@ -12,7 +12,7 @@ return {
   config = function()
     require("conform").setup({
       formatters_by_ft = {
-        lua = {},
+        lua = { lsp_format = "fallback" },
         javascript = pretty,
         javascriptreact = pretty,
         typescript = pretty,
@@ -33,29 +33,14 @@ return {
         cpp = { "clang-format" },
         python = { "black" },
         kotlin = { "ktlint" },
-
-        proto = {},
+        proto = {}
       },
+    })
 
-      -- Enable or disable autoformat on save
-      format_on_save = function(bufnr)
-        -- Disable autoformat on certain filetypes
-        local ignore_filetypes = {} -- { "sql", "javascript", "vue" }
-        if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
-          return
-        end
-        -- Disable with a global or buffer-local variable
-        if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
-          return
-        end
-
-        -- Disable autoformat for files in a certain path
-        local bufname = vim.api.nvim_buf_get_name(bufnr)
-        if bufname:match("/node_modules/") then
-          return
-        end
-        -- ...additional logic...
-        return { timeout_ms = 500, lsp_fallback = true }
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = "*",
+      callback = function(args)
+        require("conform").format({ bufnr = args.buf })
       end,
     })
   end,
