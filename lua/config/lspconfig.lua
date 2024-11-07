@@ -40,7 +40,8 @@ local servers = {
   "bufls",
   "vala_ls",
   "jsonls",
-  "java_language_server"
+  "java_language_server",
+  "angularls",
 }
 
 for _, lsp in ipairs(servers) do
