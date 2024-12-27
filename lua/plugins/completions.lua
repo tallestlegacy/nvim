@@ -8,7 +8,6 @@ return {
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
-    'hrsh7th/cmp-cmdline',
     'hrsh7th/nvim-cmp',
     -- luasnip dependencies
     'L3MON4D3/LuaSnip',
@@ -34,6 +33,7 @@ return {
           ['<CR>'] = cmp.mapping.confirm({ select = false }),
         }),
         sources = cmp.config.sources({
+          { name = "supermaven" },
           { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "buffer" },

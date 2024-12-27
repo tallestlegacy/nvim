@@ -1,7 +1,7 @@
 local lspconfig = require("lspconfig")
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+-- capabilities = require("blink.cmp").default_capabilities(capabilities)
 
 local mason_registry = require("mason-registry")
 local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
@@ -37,7 +37,7 @@ local servers = {
   "prismals",
   "gleam",
   "kotlin_language_server",
-  "bufls",
+  "buf_ls",
   "vala_ls",
   "jsonls",
   "java_language_server",
