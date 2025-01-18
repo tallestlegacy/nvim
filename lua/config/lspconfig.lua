@@ -8,40 +8,50 @@ local vue_language_server_path = mason_registry.get_package("vue-language-server
     .. "/node_modules/@vue/language-server"
 
 local markup_files = {
+  -- markup
   "html",
+
+  -- style
   "css",
   "scss",
+
+  -- js
+  "astro",
   "javascript",
   "javascriptreact",
+  "svelte",
   "typescript",
   "typescriptreact",
-  "svelte",
   "vue",
-  "astro",
+
+  -- weird shit
   "heex",
 }
 
 local servers = {
-  "gopls",
-  -- "rust_analyzer",
-  "pyright",
-  "dartls",
-  "svelte",
-  "clangd",
-  "astro",
-  "intelephense",
-  "lua_ls",
-  "taplo", -- toml
-  "cssls",
-  "zls",
-  "prismals",
-  "gleam",
-  "kotlin_language_server",
-  "buf_ls",
-  "vala_ls",
-  "jsonls",
-  "java_language_server",
   "angularls",
+  "astro",
+  "buf_ls", -- protobuf
+  "clangd",
+  "cssls",
+  "dartls",
+  "gleam",
+  "gopls",
+  "graphql",
+  "intelephense",
+  "java_language_server",
+  "jsonls",
+  "kotlin_language_server",
+  "lua_ls",
+  "marksman", -- markdown
+  "prismals",
+  "pyright",
+  "svelte",
+  "taplo", -- toml
+  "vala_ls",
+  "yamlls",
+  "zls",
+  -- "rust_analyzer",
 }
 
 for _, lsp in ipairs(servers) do
@@ -93,10 +103,10 @@ lspconfig.unocss.setup({
   root_dir = lspconfig.util.root_pattern("uno.config.js", "uno.config.ts"),
 })
 
--- lspconfig.cssls.setup({
--- 	filetypes = markup_files,
--- })
---
+lspconfig.cssls.setup({
+  filetypes = markup_files,
+})
+
 
 
 lspconfig.lua_ls.setup({

@@ -1,6 +1,7 @@
 -- defaults
 require("tallestlegacy.defaults.options")
 require("tallestlegacy.defaults.remap")
+require("tallestlegacy.defaults.filetypes")
 
 require("tallestlegacy.lazy")
 

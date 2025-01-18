@@ -1,7 +1,11 @@
 -- local auto_format_pattern = { "*.ts", "*.go", "*.rs", "*.lua", "*.tsx", "*.html", "*.svelte", "*.astro", "*.md" }
-
 -- Use a sub-list to run only the first available formatter
-local pretty = { "prettierd", "prettier", stop_after_first = true, lsp_format = "format" }
+local pretty = {
+  -- "prettierd",
+  "prettier",
+  stop_after_first = true,
+  lsp_format = "format"
+}
 
 return {
   -- Formatting
@@ -12,7 +16,7 @@ return {
   config = function()
     require("conform").setup({
       formatters_by_ft = {
-        lua = { "lua-format", lsp_format = "fallback" },
+        lua = { lsp_format = "fallback" },
         javascript = pretty,
         javascriptreact = pretty,
         typescript = pretty,
@@ -22,9 +26,8 @@ return {
         jsonc = pretty,
         svelte = pretty,
         vue = pretty,
-        astro = pretty,
-        scss = pretty,
-        css = pretty,
+        css = { "prettierd" },
+        scss = { "prettierd" },
         html = pretty,
         markdown = pretty,
 
@@ -34,14 +37,14 @@ return {
         python = { "black" },
         kotlin = { "ktlint" },
         proto = {}
-      },
+      }
     })
 
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = "*",
       callback = function(args)
         require("conform").format({ bufnr = args.buf })
-      end,
+      end
     })
-  end,
+  end
 }
