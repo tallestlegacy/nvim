@@ -9,5 +9,6 @@ return {
     "goimports-reviser",
     "ktlint",
     -- "black",
+    "lua_ls"
   },
 }

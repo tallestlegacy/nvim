@@ -12,7 +12,7 @@ return {
   config = function()
     require("conform").setup({
       formatters_by_ft = {
-        lua = { "luaformatter", lsp_format = "fallback" },
+        lua = { "luaformatter", lsp_format = "first" },
         javascript = pretty,
         javascriptreact = pretty,
         typescript = pretty,
