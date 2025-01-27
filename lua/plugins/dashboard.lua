@@ -27,7 +27,7 @@ return {
       }
 
       -- local avatar = vim_dos_rebel
-      local avatar = require("builtin.ui.anya")[1]
+      local avatar = require("builtin.ui.adventure-time").bemo
       local icons = require("builtin.ui.icons")
 
       dashboard.section.header.val = avatar

@@ -84,7 +84,8 @@ lspconfig.tailwindcss.setup({
     "postcss.config.js",
     "tailwind.config.cjs",
     "tailwind.config.mjs",
-    "mix.exs"
+    "mix.exs",
+    "artisan" -- for osticket
   ),
 })
 

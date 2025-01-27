@@ -10,7 +10,7 @@
 - [x] [which-key.nvim](https://github.com/folke/which-key.nvim) to display keymaps
   - lots of custom keymaps for LSP, Telescope, dashboard etc.
 
-### PLugin management:
+### Plugin management:
 
 - [x] [lazy.nvim](https://github.com/folke/lazy.nvim) for plugin installation
 

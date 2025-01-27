@@ -1,7 +1,12 @@
 -- local auto_format_pattern = { "*.ts", "*.go", "*.rs", "*.lua", "*.tsx", "*.html", "*.svelte", "*.astro", "*.md" }
 
 -- Use a sub-list to run only the first available formatter
-local pretty = { "prettierd", "prettier", stop_after_first = true, lsp_format = "format" }
+local pretty = {
+  --"prettierd",
+  "prettier",
+  stop_after_first = true,
+  lsp_format = "format"
+}
 
 return {
   -- Formatting
@@ -18,13 +23,13 @@ return {
         typescript = pretty,
         typescriptreact = pretty,
 
-        json = pretty,
+        -- json = pretty,
         jsonc = pretty,
         svelte = pretty,
         vue = pretty,
         astro = pretty,
         scss = pretty,
-        css = pretty,
+        -- css = pretty,
         html = pretty,
         markdown = pretty,
 
