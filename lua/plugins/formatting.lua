@@ -2,7 +2,7 @@
 
 -- Use a sub-list to run only the first available formatter
 local pretty = {
-  --"prettierd",
+  "prettierd",
   "prettier",
   stop_after_first = true,
   lsp_format = "format"
@@ -23,13 +23,13 @@ return {
         typescript = pretty,
         typescriptreact = pretty,
 
-        -- json = pretty,
+        json = pretty,
         jsonc = pretty,
         svelte = pretty,
         vue = pretty,
         astro = pretty,
         scss = pretty,
-        -- css = pretty,
+        css = pretty,
         html = pretty,
         markdown = pretty,
 
