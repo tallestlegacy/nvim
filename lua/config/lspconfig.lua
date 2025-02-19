@@ -3,9 +3,9 @@ local lspconfig = require("lspconfig")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 -- capabilities = require("blink.cmp").default_capabilities(capabilities)
 
-local mason_registry = require("mason-registry")
-local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
-    .. "/node_modules/@vue/language-server"
+-- local mason_registry = require("mason-registry")
+-- local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
+--     .. "/node_modules/@vue/language-server"
 
 local markup_files = {
   "html",
@@ -42,6 +42,7 @@ local servers = {
   "jsonls",
   "java_language_server",
   "angularls",
+  "vtsls"
 }
 
 for _, lsp in ipairs(servers) do
@@ -106,37 +107,37 @@ lspconfig.lua_ls.setup({
   hint = { enable = true },
 })
 
--- lspconfig.eslint.setup({
--- 	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "astro" },
--- })
+lspconfig.eslint.setup({
+  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "astro" },
+})
 
 lspconfig.elixirls.setup({
   cmd = { "elixir-ls" },
 })
 
 -- javascript
-local ts_organize_imports_cmd = "_typescript.organizeImports"
+-- local ts_organize_imports_cmd = "_typescript.organizeImports"
 
-lspconfig.ts_ls.setup({
-  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
-  commands = {
-    OrganizeImports = {
-      function()
-        organize_imports(ts_organize_imports_cmd)
-      end,
-      description = "Organize Imports",
-    },
-  },
-  init_options = {
-    plugins = {
-      {
-        name = "@vue/typescript-plugin",
-        location = vue_language_server_path,
-        languages = { "vue" },
-      },
-    },
-  },
-})
+-- lspconfig.ts_ls.setup({
+--   filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+--   commands = {
+--     OrganizeImports = {
+--       function()
+--         organize_imports(ts_organize_imports_cmd)
+--       end,
+--       description = "Organize Imports",
+--     },
+--   },
+--   init_options = {
+--     plugins = {
+--       {
+--         name = "@vue/typescript-plugin",
+--         location = vue_language_server_path,
+--         languages = { "vue" },
+--       },
+--     },
+--   },
+-- })
 
 
 lspconfig.volar.setup({

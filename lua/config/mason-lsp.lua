@@ -9,6 +9,10 @@ return {
     "goimports-reviser",
     "ktlint",
     -- "black",
-    "lua_ls"
+    "lua_ls",
+    "vtsls",
+    "tailwindcss-language-server",
+    "emmet-language-server",
+    "cssls"
   },
 }

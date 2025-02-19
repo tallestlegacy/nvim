@@ -5,10 +5,11 @@ if not status_ok then
 end
 
 
--- External mapppings
+-- External mappings
 require("config.mappings.telescope-mappings")
 require("config.mappings.bufferline-mappings")
 require("config.mappings.kulala")
+require("config.mappings.nvchad-mappings")
 
 -- Explorer
 wk.add({
@@ -17,7 +18,7 @@ wk.add({
 })
 
 -- Dashboard
-wk.add({ "<leader>a", "<cmd>Alpha<cr>", desc = "Dashboard" })
+wk.add({ "<leader>a", "<cmd>Nvdash<cr>", desc = "Dashboard" })
 
 -- Language server options
 wk.add({

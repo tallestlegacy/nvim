@@ -4,7 +4,7 @@ local wk = require("which-key")
 local M = require("telescope.builtin")
 
 wk.add {
-  { "<leader>f",
+  { "<leader>F",
     function() M.find_files({ no_ignore = true }) end,
     desc = "All Files",
   },
