@@ -106,35 +106,61 @@ lspconfig.lua_ls.setup({
   hint = { enable = true },
 })
 
--- lspconfig.eslint.setup({
--- 	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "astro" },
--- })
+lspconfig.eslint.setup({
+  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "astro" },
+})
 
 lspconfig.elixirls.setup({
   cmd = { "elixir-ls" },
 })
 
 -- javascript
-local ts_organize_imports_cmd = "_typescript.organizeImports"
+-- local ts_organize_imports_cmd = "_typescript.organizeImports"
+--
+-- lspconfig.ts_ls.setup({
+--   filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+--   commands = {
+--     OrganizeImports = {
+--       function()
+--         organize_imports(ts_organize_imports_cmd)
+--       end,
+--       description = "Organize Imports",
+--     },
+--   },
+--   init_options = {
+--     plugins = {
+--       {
+--         name = "@vue/typescript-plugin",
+--         location = vue_language_server_path,
+--         languages = { "vue" },
+--       },
+--     },
+--   },
+-- })
 
-lspconfig.ts_ls.setup({
-  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+
+
+
+require("lspconfig.configs").vtsls = require("vtsls").lspconfig -- set default server config, optional but recommended
+lspconfig.vtsls.setup({
+  settings = {
+    typescript = {
+      preferences = {
+        includeCompletionsForModuleExports = true,
+        includeCompletionsForImportStatements = true,
+        importModuleSpecifier = "non-relative",
+        importModuleSpecifierEnding = "js",
+
+      },
+    },
+  },
   commands = {
     OrganizeImports = {
       function()
-        organize_imports(ts_organize_imports_cmd)
+        organize_imports("source.organizeImports")
       end,
-      description = "Organize Imports",
-    },
-  },
-  init_options = {
-    plugins = {
-      {
-        name = "@vue/typescript-plugin",
-        location = vue_language_server_path,
-        languages = { "vue" },
-      },
-    },
+      description = "OrganizeImports"
+    }
   },
 })
 

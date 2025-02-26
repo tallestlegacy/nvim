@@ -12,9 +12,11 @@ return {
     -- luasnip dependencies
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
+    "mlaursen/vim-react-snippets",
   },
   config = function()
     local cmp = require("cmp")
+    require("vim-react-snippets").lazy_load()
 
     cmp.setup(
       {
@@ -29,7 +31,8 @@ return {
         },
         mapping = cmp.mapping.preset.insert({
           ['<C-Space>'] = cmp.mapping.complete(),
-          ['<M-Space>'] = cmp.mapping.complete(),
+          ['<D-Space>'] = cmp.mapping.complete(),
+          ['<C-K>'] = cmp.mapping.complete(),
           ['<C-e>'] = cmp.mapping.abort(),
           ['<CR>'] = cmp.mapping.confirm({ select = false }),
         }),

@@ -27,9 +27,10 @@ return {
 
   -- hex color highlighter
   {
-    'norcalli/nvim-colorizer.lua',
+    "catgoose/nvim-colorizer.lua",
+    event = "BufReadPre",
     config = function()
       require("colorizer").setup {}
     end
-  },
+  }
 }

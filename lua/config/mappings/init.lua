@@ -27,7 +27,7 @@ wk.add({
   { "<leader>lr", vim.lsp.buf.rename,                      desc = "Rename",      mode = { "n", "v" } },
   { "<leader>lR", "<cmd>LspRestart<cr>",                   desc = "Restart",     mode = { "n", "v" } },
   { "<leader>lf", vim.lsp.buf.format,                      desc = "Format",      mode = { "n", "v" } },
-  { "<leader>ld", vim.lsp.buf.definition,                  desc = "Definition",  mode = { "n", "v" } },
+  { "<leader>ld", "<cmd>Telescope lsp_definitions<cr>",    desc = "Definition",  mode = { "n", "v" } },
   {
     "<leader>lh",
     function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
@@ -123,7 +123,7 @@ wk.add({
   { "<leader>/",  "gc",                 desc = "Comment toggle current line", mode = { "n", "v" } },
   { "<leader>lf", manual_format,        desc = "Format (conform)" },
   {
-    "<leader>fl",
+    "<leader>fL",
     "<cmd>lua require('telescope').extensions.flutter.commands()<cr>",
     desc = "Flutter Tools"
   },

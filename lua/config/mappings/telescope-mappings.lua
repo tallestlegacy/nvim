@@ -4,7 +4,7 @@ local wk = require("which-key")
 local M = require("telescope.builtin")
 
 wk.add {
-  { "<leader>f",
+  { "<leader>fa",
     function() M.find_files({ no_ignore = true }) end,
     desc = "All Files",
   },
@@ -28,4 +28,10 @@ wk.add {
   { "<leader>fgc", M.git_commits,               desc = "Git Commits" },
   { "<leader>fgC", M.git_bcommits,              desc = "Git File Commits" },
   { "<leader>fgf", M.git_files,                 desc = "Git Files" },
+
+  -- lsp stuff
+  { "<leader>fld", M.lsp_definitions,           desc = "LSP definitions" },
+  { "<leader>flt", M.lsp_type_definitions,      desc = "LSP type definitions" },
+  { "<leader>fli", M.lsp_implementations,       desc = "LSP lsp_implementations" },
+  { "<leader>fli", M.lsp_references,            desc = "LSP lsp_references" },
 }

@@ -1,5 +1,16 @@
 return {
   {
+    "luckasRanarison/tailwind-tools.nvim",
+    name = "tailwind-tools",
+    build = ":UpdateRemotePlugins",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-telescope/telescope.nvim", -- optional
+      "neovim/nvim-lspconfig",         -- optional
+    },
+    opts = {}                          -- your configuration
+  },
+  {
     "akinsho/flutter-tools.nvim",
     event = "VeryLazy",
     lazy = false,
@@ -75,4 +86,17 @@ return {
       require('kulala').setup()
     end
   },
+
+
+  -- MDX
+  {
+    "davidmh/mdx.nvim",
+    config = true,
+    dependencies = { "nvim-treesitter/nvim-treesitter" }
+  },
+
+  -- Typescript
+  {
+    "yioneko/nvim-vtsls",
+  }
 }

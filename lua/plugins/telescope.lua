@@ -77,7 +77,7 @@ return {
       -- pcall(require("telescope").load_extension("ui-select"))
 
       -- other plugins
-      pcall(require("telescope").load_extension("flutter"))
+      -- pcall(require("telescope").load_extension("flutter"))
     end,
   },
 }
