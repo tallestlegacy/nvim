@@ -15,6 +15,7 @@ return {
     "vtsls",
     "emmet-language-server",
     "tailwindcss-language-server",
-    "intelephense"
+    "intelephense",
+    "zls"
   },
 }

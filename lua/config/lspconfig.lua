@@ -42,6 +42,7 @@ local servers = {
   "jsonls",
   "java_language_server",
   "angularls",
+  "zls"
 }
 
 for _, lsp in ipairs(servers) do
