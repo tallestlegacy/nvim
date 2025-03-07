@@ -68,8 +68,8 @@ lspconfig.emmet_language_server.setup({
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    -- "svelte", -- svelte has its own language server
-    "vue", -- same as vue
+    "svelte", -- svelte has its own language server
+    "vue",    -- same as vue
     "php",
     "astro",
     "heex",
